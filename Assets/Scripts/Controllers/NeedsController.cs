@@ -6,12 +6,19 @@ public class NeedsController : MonoBehaviour
 {
     public int food, happiness, energy;
     public int foodTickRate, happinessTickRate, energyTickRate;
+    public System.DateTime lastTimeFed, lastTimeHappy, lastTimeEnergised;
 
-    public void Initialise(int food, int happiness, int energy)
+    public void Initialise(int food, int happiness, int energy, int foodTickRate, int happinessTickRate, int energyTickRate)
     {
+        lastTimeFed = System.DateTime.Now;
+        lastTimeHappy = System.DateTime.Now;
+        lastTimeEnergised = System.DateTime.Now;
         this.food = food;
         this.happiness = happiness;
         this.energy = energy;
+        this.foodTickRate = foodTickRate;
+        this.happinessTickRate = happinessTickRate;
+        this.energyTickRate = energyTickRate;
     }
 
     private void Update()
@@ -27,9 +34,13 @@ public class NeedsController : MonoBehaviour
     public void ChangeFood(int amount)
     {
         food += amount;
+        if(amount > 0)
+        {
+            lastTimeFed = System.DateTime.Now;
+        }
         if(food < 0)
         {
-            PetManager.Die();
+            PetManager.instance.Die();
         }
         else if(food > 100) food = 100;
     }
@@ -37,9 +48,13 @@ public class NeedsController : MonoBehaviour
     public void ChangeHappiness(int amount)
     {
         happiness += amount;
+        if(amount > 0)
+        {
+            lastTimeHappy = System.DateTime.Now;
+        }
         if(happiness < 0)
         {
-            PetManager.Die();
+            PetManager.instance.Die();
         }
         else if(happiness > 100) happiness = 100;
     }
@@ -47,9 +62,13 @@ public class NeedsController : MonoBehaviour
     public void ChangeEnergy(int amount)
     {
         energy += amount;
+        if(amount > 0)
+        {
+            lastTimeEnergised = System.DateTime.Now;
+        }
         if(energy < 0)
         {
-            PetManager.Die();
+            PetManager.instance.Die();
         }
         else if(energy > 100) energy = 100;
     }

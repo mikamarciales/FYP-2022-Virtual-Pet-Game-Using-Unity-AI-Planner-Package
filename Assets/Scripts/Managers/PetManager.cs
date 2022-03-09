@@ -5,12 +5,19 @@ using UnityEngine;
 public class PetManager : MonoBehaviour
 {
     public PetController pet;
+    public NeedsController needsController;
     public float petMoveTimer, originalpetMoveTimer;
     public Transform[] waypoints;
+    public static PetManager instance;
 
     private void Awake()
     {
         originalpetMoveTimer = petMoveTimer;
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else Debug.LogWarning("More than one PetManager in the Scene");
     }
 
     private void Update()
@@ -19,7 +26,8 @@ public class PetManager : MonoBehaviour
         {
             petMoveTimer -= Time.deltaTime;
         }
-        else{
+        else
+        {
             MovePetToRandomWaypoint();
             petMoveTimer = originalpetMoveTimer;
         }
@@ -27,21 +35,12 @@ public class PetManager : MonoBehaviour
 
     private void MovePetToRandomWaypoint()
     {
-        int randomWaypoint = Random.Range(0,waypoints.Length);
-        //Debug.Log("randomWaypoint = " + randomWaypoint);
-        //Debug.Log("waypoints[randomWaypoint].position = " + waypoints[randomWaypoint].position);
-        if(randomWaypoint >= 0 && randomWaypoint <= waypoints.Length)
-        {
-            pet.Move(waypoints[randomWaypoint].position);
-        }
-        else
-        {
-            pet.Move(waypoints[0].position);
-        }
+        int randomWaypoint = Random.Range(0, waypoints.Length);
+        pet.Move(waypoints[randomWaypoint].position);
     }
 
-    public static void Die()
+    public void Die()
     {
-
+        Debug.Log("Dead");
     }
 }
