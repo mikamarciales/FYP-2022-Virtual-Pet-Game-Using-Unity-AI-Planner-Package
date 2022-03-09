@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//[System.Serializable]
 public class Pet : MonoBehaviour
 {
-    public System.DateTime lastTimeFed, lastTimeHappy, lastTimeEnergised;
+    public string lastTimeFed, lastTimeHappy, lastTimeEnergised;
     public int food, happiness, energy;
 
-    public Pet(System.DateTime lastTimeFed, System.DateTime lastTimeHappy, System.DateTime lastTimeEnergised, int food, int happiness, int energy)
+    public Pet(string lastTimeFed, string lastTimeHappy, string lastTimeEnergised, int food, int happiness, int energy)
     {
         this.lastTimeFed = lastTimeFed;
         this.lastTimeHappy = lastTimeHappy;

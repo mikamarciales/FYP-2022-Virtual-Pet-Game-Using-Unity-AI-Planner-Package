@@ -8,6 +8,11 @@ public class NeedsController : MonoBehaviour
     public int foodTickRate, happinessTickRate, energyTickRate;
     public System.DateTime lastTimeFed, lastTimeHappy, lastTimeEnergised;
 
+    public void Awake()
+    {
+        Initialise(100, 100, 100, 10, 10, 10);
+    }
+
     public void Initialise(int food, int happiness, int energy, int foodTickRate, int happinessTickRate, int energyTickRate)
     {
         lastTimeFed = System.DateTime.Now;
@@ -19,6 +24,20 @@ public class NeedsController : MonoBehaviour
         this.foodTickRate = foodTickRate;
         this.happinessTickRate = happinessTickRate;
         this.energyTickRate = energyTickRate;
+    }
+
+    public void Initialise(int food, int happiness, int energy, int foodTickRate, int happinessTickRate, int energyTickRate, System.DateTime lastTimeFed, System.DateTime lastTimeHappy, System.DateTime lastTimeEnergised)
+    {
+        this.lastTimeFed = lastTimeFed;
+        this.lastTimeHappy = lastTimeHappy;
+        this.lastTimeEnergised = lastTimeEnergised;
+        this.food = food;
+        this.happiness = happiness;
+        this.energy = energy;
+        this.foodTickRate = foodTickRate;
+        this.happinessTickRate = happinessTickRate;
+        this.energyTickRate = energyTickRate;
+        //TODO: FINISH TIME PASSING
     }
 
     private void Update()

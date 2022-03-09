@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Database
 {
-    private string path = Application.dataPath + "Resources/Saves/";
+    private string path = Application.dataPath + "/Resources/Saves/";
 
     public void SaveData<T>(string saveName, T saveData)
     {

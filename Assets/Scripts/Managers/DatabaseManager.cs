@@ -22,7 +22,7 @@ public class DatabaseManager : MonoBehaviour
     {
         if(TimingManager.gameHourTimer < 0)
         {
-            Pet pet = new Pet(needsController.lastTimeFed, needsController.lastTimeHappy, needsController.lastTimeEnergised, needsController.food, needsController.happiness, needsController.energy);
+            Pet pet = new Pet(needsController.lastTimeFed.ToString(), needsController.lastTimeHappy.ToString(), needsController.lastTimeEnergised.ToString(), needsController.food, needsController.happiness, needsController.energy);
             SavePet(pet);
         }
     }
@@ -32,7 +32,7 @@ public class DatabaseManager : MonoBehaviour
         Pet pet = LoadPet();
         if(pet != null)
         {
-            Debug.Log(LoadPet().energy);
+            needsController.Initialise(pet.food, pet.happiness, pet.energy, 10, 10, 10, System.DateTime.Parse(pet.lastTimeFed), System.DateTime.Parse(pet.lastTimeHappy), System.DateTime.Parse(pet.lastTimeEnergised));
         }
     }
 
@@ -41,7 +41,8 @@ public class DatabaseManager : MonoBehaviour
         database.SaveData<Pet>("pet", pet);
     }
 
-    public Pet LoadPet()
+    public Pet 
+    LoadPet()
     {
         Pet returnValue = null;
         database.LoadData<Pet>("pet", (pet) =>
