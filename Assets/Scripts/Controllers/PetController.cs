@@ -60,4 +60,9 @@ public class PetController : MonoBehaviour
     {
         petAnimator.SetTrigger("Tired");
     }
+
+    public void Sleep()
+    {
+        petAnimator.SetTrigger("Sleep");
+    }
 }
