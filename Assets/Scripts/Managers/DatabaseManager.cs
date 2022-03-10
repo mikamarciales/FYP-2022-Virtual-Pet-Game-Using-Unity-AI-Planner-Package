@@ -53,4 +53,6 @@ public class DatabaseManager : MonoBehaviour
         return returnValue;
     }
 }
+
+// ADD DATABASEMANAGER SCRIPT COMPONENT TO MANAGERS OBJECT WHEN FINISHED!!!
 **/

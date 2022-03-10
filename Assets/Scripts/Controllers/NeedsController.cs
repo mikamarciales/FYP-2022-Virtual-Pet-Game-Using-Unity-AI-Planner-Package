@@ -10,7 +10,7 @@ public class NeedsController : MonoBehaviour
 
     public void Awake()
     {
-        Initialise(100, 100, 100, 100, 10, 0, 0, 0);
+        Initialise(100, 100, 100, 100, 10, 7, 2, 5);
     }
 
     public void Initialise(int food, int drink, int happiness, int energy,
@@ -30,7 +30,7 @@ public class NeedsController : MonoBehaviour
         this.energyTickRate = energyTickRate;
     }
 
-    public void Initialise(int food, int drink, int happiness, int energy,
+    /**public void Initialise(int food, int drink, int happiness, int energy,
                             int foodTickRate, int drinkTickRate, int happinessTickRate, int energyTickRate,
                             System.DateTime lastTimeFed, System.DateTime lastTimeDrank, System.DateTime lastTimeHappy, System.DateTime lastTimeEnergised)
     {
@@ -47,7 +47,7 @@ public class NeedsController : MonoBehaviour
         this.happinessTickRate = happinessTickRate;
         this.energyTickRate = energyTickRate;
         //TODO: FINISH TIME PASSING
-    }
+    }**/
 
     private void Update()
     {

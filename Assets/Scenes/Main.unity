@@ -3037,7 +3037,6 @@ GameObject:
   - component: {fileID: 782492478}
   - component: {fileID: 782492477}
   - component: {fileID: 782492479}
-  - component: {fileID: 782492480}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -3104,19 +3103,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hourLength: 10
---- !u!114 &782492480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 782492476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baddb2676c41e4edabd6c8295b350dd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  needsController: {fileID: 1407123196}
 --- !u!1 &815950194
 GameObject:
   m_ObjectHideFlags: 0
@@ -3793,9 +3779,9 @@ MonoBehaviour:
   happiness: 100
   energy: 100
   foodTickRate: 10
-  drinkTickRate: 0
-  happinessTickRate: 0
-  energyTickRate: 0
+  drinkTickRate: 7
+  happinessTickRate: 2
+  energyTickRate: 5
 --- !u!1 &1415335255
 GameObject:
   m_ObjectHideFlags: 0
