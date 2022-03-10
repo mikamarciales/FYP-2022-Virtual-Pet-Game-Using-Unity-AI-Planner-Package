@@ -5,15 +5,18 @@ using UnityEngine;
 //[System.Serializable]
 public class Pet : MonoBehaviour
 {
-    public string lastTimeFed, lastTimeHappy, lastTimeEnergised;
-    public int food, happiness, energy;
+    public string lastTimeFed, lastTimeDrank, lastTimeHappy, lastTimeEnergised;
+    public int food, drink, happiness, energy;
 
-    public Pet(string lastTimeFed, string lastTimeHappy, string lastTimeEnergised, int food, int happiness, int energy)
+    public Pet(string lastTimeFed, string lastTimeDrank, string lastTimeHappy, string lastTimeEnergised,
+                int food, int drink, int happiness, int energy)
     {
         this.lastTimeFed = lastTimeFed;
+        this.lastTimeDrank = lastTimeDrank;
         this.lastTimeHappy = lastTimeHappy;
         this.lastTimeEnergised = lastTimeEnergised;
         this.food = food;
+        this.drink = drink;
         this.happiness = happiness;
         this.energy = energy;
     }

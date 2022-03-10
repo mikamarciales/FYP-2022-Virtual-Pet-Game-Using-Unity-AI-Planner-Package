@@ -31,13 +31,33 @@ public class PetController : MonoBehaviour
         petAnimator.SetTrigger("Happy");
     }
 
+    public void Sad()
+    {
+        petAnimator.SetTrigger("Sad");
+    }
+
+    public void Hungry()
+    {
+        petAnimator.SetTrigger("Hungry");
+    }
+
     public void Eat()
     {
         petAnimator.SetTrigger("Eat");
     }
 
-    public void Sad()
+    public void Thirsty()
     {
-        petAnimator.SetTrigger("Sad");
+        petAnimator.SetTrigger("Thirsty");
+    }
+
+    public void Drink()
+    {
+        petAnimator.SetTrigger("Drink");
+    }
+
+    public void Tired()
+    {
+        petAnimator.SetTrigger("Tired");
     }
 }
