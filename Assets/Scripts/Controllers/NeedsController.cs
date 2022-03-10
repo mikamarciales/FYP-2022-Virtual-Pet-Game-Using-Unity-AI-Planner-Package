@@ -10,7 +10,7 @@ public class NeedsController : MonoBehaviour
 
     public void Awake()
     {
-        Initialise(100, 100, 100, 100, 10, 10, 10, 10);
+        Initialise(100, 100, 100, 100, 10, 0, 0, 0);
     }
 
     public void Initialise(int food, int drink, int happiness, int energy,

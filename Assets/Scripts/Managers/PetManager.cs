@@ -22,7 +22,7 @@ public class PetManager : MonoBehaviour
 
     private void Update()
     {
-        if(petMoveTimer > 0)
+        /**if(petMoveTimer > 0)
         {
             petMoveTimer -= Time.deltaTime;
         }
@@ -30,14 +30,14 @@ public class PetManager : MonoBehaviour
         {
             MovePetToRandomWaypoint();
             petMoveTimer = originalpetMoveTimer;
-        }
+        }**/
     }
 
-    private void MovePetToRandomWaypoint()
+    /**private void MovePetToRandomWaypoint()
     {
         int randomWaypoint = Random.Range(0, waypoints.Length);
         pet.Move(waypoints[randomWaypoint].position);
-    }
+    }**/
 
     public void Die()
     {

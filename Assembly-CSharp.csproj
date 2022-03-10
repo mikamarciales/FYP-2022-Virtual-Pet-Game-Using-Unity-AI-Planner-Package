@@ -40,11 +40,10 @@
      <Compile Include="Assets/Scripts/Managers/TimingManager.cs" />
      <Compile Include="Assets/Scripts/Controllers/PetController.cs" />
      <Compile Include="Assets/Scripts/Controllers/NeedsController.cs" />
-     <Compile Include="Assets/Resources/Art/Simple UI/Samples/IconPreview.cs" />
-     <Compile Include="Assets/Scripts/Controllers/BackgroundController.cs" />
      <Compile Include="Assets/Scripts/Abstracts/Pet.cs" />
      <Compile Include="Assets/Scripts/Abstracts/Database.cs" />
      <Compile Include="Assets/Scripts/Managers/DatabaseManager.cs" />
+     <Compile Include="Assets/Resources/Art/Simple UI/Samples/IconPreview.cs" />
      <None Include="Assets/Resources/Art/Simple UI/Fonts/OFL.txt" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -679,6 +678,9 @@
     <Reference Include="Unity.Entities.Hybrid.EndToEnd.Tests">
         <HintPath>/Users/mikamarciales/Virtual Pet Game/Library/ScriptAssemblies/Unity.Entities.Hybrid.EndToEnd.Tests.dll</HintPath>
     </Reference>
+    <Reference Include="Generated.AI.Planner.StateRepresentation">
+        <HintPath>/Users/mikamarciales/Virtual Pet Game/Library/ScriptAssemblies/Generated.AI.Planner.StateRepresentation.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Properties.UI.Editor">
         <HintPath>/Users/mikamarciales/Virtual Pet Game/Library/ScriptAssemblies/Unity.Properties.UI.Editor.dll</HintPath>
     </Reference>
@@ -822,6 +824,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Workaholic.Custom.csproj">
+      <Project>{6b29da69-e286-484b-987d-ce4cb93bd373}</Project>
+      <Name>Workaholic.Custom</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

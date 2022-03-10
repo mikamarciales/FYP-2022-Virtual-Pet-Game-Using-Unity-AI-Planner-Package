@@ -1,4 +1,4 @@
-using System.Collections;
+/**using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,7 +33,7 @@ public class DatabaseManager : MonoBehaviour
         Pet pet = LoadPet();
         if(pet != null)
         {
-            needsController.Initialise(pet.food, pet.drink, pet.happiness, pet.energy, 10, 10, 10, 10, System.DateTime.Parse(pet.lastTimeFed), System.DateTime.Parse(pet.lastTimeDrank), System.DateTime.Parse(pet.lastTimeHappy), System.DateTime.Parse(pet.lastTimeEnergised));
+            needsController.Initialise(pet.food, pet.drink, pet.happiness, pet.energy, 10, 0, 0, 0, System.DateTime.Parse(pet.lastTimeFed), System.DateTime.Parse(pet.lastTimeDrank), System.DateTime.Parse(pet.lastTimeHappy), System.DateTime.Parse(pet.lastTimeEnergised));
         }
     }
 
@@ -53,3 +53,4 @@ public class DatabaseManager : MonoBehaviour
         return returnValue;
     }
 }
+**/
