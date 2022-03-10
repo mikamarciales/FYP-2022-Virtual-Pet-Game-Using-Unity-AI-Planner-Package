@@ -39,6 +39,26 @@ public class PetManager : MonoBehaviour
         pet.Move(waypoints[randomWaypoint].position);
     }
 
+    public void MovePetToFood()
+    {
+        pet.Move(waypoints[11].position);
+    }
+
+    public void MovePetToDrink()
+    {
+        pet.Move(waypoints[12].position);
+    }
+
+    public void MovePetToHappiness()
+    {
+        pet.Move(waypoints[14].position);
+    }
+
+        public void MovePetToEnergy()
+    {
+        pet.Move(waypoints[13].position);
+    }
+
     public void Die()
     {
         Debug.Log("Dead");
