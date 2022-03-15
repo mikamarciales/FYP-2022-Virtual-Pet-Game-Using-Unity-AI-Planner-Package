@@ -28,6 +28,7 @@ public class NeedsController : MonoBehaviour
         this.drinkTickRate = drinkTickRate;
         this.happinessTickRate = happinessTickRate;
         this.energyTickRate = energyTickRate;
+        PetUIController.instance.UpdateImages(food, drink, happiness, energy);
     }
 
     /**public void Initialise(int food, int drink, int happiness, int energy,
@@ -57,6 +58,7 @@ public class NeedsController : MonoBehaviour
             ChangeDrink(-drinkTickRate);
             ChangeHappiness(-happinessTickRate);
             ChangeEnergy(-energyTickRate);
+            PetUIController.instance.UpdateImages(food, drink, happiness, energy);
         }
     }
 

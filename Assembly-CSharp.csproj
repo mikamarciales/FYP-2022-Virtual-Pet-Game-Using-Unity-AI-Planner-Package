@@ -44,6 +44,7 @@
      <Compile Include="Assets/Scripts/Abstracts/Database.cs" />
      <Compile Include="Assets/Scripts/Managers/DatabaseManager.cs" />
      <Compile Include="Assets/Resources/Art/Simple UI/Samples/IconPreview.cs" />
+     <Compile Include="Assets/Scripts/Controllers/UI/PetUIController.cs" />
      <None Include="Assets/Resources/Art/Simple UI/Fonts/OFL.txt" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -708,11 +709,11 @@
     <Reference Include="Unity.Collections">
         <HintPath>/Users/mikamarciales/Virtual Pet Game/Library/ScriptAssemblies/Unity.Collections.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Transforms.Editor">
-        <HintPath>/Users/mikamarciales/Virtual Pet Game/Library/ScriptAssemblies/Unity.Transforms.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.Common.Editor">
         <HintPath>/Users/mikamarciales/Virtual Pet Game/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Transforms.Editor">
+        <HintPath>/Users/mikamarciales/Virtual Pet Game/Library/ScriptAssemblies/Unity.Transforms.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Build.SlimPlayerRuntime">
         <HintPath>/Users/mikamarciales/Virtual Pet Game/Library/ScriptAssemblies/Unity.Build.SlimPlayerRuntime.dll</HintPath>
