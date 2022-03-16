@@ -7,6 +7,7 @@ public class PetController : MonoBehaviour
     public Animator petAnimator;
     private Vector3 destination;
     public float moveSpeed;
+    public bool petMoving = false;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class PetController : MonoBehaviour
 
     public void Move(Vector3 destination)
     {
+        petMoving = true;
         this.destination = destination;
     }
 

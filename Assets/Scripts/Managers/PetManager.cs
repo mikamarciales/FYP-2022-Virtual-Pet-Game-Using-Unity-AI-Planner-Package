@@ -26,7 +26,7 @@ public class PetManager : MonoBehaviour
         {
             petMoveTimer -= Time.deltaTime;
         }
-        else
+        else if (petMoveTimer <= 0 && pet.petMoving == false)
         {
             MovePetToRandomWaypoint();
             petMoveTimer = originalpetMoveTimer;
@@ -36,27 +36,59 @@ public class PetManager : MonoBehaviour
     private void MovePetToRandomWaypoint()
     {
         int randomWaypoint = Random.Range(0, waypoints.Length);
-        pet.Move(waypoints[randomWaypoint].position);
+        if(pet.petMoving == false
+            && (waypoints[randomWaypoint].position != waypoints[11].position
+            || waypoints[randomWaypoint].position != waypoints[12].position
+            || waypoints[randomWaypoint].position != waypoints[13].position
+            || waypoints[randomWaypoint].position != waypoints[14].position))
+        {
+            pet.Move(waypoints[randomWaypoint].position);
+            pet.petMoving = false;
+        }
     }
 
     public void MovePetToFood()
     {
-        pet.Move(waypoints[11].position);
+        if(pet.petMoving == false)
+        {
+            pet.Move(waypoints[11].position);
+            Debug.Log("Food +10");
+            pet.petMoving = false;
+            petMoveTimer = originalpetMoveTimer;
+        }
     }
 
     public void MovePetToDrink()
     {
-        pet.Move(waypoints[12].position);
+        if(pet.petMoving == false)
+        {
+            pet.Move(waypoints[12].position);
+            Debug.Log("Drink +7");
+            pet.petMoving = false;
+            petMoveTimer = originalpetMoveTimer;
+        }
     }
 
     public void MovePetToHappiness()
     {
-        pet.Move(waypoints[14].position);
+        if(pet.petMoving == false)
+        {
+            pet.Move(waypoints[14].position);
+            Debug.Log("Happiness +2");
+            pet.petMoving = false;
+            petMoveTimer = originalpetMoveTimer;
+        }
     }
 
         public void MovePetToEnergy()
     {
-        pet.Move(waypoints[13].position);
+        if(pet.petMoving == false)
+        {
+            pet.Move(waypoints[13].position);
+            Debug.Log("Energy +5");
+            pet.petMoving = false;
+            petMoveTimer = originalpetMoveTimer;
+        }
     }
 
     public void Die()

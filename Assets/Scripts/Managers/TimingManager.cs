@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class TimingManager : MonoBehaviour
 {
-    public static float gameHourTimer;
-    public float hourLength;
+    public static float gameHourTimer, gameTickTimer;
+    public float hourLength, tickLength;
 
     private void Update()
     {
-        if (gameHourTimer <= 0)
+        if (gameHourTimer <= 0 && gameTickTimer <=0)
         {
             gameHourTimer = hourLength;
+            gameTickTimer = tickLength;
         }
         else
         {
             gameHourTimer -= Time.deltaTime;
+            gameTickTimer -= Time.deltaTime;
         }
     }
 

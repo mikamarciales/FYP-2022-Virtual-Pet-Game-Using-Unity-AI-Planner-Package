@@ -3565,7 +3565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pet: {fileID: 5077767372468047311}
   needsController: {fileID: 0}
-  petMoveTimer: 17
+  petMoveTimer: 10
   originalpetMoveTimer: 0
   waypoints:
   - {fileID: 1265156935}
@@ -3610,6 +3610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hourLength: 10
+  tickLength: 1
 --- !u!1 &809909912
 GameObject:
   m_ObjectHideFlags: 0
@@ -4950,7 +4951,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 08c9a04fdc37441798820983f3c71832, type: 2}
     - target: {fileID: 3314262528956662031, guid: 0475b784f694c4fe2b885911d60829df, type: 3}
       propertyPath: moveSpeed
-      value: 5
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 5079194391067479130, guid: 0475b784f694c4fe2b885911d60829df, type: 3}
       propertyPath: m_LocalPosition.y

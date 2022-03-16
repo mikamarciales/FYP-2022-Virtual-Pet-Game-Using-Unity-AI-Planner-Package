@@ -7,7 +7,7 @@ public class NeedsController : MonoBehaviour
     public int food, drink, happiness, energy;
     public int foodTickRate, drinkTickRate, happinessTickRate, energyTickRate;
     public System.DateTime lastTimeFed, lastTimeDrank, lastTimeHappy, lastTimeEnergised;
-
+    
     public void Awake()
     {
         Initialise(100, 100, 100, 100, 10, 7, 2, 5);
@@ -58,6 +58,9 @@ public class NeedsController : MonoBehaviour
             ChangeDrink(-drinkTickRate);
             ChangeHappiness(-happinessTickRate);
             ChangeEnergy(-energyTickRate);
+        }
+        if (TimingManager.gameTickTimer < 0)
+        {
             PetUIController.instance.UpdateImages(food, drink, happiness, energy);
         }
     }
