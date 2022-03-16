@@ -55,6 +55,7 @@ public class PetManager : MonoBehaviour
             Debug.Log("Food +10");
             pet.petMoving = false;
             petMoveTimer = originalpetMoveTimer;
+            pet.Eat();
         }
     }
 
@@ -66,6 +67,7 @@ public class PetManager : MonoBehaviour
             Debug.Log("Drink +7");
             pet.petMoving = false;
             petMoveTimer = originalpetMoveTimer;
+            pet.Drink();
         }
     }
 
@@ -77,6 +79,7 @@ public class PetManager : MonoBehaviour
             Debug.Log("Happiness +2");
             pet.petMoving = false;
             petMoveTimer = originalpetMoveTimer;
+            pet.Happy();
         }
     }
 
@@ -88,6 +91,7 @@ public class PetManager : MonoBehaviour
             Debug.Log("Energy +5");
             pet.petMoving = false;
             petMoveTimer = originalpetMoveTimer;
+            pet.Sleep();
         }
     }
 
