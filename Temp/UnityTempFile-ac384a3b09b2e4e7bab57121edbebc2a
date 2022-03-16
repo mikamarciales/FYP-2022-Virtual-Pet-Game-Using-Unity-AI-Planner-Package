@@ -376,11 +376,9 @@
 /define:UNITY_TEAM_LICENSE
 /define:USE_SEARCH_ENGINE_API
 "Assets/Resources/Art/Simple UI/Samples/IconPreview.cs"
-"Assets/Scripts/Abstracts/Database.cs"
 "Assets/Scripts/Abstracts/Pet.cs"
 "Assets/Scripts/Controllers/NeedsController.cs"
 "Assets/Scripts/Controllers/PetController.cs"
 "Assets/Scripts/Controllers/UI/PetUIController.cs"
-"Assets/Scripts/Managers/DatabaseManager.cs"
 "Assets/Scripts/Managers/PetManager.cs"
 "Assets/Scripts/Managers/TimingManager.cs"

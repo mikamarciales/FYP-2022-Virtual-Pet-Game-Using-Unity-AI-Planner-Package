@@ -39,12 +39,10 @@
      <Compile Include="Assets/Scripts/Managers/PetManager.cs" />
      <Compile Include="Assets/Scripts/Managers/TimingManager.cs" />
      <Compile Include="Assets/Scripts/Controllers/PetController.cs" />
+     <Compile Include="Assets/Scripts/Controllers/UI/PetUIController.cs" />
      <Compile Include="Assets/Scripts/Controllers/NeedsController.cs" />
      <Compile Include="Assets/Scripts/Abstracts/Pet.cs" />
-     <Compile Include="Assets/Scripts/Abstracts/Database.cs" />
-     <Compile Include="Assets/Scripts/Managers/DatabaseManager.cs" />
      <Compile Include="Assets/Resources/Art/Simple UI/Samples/IconPreview.cs" />
-     <Compile Include="Assets/Scripts/Controllers/UI/PetUIController.cs" />
      <None Include="Assets/Resources/Art/Simple UI/Fonts/OFL.txt" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
