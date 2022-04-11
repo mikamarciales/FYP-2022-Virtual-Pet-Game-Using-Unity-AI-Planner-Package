@@ -7,17 +7,17 @@ using Unity.Entities;
 namespace Generated.Semantic.Traits
 {
     [Serializable]
-    public partial struct Agent_PetData : ITraitData, IEquatable<Agent_PetData>
+    public partial struct PetAgentData : ITraitData, IEquatable<PetAgentData>
     {
 
-        public bool Equals(Agent_PetData other)
+        public bool Equals(PetAgentData other)
         {
             return true;
         }
 
         public override string ToString()
         {
-            return $"Agent_Pet";
+            return $"PetAgent";
         }
     }
 }

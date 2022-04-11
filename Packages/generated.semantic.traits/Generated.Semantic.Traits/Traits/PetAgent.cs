@@ -9,9 +9,9 @@ namespace Generated.Semantic.Traits
 {
     [ExecuteAlways]
     [DisallowMultipleComponent]
-    [AddComponentMenu("Semantic/Traits/Agent_Pet (Trait)")]
+    [AddComponentMenu("Semantic/Traits/PetAgent (Trait)")]
     [RequireComponent(typeof(SemanticObject))]
-    public partial class Agent_Pet : MonoBehaviour, ITrait
+    public partial class PetAgent : MonoBehaviour, ITrait
     {
 
         EntityManager m_EntityManager;
@@ -33,9 +33,9 @@ namespace Generated.Semantic.Traits
             m_EntityManager = destinationManager;
             m_World = destinationManager.World;
 
-            if (!destinationManager.HasComponent(entity, typeof(Agent_PetData)))
+            if (!destinationManager.HasComponent(entity, typeof(PetAgentData)))
             {
-                destinationManager.AddComponent<Agent_PetData>(entity);
+                destinationManager.AddComponent<PetAgentData>(entity);
             }
         }
 
@@ -43,7 +43,7 @@ namespace Generated.Semantic.Traits
         {
             if (m_World != default && m_World.IsCreated)
             {
-                m_EntityManager.RemoveComponent<Agent_PetData>(m_Entity);
+                m_EntityManager.RemoveComponent<PetAgentData>(m_Entity);
                 if (m_EntityManager.GetComponentCount(m_Entity) == 0)
                     m_EntityManager.DestroyEntity(m_Entity);
             }
@@ -54,7 +54,7 @@ namespace Generated.Semantic.Traits
 #if UNITY_EDITOR
         void OnDrawGizmos()
         {
-            TraitGizmos.DrawGizmoForTrait(nameof(Agent_PetData), gameObject,null);
+            TraitGizmos.DrawGizmoForTrait(nameof(PetAgentData), gameObject,null);
         }
 #endif
     }
