@@ -33,14 +33,14 @@ public class NeedsController : MonoBehaviour
 
     private void Update()
     {
-        if(TimingManager.gameHourTimer < 0)
+        if(TimingManager.gameHourTimer < 0 && FindObjectOfType<GameManager>().isGameOver == false)
         {
             ChangeFood(-foodTickRate);
             ChangeDrink(-drinkTickRate);
             ChangeHappiness(-happinessTickRate);
             ChangeEnergy(-energyTickRate);
         }
-        if (TimingManager.gameTickTimer < 0)
+        if (TimingManager.gameTickTimer < 0 && FindObjectOfType<GameManager>().isGameOver == false)
         {
             PetUIController.instance.UpdateImages(food, drink, happiness, energy);
         }
@@ -62,9 +62,15 @@ public class NeedsController : MonoBehaviour
 
     public void FoodOnClick()
     {
-        drink -= 3;
-        happiness -= 1;
-        energy -= 2;
+        if (food > 0 && drink > 0 && happiness > 0 && energy > 0)
+        {
+            drink -= 3;
+            Debug.Log("Drink -3");
+            happiness -= 1;
+            Debug.Log("Happiness -1");
+            energy -= 2;
+            Debug.Log("Energy -2");
+        }
     }
 
     public void ChangeDrink(int amount)
@@ -83,9 +89,15 @@ public class NeedsController : MonoBehaviour
 
     public void DrinkOnClick()
     {
-        food -= 5;
-        happiness -= 1;
-        energy -= 2;
+        if (food > 0 && drink > 0 && happiness > 0 && energy > 0)
+        {
+            food -= 5;
+            Debug.Log("Food -5");
+            happiness -= 1;
+            Debug.Log("Happiness -1");
+            energy -= 2;
+            Debug.Log("Energy -2");
+        }
     }
 
     public void ChangeHappiness(int amount)
@@ -104,9 +116,15 @@ public class NeedsController : MonoBehaviour
 
     public void HappinessOnClick()
     {
-        food -= 5;
-        drink -= 3;
-        energy -= 2;
+        if (food > 0 && drink > 0 && happiness > 0 && energy > 0)
+        {
+            food -= 5;
+            Debug.Log("Food -5");
+            drink -= 3;
+            Debug.Log("Drink -3");
+            energy -= 2;
+            Debug.Log("Energy -2");
+        }
     }
 
     public void ChangeEnergy(int amount)
@@ -125,8 +143,14 @@ public class NeedsController : MonoBehaviour
 
     public void EnergyOnClick()
     {
-        food -= 5;
-        drink -= 3;
-        happiness -= 1;
+        if (food > 0 && drink > 0 && happiness > 0 && energy > 0)
+        {
+            food -= 5;
+            Debug.Log("Food -5");
+            drink -= 3;
+            Debug.Log("Drink -3");
+            happiness -= 1;
+            Debug.Log("Happiness -1");
+        }
     }
 }

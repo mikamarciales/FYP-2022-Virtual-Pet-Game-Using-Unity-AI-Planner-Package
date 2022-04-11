@@ -22,14 +22,15 @@ public class PetManager : MonoBehaviour
 
     private void Update()
     {
-        if(petMoveTimer > 0)
+        if(petMoveTimer > 0 && FindObjectOfType<GameManager>().isGameOver == false)
         {
             petMoveTimer -= Time.deltaTime;
         }
-        else if (petMoveTimer <= 0 && pet.petMoving == false)
+        else if (petMoveTimer <= 0 && pet.petMoving == false && FindObjectOfType<GameManager>().isGameOver == false)
         {
             MovePetToRandomWaypoint();
             petMoveTimer = originalpetMoveTimer;
+            Debug.Log("Food -10 Drink -7 Happiness -2 Energy -5");
         }
     }
 
@@ -97,8 +98,8 @@ public class PetManager : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("Dead");
         petMoveTimer = 0;
         pet.Sleep();
+        FindObjectOfType<GameManager>().GameOver();
     }
 }
