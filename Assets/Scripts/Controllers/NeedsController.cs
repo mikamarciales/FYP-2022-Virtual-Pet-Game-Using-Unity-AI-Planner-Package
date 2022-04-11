@@ -31,25 +31,6 @@ public class NeedsController : MonoBehaviour
         PetUIController.instance.UpdateImages(food, drink, happiness, energy);
     }
 
-    /**public void Initialise(int food, int drink, int happiness, int energy,
-                            int foodTickRate, int drinkTickRate, int happinessTickRate, int energyTickRate,
-                            System.DateTime lastTimeFed, System.DateTime lastTimeDrank, System.DateTime lastTimeHappy, System.DateTime lastTimeEnergised)
-    {
-        this.lastTimeFed = lastTimeFed;
-        this.lastTimeDrank = lastTimeDrank;
-        this.lastTimeHappy = lastTimeHappy;
-        this.lastTimeEnergised = lastTimeEnergised;
-        this.food = food;
-        this.drink = drink;
-        this.happiness = happiness;
-        this.energy = energy;
-        this.foodTickRate = foodTickRate;
-        this.drinkTickRate = drinkTickRate;
-        this.happinessTickRate = happinessTickRate;
-        this.energyTickRate = energyTickRate;
-        //TODO: FINISH TIME PASSING
-    }**/
-
     private void Update()
     {
         if(TimingManager.gameHourTimer < 0)
@@ -79,6 +60,13 @@ public class NeedsController : MonoBehaviour
         else if(food > 100) food = 100;
     }
 
+    public void FoodOnClick()
+    {
+        drink -= 3;
+        happiness -= 1;
+        energy -= 2;
+    }
+
     public void ChangeDrink(int amount)
     {
         drink += amount;
@@ -91,6 +79,13 @@ public class NeedsController : MonoBehaviour
             PetManager.instance.Die();
         }
         else if(drink > 100) drink = 100;
+    }
+
+    public void DrinkOnClick()
+    {
+        food -= 5;
+        happiness -= 1;
+        energy -= 2;
     }
 
     public void ChangeHappiness(int amount)
@@ -107,6 +102,13 @@ public class NeedsController : MonoBehaviour
         else if(happiness > 100) happiness = 100;
     }
 
+    public void HappinessOnClick()
+    {
+        food -= 5;
+        drink -= 3;
+        energy -= 2;
+    }
+
     public void ChangeEnergy(int amount)
     {
         energy += amount;
@@ -119,5 +121,12 @@ public class NeedsController : MonoBehaviour
             PetManager.instance.Die();
         }
         else if(energy > 100) energy = 100;
+    }
+
+    public void EnergyOnClick()
+    {
+        food -= 5;
+        drink -= 3;
+        happiness -= 1;
     }
 }

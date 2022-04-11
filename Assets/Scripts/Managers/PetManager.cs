@@ -91,12 +91,14 @@ public class PetManager : MonoBehaviour
             Debug.Log("Energy +5");
             pet.petMoving = false;
             petMoveTimer = originalpetMoveTimer;
-            pet.Sleep();
+            pet.Tired();
         }
     }
 
     public void Die()
     {
         Debug.Log("Dead");
+        petMoveTimer = 0;
+        pet.Sleep();
     }
 }
