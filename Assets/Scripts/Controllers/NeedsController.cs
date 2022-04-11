@@ -72,7 +72,7 @@ public class NeedsController : MonoBehaviour
         {
             lastTimeFed = System.DateTime.Now;
         }
-        if(food < 0)
+        if(food <= 0)
         {
             PetManager.instance.Die();
         }
@@ -86,7 +86,7 @@ public class NeedsController : MonoBehaviour
         {
             lastTimeDrank = System.DateTime.Now;
         }
-        if(drink < 0)
+        if(drink <= 0)
         {
             PetManager.instance.Die();
         }
@@ -100,7 +100,7 @@ public class NeedsController : MonoBehaviour
         {
             lastTimeHappy = System.DateTime.Now;
         }
-        if(happiness < 0)
+        if(happiness <= 0)
         {
             PetManager.instance.Die();
         }
@@ -114,7 +114,7 @@ public class NeedsController : MonoBehaviour
         {
             lastTimeEnergised = System.DateTime.Now;
         }
-        if(energy < 0)
+        if(energy <= 0)
         {
             PetManager.instance.Die();
         }
