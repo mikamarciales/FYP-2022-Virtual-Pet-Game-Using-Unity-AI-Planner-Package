@@ -5342,3 +5342,4 @@ AssetImportParameters requested are different than current active one (requested
   custom:DOTSType/UnityEditor.AvatarEditor: 38c120dc7013259d38c120dc7013259d -> 
   custom:DOTSType/Unity.Scenes.DisableLiveLink: acfec9bf12a4cae8acfec9bf12a4cae8 -> 
   custom:DOTSType/UnityEngine.Timeline.AudioTrack: ff514f1788d4954eff514f1788d4954e -> 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
