@@ -133,7 +133,7 @@ namespace Generated.AI.Planner.Plans.PetNeeds
                 var treeIndex = treeObjectIndices[i1];
                 var treeObject = stateData.TraitBasedObjects[treeIndex];
                 
-                if (!(LocationBuffer[agentObject.LocationIndex].Position == LocationBuffer[treeObject.LocationIndex].Position))
+                if (!(LocationBuffer[agentObject.LocationIndex].Position != LocationBuffer[treeObject.LocationIndex].Position))
                     continue;
                 
                 
@@ -193,10 +193,13 @@ namespace Generated.AI.Planner.Plans.PetNeeds
             var originalStateObjectBuffer = originalState.TraitBasedObjects;
             var originalhungerObject = originalStateObjectBuffer[action[k_hungerIndex]];
             var originaltimeObject = originalStateObjectBuffer[action[k_timeIndex]];
+            var originalagentObject = originalStateObjectBuffer[action[k_agentIndex]];
+            var originaltreeObject = originalStateObjectBuffer[action[k_treeIndex]];
 
             var newState = m_StateDataContext.CopyStateData(originalState);
             var newNeedBuffer = newState.NeedBuffer;
             var newPet_TimeBuffer = newState.Pet_TimeBuffer;
+            var newLocationBuffer = newState.LocationBuffer;
             {
                     var @Need = newNeedBuffer[originalhungerObject.NeedIndex];
                     @Need.@Urgency = 0;
@@ -206,6 +209,11 @@ namespace Generated.AI.Planner.Plans.PetNeeds
                     var @Pet_Time = newPet_TimeBuffer[originaltimeObject.Pet_TimeIndex];
                     @Pet_Time.@Value += 1;
                     newPet_TimeBuffer[originaltimeObject.Pet_TimeIndex] = @Pet_Time;
+            }
+            {
+                    var @Location = newLocationBuffer[originalagentObject.LocationIndex];
+                    @Location.Position = newLocationBuffer[originaltreeObject.LocationIndex].Position;
+                    newLocationBuffer[originalagentObject.LocationIndex] = @Location;
             }
 
             
