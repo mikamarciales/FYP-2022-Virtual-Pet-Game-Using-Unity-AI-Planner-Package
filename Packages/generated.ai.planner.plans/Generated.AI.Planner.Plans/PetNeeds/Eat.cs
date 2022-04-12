@@ -68,7 +68,7 @@ namespace Generated.AI.Planner.Plans.PetNeeds
 
         void InitializeLocalContainers()
         {
-            agentFilter = new NativeArray<ComponentType>(3, Allocator.Temp){[0] = ComponentType.ReadWrite<PetAgent>(),[1] = ComponentType.ReadWrite<Location>(),[2] = ComponentType.ReadWrite<Need>(),  };
+            agentFilter = new NativeArray<ComponentType>(2, Allocator.Temp){[0] = ComponentType.ReadWrite<PetAgent>(),[1] = ComponentType.ReadWrite<Location>(),  };
             agentObjectIndices = new NativeList<int>(2, Allocator.Temp);
             treeFilter = new NativeArray<ComponentType>(2, Allocator.Temp){[0] = ComponentType.ReadWrite<Location>(),[1] = ComponentType.ReadWrite<Tree_Food>(),  };
             treeObjectIndices = new NativeList<int>(2, Allocator.Temp);
@@ -125,6 +125,7 @@ namespace Generated.AI.Planner.Plans.PetNeeds
                 
                 
                 
+                
             
             
 
@@ -135,6 +136,7 @@ namespace Generated.AI.Planner.Plans.PetNeeds
                 
                 if (!(LocationBuffer[agentObject.LocationIndex].Position != LocationBuffer[treeObject.LocationIndex].Position))
                     continue;
+                
                 
                 
                 
@@ -153,6 +155,7 @@ namespace Generated.AI.Planner.Plans.PetNeeds
                 
                 
                 
+                
             
             
 
@@ -163,6 +166,9 @@ namespace Generated.AI.Planner.Plans.PetNeeds
                 
                 
                 if (!(NeedBuffer[hungerObject.NeedIndex].NeedType == NeedType.Hunger))
+                    continue;
+                
+                if (!(NeedBuffer[hungerObject.NeedIndex].Urgency >= 2))
                     continue;
                 
                 

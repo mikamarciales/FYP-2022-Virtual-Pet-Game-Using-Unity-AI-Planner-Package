@@ -17,7 +17,6 @@ MonoBehaviour:
     m_RequiredTraits:
     - {fileID: 11400000, guid: c104b8b0cd54146f09927c45d4faef46, type: 2}
     - {fileID: 11400000, guid: 6b7c2cd8001b84552891cf17ebf8b587, type: 2}
-    - {fileID: 11400000, guid: b738c091b6daf4a29bdc0b46da0dd3f8, type: 2}
     m_ProhibitedTraits: []
     m_LimitCount: 0
     m_LimitComparerType: 
@@ -45,7 +44,7 @@ MonoBehaviour:
     m_LimitComparerType: 
     m_LimitComparerReference: 
   m_Preconditions:
-  - m_Operator: ==
+  - m_Operator: '!='
     m_CustomOperatorType: 
     m_OperandA:
       m_Parameter: agent
@@ -73,6 +72,20 @@ MonoBehaviour:
       m_TraitPropertyId: -1
       m_Enum: {fileID: 11400000, guid: dec1700a15b4e433693d524d77540c63, type: 2}
       m_Value: Hunger
+  - m_Operator: '>='
+    m_CustomOperatorType: 
+    m_OperandA:
+      m_Parameter: hunger
+      m_Trait: {fileID: 11400000, guid: b738c091b6daf4a29bdc0b46da0dd3f8, type: 2}
+      m_TraitPropertyId: 1
+      m_Enum: {fileID: 0}
+      m_Value: 
+    m_OperandB:
+      m_Parameter: 
+      m_Trait: {fileID: 0}
+      m_TraitPropertyId: -1
+      m_Enum: {fileID: 0}
+      m_Value: 2
   m_CreatedObjects: []
   m_RemovedObjects: []
   m_ObjectModifiers:
@@ -104,5 +117,19 @@ MonoBehaviour:
       m_TraitPropertyId: -1
       m_Enum: {fileID: 0}
       m_Value: 1
+  - m_Operator: =
+    m_CustomOperatorType: 
+    m_OperandA:
+      m_Parameter: agent
+      m_Trait: {fileID: 11400000, guid: 6b7c2cd8001b84552891cf17ebf8b587, type: 2}
+      m_TraitPropertyId: 0
+      m_Enum: {fileID: 0}
+      m_Value: 
+    m_OperandB:
+      m_Parameter: tree
+      m_Trait: {fileID: 11400000, guid: 6b7c2cd8001b84552891cf17ebf8b587, type: 2}
+      m_TraitPropertyId: 0
+      m_Enum: {fileID: 0}
+      m_Value: 
   m_Reward: -1
   m_CustomRewards: []

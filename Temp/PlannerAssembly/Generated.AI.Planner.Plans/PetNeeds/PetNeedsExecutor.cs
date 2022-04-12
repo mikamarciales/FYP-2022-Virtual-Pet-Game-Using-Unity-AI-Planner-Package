@@ -107,10 +107,6 @@ namespace Generated.AI.Planner.Plans.PetNeeds
                             var traitLocation = stateData.GetTraitOnObjectAtIndex<Location>(traitBasedObjectIndex);
                             arguments[i] = split.Length == 3 ? traitLocation.GetField(split[2]) : traitLocation;
                             break;
-                        case nameof(Need):
-                            var traitNeed = stateData.GetTraitOnObjectAtIndex<Need>(traitBasedObjectIndex);
-                            arguments[i] = split.Length == 3 ? traitNeed.GetField(split[2]) : traitNeed;
-                            break;
                         case nameof(Tree_Food):
                             var traitTree_Food = stateData.GetTraitOnObjectAtIndex<Tree_Food>(traitBasedObjectIndex);
                             arguments[i] = split.Length == 3 ? traitTree_Food.GetField(split[2]) : traitTree_Food;
@@ -118,6 +114,10 @@ namespace Generated.AI.Planner.Plans.PetNeeds
                         case nameof(Pet_Time):
                             var traitPet_Time = stateData.GetTraitOnObjectAtIndex<Pet_Time>(traitBasedObjectIndex);
                             arguments[i] = split.Length == 3 ? traitPet_Time.GetField(split[2]) : traitPet_Time;
+                            break;
+                        case nameof(Need):
+                            var traitNeed = stateData.GetTraitOnObjectAtIndex<Need>(traitBasedObjectIndex);
+                            arguments[i] = split.Length == 3 ? traitNeed.GetField(split[2]) : traitNeed;
                             break;
                     }
                 }

@@ -624,18 +624,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1407123196}
-        m_TargetAssemblyTypeName: NeedsController, Assembly-CSharp
-        m_MethodName: ChangeEnergy
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 782492477}
         m_TargetAssemblyTypeName: PetManager, Assembly-CSharp
         m_MethodName: MovePetToEnergy
@@ -651,11 +639,11 @@ MonoBehaviour:
       - m_Target: {fileID: 1407123196}
         m_TargetAssemblyTypeName: NeedsController, Assembly-CSharp
         m_MethodName: EnergyOnClick
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -810,18 +798,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1407123196}
-        m_TargetAssemblyTypeName: NeedsController, Assembly-CSharp
-        m_MethodName: ChangeDrink
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 7
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 782492477}
         m_TargetAssemblyTypeName: PetManager, Assembly-CSharp
         m_MethodName: MovePetToDrink
@@ -837,11 +813,11 @@ MonoBehaviour:
       - m_Target: {fileID: 1407123196}
         m_TargetAssemblyTypeName: NeedsController, Assembly-CSharp
         m_MethodName: DrinkOnClick
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3809,18 +3785,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1407123196}
-        m_TargetAssemblyTypeName: NeedsController, Assembly-CSharp
-        m_MethodName: ChangeFood
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 10
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 782492477}
         m_TargetAssemblyTypeName: PetManager, Assembly-CSharp
         m_MethodName: MovePetToFood
@@ -3836,11 +3800,11 @@ MonoBehaviour:
       - m_Target: {fileID: 1407123196}
         m_TargetAssemblyTypeName: NeedsController, Assembly-CSharp
         m_MethodName: FoodOnClick
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4514,18 +4478,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1407123196}
-        m_TargetAssemblyTypeName: NeedsController, Assembly-CSharp
-        m_MethodName: ChangeHappiness
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 782492477}
         m_TargetAssemblyTypeName: PetManager, Assembly-CSharp
         m_MethodName: MovePetToHappiness
@@ -4541,11 +4493,11 @@ MonoBehaviour:
       - m_Target: {fileID: 1407123196}
         m_TargetAssemblyTypeName: NeedsController, Assembly-CSharp
         m_MethodName: HappinessOnClick
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4687,66 +4639,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1407123194}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f222baf27330f49959caf266f2f6b851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Query:
-    m_QueryGroups:
-    - m_Filters:
-      - id: 0
-      - id: 1
-      - id: 2
-      m_Quantifier: 0
-      m_QuantifierLimit: 1
-      m_QuantifierScorer:
-        id: 3
-      m_RequiredTraits:
-        m_Traits:
-        - {fileID: 11400000, guid: 29596d5afba614899bab037ff947d020, type: 2}
-      m_ProhibitedTraits:
-        m_Traits: []
-    - m_Filters:
-      - id: 4
-      m_Quantifier: 0
-      m_QuantifierLimit: 1
-      m_QuantifierScorer:
-        id: 3
-      m_RequiredTraits:
-        m_Traits: []
-      m_ProhibitedTraits:
-        m_Traits: []
-  references:
-    version: 1
-    00000000:
-      type: {class: DistanceFilter, ns: Unity.Semantic.Traits.Queries, asm: Unity.Semantic.Traits.Queries}
-      data:
-        m_Radius: 0
-        m_Source: {fileID: 0}
-    00000001:
-      type: {class: DistanceFilter, ns: Unity.Semantic.Traits.Queries, asm: Unity.Semantic.Traits.Queries}
-      data:
-        m_Radius: 0
-        m_Source: {fileID: 0}
-    00000002:
-      type: {class: DistanceFilter, ns: Unity.Semantic.Traits.Queries, asm: Unity.Semantic.Traits.Queries}
-      data:
-        m_Radius: 0
-        m_Source: {fileID: 0}
-    00000003:
-      type: {class: , ns: , asm: }
-    00000004:
-      type: {class: SpecificSemanticObjectFilter, ns: Unity.Semantic.Traits.Queries, asm: Unity.Semantic.Traits.Queries}
-      data:
-        m_ReferenceObject: {fileID: 0}
---- !u!114 &1407123198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1407123194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd8ac131c09d04008af565adfda708ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -4770,7 +4662,7 @@ MonoBehaviour:
     MaximumDecisionTolerance: 3.4028235e+38
     MinimumPlanSize: 0
     MinimumPlanningTime: 0
-  m_WorldObjectQuery: {fileID: 0}
+  m_WorldObjectQuery: {fileID: 1407123198}
   m_ActionExecuteInfos:
   - m_ActionName: Eat
     m_PlanExecutorStateUpdateMode: 1
@@ -4784,6 +4676,44 @@ MonoBehaviour:
       m_Enum: {fileID: 0}
       m_Value: 10
   m_AutoUpdate: 1
+--- !u!114 &1407123198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407123194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f222baf27330f49959caf266f2f6b851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Query:
+    m_QueryGroups:
+    - m_Filters: []
+      m_Quantifier: 0
+      m_QuantifierLimit: 1
+      m_QuantifierScorer:
+        id: 0
+      m_RequiredTraits:
+        m_Traits:
+        - {fileID: 11400000, guid: 29596d5afba614899bab037ff947d020, type: 2}
+      m_ProhibitedTraits:
+        m_Traits: []
+    - m_Filters: []
+      m_Quantifier: 0
+      m_QuantifierLimit: 1
+      m_QuantifierScorer:
+        id: 0
+      m_RequiredTraits:
+        m_Traits:
+        - {fileID: 11400000, guid: c104b8b0cd54146f09927c45d4faef46, type: 2}
+      m_ProhibitedTraits:
+        m_Traits: []
+  references:
+    version: 1
+    00000000:
+      type: {class: , ns: , asm: }
 --- !u!114 &1407123199
 MonoBehaviour:
   m_ObjectHideFlags: 0

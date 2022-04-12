@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Die
   m_EditorClassIdentifier: 
   m_Parameters:
-  - m_Name: parameter1
+  - m_Name: need
     m_RequiredTraits:
     - {fileID: 11400000, guid: b738c091b6daf4a29bdc0b46da0dd3f8, type: 2}
     m_ProhibitedTraits: []
@@ -24,7 +24,7 @@ MonoBehaviour:
   - m_Operator: '>='
     m_CustomOperatorType: 
     m_OperandA:
-      m_Parameter: parameter1
+      m_Parameter: need
       m_Trait: {fileID: 11400000, guid: b738c091b6daf4a29bdc0b46da0dd3f8, type: 2}
       m_TraitPropertyId: 1
       m_Enum: {fileID: 0}
@@ -34,6 +34,6 @@ MonoBehaviour:
       m_Trait: {fileID: 0}
       m_TraitPropertyId: -1
       m_Enum: {fileID: 0}
-      m_Value: 20
+      m_Value: 100
   m_TerminalReward: 0
   m_CustomTerminalRewards: []

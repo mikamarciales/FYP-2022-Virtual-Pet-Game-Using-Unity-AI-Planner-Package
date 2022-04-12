@@ -12,24 +12,24 @@ namespace Generated.AI.Planner.Plans.PetNeeds
     {
         public bool IsTerminal(StateData stateData)
         {
-            var parameter1Filter = new NativeArray<ComponentType>(1, Allocator.Temp){[0] = ComponentType.ReadWrite<Need>(),  };
-            var parameter1ObjectIndices = new NativeList<int>(2, Allocator.Temp);
-            stateData.GetTraitBasedObjectIndices(parameter1ObjectIndices, parameter1Filter);
+            var needFilter = new NativeArray<ComponentType>(1, Allocator.Temp){[0] = ComponentType.ReadWrite<Need>(),  };
+            var needObjectIndices = new NativeList<int>(2, Allocator.Temp);
+            stateData.GetTraitBasedObjectIndices(needObjectIndices, needFilter);
             var NeedBuffer = stateData.NeedBuffer;
-            for (int i0 = 0; i0 < parameter1ObjectIndices.Length; i0++)
+            for (int i0 = 0; i0 < needObjectIndices.Length; i0++)
             {
-                var parameter1Index = parameter1ObjectIndices[i0];
-                var parameter1Object = stateData.TraitBasedObjects[parameter1Index];
+                var needIndex = needObjectIndices[i0];
+                var needObject = stateData.TraitBasedObjects[needIndex];
             
                 
-                if (!(NeedBuffer[parameter1Object.NeedIndex].Urgency >= 20))
+                if (!(NeedBuffer[needObject.NeedIndex].Urgency >= 100))
                     continue;
-                parameter1ObjectIndices.Dispose();
-                parameter1Filter.Dispose();
+                needObjectIndices.Dispose();
+                needFilter.Dispose();
                 return true;
             }
-            parameter1ObjectIndices.Dispose();
-            parameter1Filter.Dispose();
+            needObjectIndices.Dispose();
+            needFilter.Dispose();
 
             return false;
         }

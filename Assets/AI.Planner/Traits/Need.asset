@@ -38,4 +38,4 @@ MonoBehaviour:
       data:
         m_Name: ChangePerSecond
         m_Id: 2
-        m_Value: 0
+        m_Value: 1
