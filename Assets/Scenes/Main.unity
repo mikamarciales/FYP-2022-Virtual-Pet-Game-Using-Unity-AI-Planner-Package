@@ -4675,6 +4675,17 @@ MonoBehaviour:
       m_TraitPropertyId: -1
       m_Enum: {fileID: 0}
       m_Value: 10
+  - m_ActionName: Drink
+    m_PlanExecutorStateUpdateMode: 1
+    m_Method: DrinkOnClick
+    m_SourceGameObject: {fileID: 1407123194}
+    m_Source: {fileID: 1407123196}
+    m_Arguments:
+    - m_Parameter: 
+      m_Trait: {fileID: 0}
+      m_TraitPropertyId: -1
+      m_Enum: {fileID: 0}
+      m_Value: 7
   m_AutoUpdate: 1
 --- !u!114 &1407123198
 MonoBehaviour:

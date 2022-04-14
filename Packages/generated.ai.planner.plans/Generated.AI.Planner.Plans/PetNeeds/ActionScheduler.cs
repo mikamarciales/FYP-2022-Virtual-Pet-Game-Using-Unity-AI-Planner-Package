@@ -14,6 +14,7 @@ namespace Generated.AI.Planner.Plans.PetNeeds
         ITraitBasedActionScheduler<TraitBasedObject, StateEntityKey, StateData, StateDataContext, StateManager, ActionKey>
     {
         public static readonly Guid EatGuid = Guid.NewGuid();
+        public static readonly Guid DrinkGuid = Guid.NewGuid();
 
         // Input
         public NativeList<StateEntityKey> UnexpandedStates { get; set; }
@@ -35,6 +36,7 @@ namespace Generated.AI.Planner.Plans.PetNeeds
             public NativeList<StateEntityKey> UnexpandedStates;
             public NativeQueue<StateTransitionInfoPair<StateEntityKey, ActionKey, StateTransitionInfo>> CreatedStateInfo;
             public EntityCommandBuffer EatECB;
+            public EntityCommandBuffer DrinkECB;
 
             public void Execute()
             {
@@ -50,6 +52,16 @@ namespace Generated.AI.Planner.Plans.PetNeeds
                         CreatedStateInfo.Enqueue(EatRefs[j].TransitionInfo);
                     entityManager.RemoveComponent(stateEntity, typeof(EatFixupReference));
                 }
+
+                DrinkECB.Playback(entityManager);
+                for (int i = 0; i < UnexpandedStates.Length; i++)
+                {
+                    var stateEntity = UnexpandedStates[i].Entity;
+                    var DrinkRefs = entityManager.GetBuffer<DrinkFixupReference>(stateEntity);
+                    for (int j = 0; j < DrinkRefs.Length; j++)
+                        CreatedStateInfo.Enqueue(DrinkRefs[j].TransitionInfo);
+                    entityManager.RemoveComponent(stateEntity, typeof(DrinkFixupReference));
+                }
             }
         }
 
@@ -59,11 +71,15 @@ namespace Generated.AI.Planner.Plans.PetNeeds
             var EatDataContext = StateManager.StateDataContext;
             var EatECB = StateManager.GetEntityCommandBuffer();
             EatDataContext.EntityCommandBuffer = EatECB.AsParallelWriter();
+            var DrinkDataContext = StateManager.StateDataContext;
+            var DrinkECB = StateManager.GetEntityCommandBuffer();
+            DrinkDataContext.EntityCommandBuffer = DrinkECB.AsParallelWriter();
 
-            var allActionJobs = new NativeArray<JobHandle>(2, Allocator.TempJob)
+            var allActionJobs = new NativeArray<JobHandle>(3, Allocator.TempJob)
             {
                 [0] = new Eat(EatGuid, UnexpandedStates, EatDataContext).Schedule(UnexpandedStates, 0, inputDeps),
-                [1] = entityManager.ExclusiveEntityTransactionDependency
+                [1] = new Drink(DrinkGuid, UnexpandedStates, DrinkDataContext).Schedule(UnexpandedStates, 0, inputDeps),
+                [2] = entityManager.ExclusiveEntityTransactionDependency
             };
 
             var allActionJobsHandle = JobHandle.CombineDependencies(allActionJobs);
@@ -76,6 +92,7 @@ namespace Generated.AI.Planner.Plans.PetNeeds
                 UnexpandedStates = UnexpandedStates,
                 CreatedStateInfo = m_CreatedStateInfo,
                 EatECB = EatECB,
+                DrinkECB = DrinkECB,
             };
 
             var playbackJobHandle = playbackJob.Schedule(allActionJobsHandle);
