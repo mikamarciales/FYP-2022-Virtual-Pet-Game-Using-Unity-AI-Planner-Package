@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab48ef9de5712c440bd0e1f505d00e04, type: 3}
+  m_Name: Play
+  m_EditorClassIdentifier: 
+  m_Parameters:
+  - m_Name: agent
+    m_RequiredTraits:
+    - {fileID: 11400000, guid: c104b8b0cd54146f09927c45d4faef46, type: 2}
+    - {fileID: 11400000, guid: 6b7c2cd8001b84552891cf17ebf8b587, type: 2}
+    m_ProhibitedTraits: []
+    m_LimitCount: 0
+    m_LimitComparerType: 
+    m_LimitComparerReference: 
+  - m_Name: table
+    m_RequiredTraits:
+    - {fileID: 11400000, guid: 354bd21a728bd4a92b7250404d06e780, type: 2}
+    - {fileID: 11400000, guid: 6b7c2cd8001b84552891cf17ebf8b587, type: 2}
+    m_ProhibitedTraits: []
+    m_LimitCount: 0
+    m_LimitComparerType: 
+    m_LimitComparerReference: 
+  - m_Name: time
+    m_RequiredTraits:
+    - {fileID: 11400000, guid: 2c6580743559942118cb567835c8ed57, type: 2}
+    m_ProhibitedTraits: []
+    m_LimitCount: 0
+    m_LimitComparerType: 
+    m_LimitComparerReference: 
+  - m_Name: happiness
+    m_RequiredTraits:
+    - {fileID: 11400000, guid: b738c091b6daf4a29bdc0b46da0dd3f8, type: 2}
+    m_ProhibitedTraits: []
+    m_LimitCount: 0
+    m_LimitComparerType: 
+    m_LimitComparerReference: 
+  m_Preconditions:
+  - m_Operator: '!='
+    m_CustomOperatorType: 
+    m_OperandA:
+      m_Parameter: agent
+      m_Trait: {fileID: 11400000, guid: 6b7c2cd8001b84552891cf17ebf8b587, type: 2}
+      m_TraitPropertyId: 0
+      m_Enum: {fileID: 0}
+      m_Value: 
+    m_OperandB:
+      m_Parameter: table
+      m_Trait: {fileID: 11400000, guid: 6b7c2cd8001b84552891cf17ebf8b587, type: 2}
+      m_TraitPropertyId: 0
+      m_Enum: {fileID: 0}
+      m_Value: 
+  - m_Operator: ==
+    m_CustomOperatorType: 
+    m_OperandA:
+      m_Parameter: happiness
+      m_Trait: {fileID: 11400000, guid: b738c091b6daf4a29bdc0b46da0dd3f8, type: 2}
+      m_TraitPropertyId: 0
+      m_Enum: {fileID: 0}
+      m_Value: 
+    m_OperandB:
+      m_Parameter: 
+      m_Trait: {fileID: 0}
+      m_TraitPropertyId: -1
+      m_Enum: {fileID: 11400000, guid: dec1700a15b4e433693d524d77540c63, type: 2}
+      m_Value: Happiness
+  - m_Operator: <=
+    m_CustomOperatorType: 
+    m_OperandA:
+      m_Parameter: happiness
+      m_Trait: {fileID: 11400000, guid: b738c091b6daf4a29bdc0b46da0dd3f8, type: 2}
+      m_TraitPropertyId: 1
+      m_Enum: {fileID: 0}
+      m_Value: 
+    m_OperandB:
+      m_Parameter: 
+      m_Trait: {fileID: 0}
+      m_TraitPropertyId: -1
+      m_Enum: {fileID: 0}
+      m_Value: 75
+  m_CreatedObjects: []
+  m_RemovedObjects: []
+  m_ObjectModifiers:
+  - m_Operator: =
+    m_CustomOperatorType: 
+    m_OperandA:
+      m_Parameter: happiness
+      m_Trait: {fileID: 11400000, guid: b738c091b6daf4a29bdc0b46da0dd3f8, type: 2}
+      m_TraitPropertyId: 1
+      m_Enum: {fileID: 0}
+      m_Value: 
+    m_OperandB:
+      m_Parameter: 
+      m_Trait: {fileID: 0}
+      m_TraitPropertyId: -1
+      m_Enum: {fileID: 0}
+      m_Value: 100
+  - m_Operator: +=
+    m_CustomOperatorType: 
+    m_OperandA:
+      m_Parameter: time
+      m_Trait: {fileID: 11400000, guid: 2c6580743559942118cb567835c8ed57, type: 2}
+      m_TraitPropertyId: 0
+      m_Enum: {fileID: 0}
+      m_Value: 
+    m_OperandB:
+      m_Parameter: 
+      m_Trait: {fileID: 0}
+      m_TraitPropertyId: -1
+      m_Enum: {fileID: 0}
+      m_Value: 4
+  - m_Operator: =
+    m_CustomOperatorType: 
+    m_OperandA:
+      m_Parameter: agent
+      m_Trait: {fileID: 11400000, guid: 6b7c2cd8001b84552891cf17ebf8b587, type: 2}
+      m_TraitPropertyId: 0
+      m_Enum: {fileID: 0}
+      m_Value: 
+    m_OperandB:
+      m_Parameter: table
+      m_Trait: {fileID: 11400000, guid: 6b7c2cd8001b84552891cf17ebf8b587, type: 2}
+      m_TraitPropertyId: 0
+      m_Enum: {fileID: 0}
+      m_Value: 
+  m_Reward: -5
+  m_CustomRewards: []

@@ -15,6 +15,8 @@ namespace Generated.AI.Planner.Plans.PetNeeds
     {
         public static readonly Guid EatGuid = Guid.NewGuid();
         public static readonly Guid DrinkGuid = Guid.NewGuid();
+        public static readonly Guid PlayGuid = Guid.NewGuid();
+        public static readonly Guid SleepGuid = Guid.NewGuid();
 
         // Input
         public NativeList<StateEntityKey> UnexpandedStates { get; set; }
@@ -37,6 +39,8 @@ namespace Generated.AI.Planner.Plans.PetNeeds
             public NativeQueue<StateTransitionInfoPair<StateEntityKey, ActionKey, StateTransitionInfo>> CreatedStateInfo;
             public EntityCommandBuffer EatECB;
             public EntityCommandBuffer DrinkECB;
+            public EntityCommandBuffer PlayECB;
+            public EntityCommandBuffer SleepECB;
 
             public void Execute()
             {
@@ -62,6 +66,26 @@ namespace Generated.AI.Planner.Plans.PetNeeds
                         CreatedStateInfo.Enqueue(DrinkRefs[j].TransitionInfo);
                     entityManager.RemoveComponent(stateEntity, typeof(DrinkFixupReference));
                 }
+
+                PlayECB.Playback(entityManager);
+                for (int i = 0; i < UnexpandedStates.Length; i++)
+                {
+                    var stateEntity = UnexpandedStates[i].Entity;
+                    var PlayRefs = entityManager.GetBuffer<PlayFixupReference>(stateEntity);
+                    for (int j = 0; j < PlayRefs.Length; j++)
+                        CreatedStateInfo.Enqueue(PlayRefs[j].TransitionInfo);
+                    entityManager.RemoveComponent(stateEntity, typeof(PlayFixupReference));
+                }
+
+                SleepECB.Playback(entityManager);
+                for (int i = 0; i < UnexpandedStates.Length; i++)
+                {
+                    var stateEntity = UnexpandedStates[i].Entity;
+                    var SleepRefs = entityManager.GetBuffer<SleepFixupReference>(stateEntity);
+                    for (int j = 0; j < SleepRefs.Length; j++)
+                        CreatedStateInfo.Enqueue(SleepRefs[j].TransitionInfo);
+                    entityManager.RemoveComponent(stateEntity, typeof(SleepFixupReference));
+                }
             }
         }
 
@@ -74,12 +98,20 @@ namespace Generated.AI.Planner.Plans.PetNeeds
             var DrinkDataContext = StateManager.StateDataContext;
             var DrinkECB = StateManager.GetEntityCommandBuffer();
             DrinkDataContext.EntityCommandBuffer = DrinkECB.AsParallelWriter();
+            var PlayDataContext = StateManager.StateDataContext;
+            var PlayECB = StateManager.GetEntityCommandBuffer();
+            PlayDataContext.EntityCommandBuffer = PlayECB.AsParallelWriter();
+            var SleepDataContext = StateManager.StateDataContext;
+            var SleepECB = StateManager.GetEntityCommandBuffer();
+            SleepDataContext.EntityCommandBuffer = SleepECB.AsParallelWriter();
 
-            var allActionJobs = new NativeArray<JobHandle>(3, Allocator.TempJob)
+            var allActionJobs = new NativeArray<JobHandle>(5, Allocator.TempJob)
             {
                 [0] = new Eat(EatGuid, UnexpandedStates, EatDataContext).Schedule(UnexpandedStates, 0, inputDeps),
                 [1] = new Drink(DrinkGuid, UnexpandedStates, DrinkDataContext).Schedule(UnexpandedStates, 0, inputDeps),
-                [2] = entityManager.ExclusiveEntityTransactionDependency
+                [2] = new Play(PlayGuid, UnexpandedStates, PlayDataContext).Schedule(UnexpandedStates, 0, inputDeps),
+                [3] = new Sleep(SleepGuid, UnexpandedStates, SleepDataContext).Schedule(UnexpandedStates, 0, inputDeps),
+                [4] = entityManager.ExclusiveEntityTransactionDependency
             };
 
             var allActionJobsHandle = JobHandle.CombineDependencies(allActionJobs);
@@ -93,6 +125,8 @@ namespace Generated.AI.Planner.Plans.PetNeeds
                 CreatedStateInfo = m_CreatedStateInfo,
                 EatECB = EatECB,
                 DrinkECB = DrinkECB,
+                PlayECB = PlayECB,
+                SleepECB = SleepECB,
             };
 
             var playbackJobHandle = playbackJob.Schedule(allActionJobsHandle);
