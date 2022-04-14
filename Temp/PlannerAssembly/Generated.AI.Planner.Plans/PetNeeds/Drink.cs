@@ -168,7 +168,7 @@ namespace Generated.AI.Planner.Plans.PetNeeds
                 if (!(NeedBuffer[thirstObject.NeedIndex].NeedType == NeedType.Thirst))
                     continue;
                 
-                if (!(NeedBuffer[thirstObject.NeedIndex].Urgency >= 5))
+                if (!(NeedBuffer[thirstObject.NeedIndex].Level <= 85))
                     continue;
                 
                 
@@ -208,7 +208,7 @@ namespace Generated.AI.Planner.Plans.PetNeeds
             var newLocationBuffer = newState.LocationBuffer;
             {
                     var @Need = newNeedBuffer[originalthirstObject.NeedIndex];
-                    @Need.@Urgency = 0;
+                    @Need.@Level = 100;
                     newNeedBuffer[originalthirstObject.NeedIndex] = @Need;
             }
             {

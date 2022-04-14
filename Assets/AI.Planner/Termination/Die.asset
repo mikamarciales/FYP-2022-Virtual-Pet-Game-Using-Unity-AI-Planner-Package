@@ -21,7 +21,7 @@ MonoBehaviour:
     m_LimitComparerType: 
     m_LimitComparerReference: 
   m_Criteria:
-  - m_Operator: '>='
+  - m_Operator: <=
     m_CustomOperatorType: 
     m_OperandA:
       m_Parameter: need
@@ -34,6 +34,6 @@ MonoBehaviour:
       m_Trait: {fileID: 0}
       m_TraitPropertyId: -1
       m_Enum: {fileID: 0}
-      m_Value: 100
+      m_Value: 0
   m_TerminalReward: 0
   m_CustomTerminalRewards: []

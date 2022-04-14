@@ -35,13 +35,13 @@ namespace Generated.Semantic.Traits
                     m_EntityManager.SetComponentData(m_Entity, data);
             }
         }
-        public System.Int32 Urgency
+        public System.Int32 Level
         {
             get
             {
                 if (m_EntityManager != default && m_EntityManager.HasComponent<NeedData>(m_Entity))
                 {
-                    m_p1 = m_EntityManager.GetComponentData<NeedData>(m_Entity).Urgency;
+                    m_p1 = m_EntityManager.GetComponentData<NeedData>(m_Entity).Level;
                 }
 
                 return m_p1;
@@ -52,18 +52,18 @@ namespace Generated.Semantic.Traits
                 var dataActive = m_EntityManager != default && m_EntityManager.HasComponent<NeedData>(m_Entity);
                 if (dataActive)
                     data = m_EntityManager.GetComponentData<NeedData>(m_Entity);
-                data.Urgency = m_p1 = value;
+                data.Level = m_p1 = value;
                 if (dataActive)
                     m_EntityManager.SetComponentData(m_Entity, data);
             }
         }
-        public System.Int32 ChangePerSecond
+        public System.Int32 Tick
         {
             get
             {
                 if (m_EntityManager != default && m_EntityManager.HasComponent<NeedData>(m_Entity))
                 {
-                    m_p2 = m_EntityManager.GetComponentData<NeedData>(m_Entity).ChangePerSecond;
+                    m_p2 = m_EntityManager.GetComponentData<NeedData>(m_Entity).Tick;
                 }
 
                 return m_p2;
@@ -74,7 +74,7 @@ namespace Generated.Semantic.Traits
                 var dataActive = m_EntityManager != default && m_EntityManager.HasComponent<NeedData>(m_Entity);
                 if (dataActive)
                     data = m_EntityManager.GetComponentData<NeedData>(m_Entity);
-                data.ChangePerSecond = m_p2 = value;
+                data.Tick = m_p2 = value;
                 if (dataActive)
                     m_EntityManager.SetComponentData(m_Entity, data);
             }
@@ -95,10 +95,10 @@ namespace Generated.Semantic.Traits
         [InspectorName("NeedType")]
         Generated.Semantic.Traits.Enums.NeedType m_p0 = (Generated.Semantic.Traits.Enums.NeedType)0;
         [SerializeField]
-        [InspectorName("Urgency")]
-        System.Int32 m_p1 = 0;
+        [InspectorName("Level")]
+        System.Int32 m_p1 = 100;
         [SerializeField]
-        [InspectorName("ChangePerSecond")]
+        [InspectorName("Tick")]
         System.Int32 m_p2 = 1;
         #pragma warning restore 649
 
@@ -110,8 +110,8 @@ namespace Generated.Semantic.Traits
         {
             NeedData data = default;
             data.NeedType = m_p0;
-            data.Urgency = m_p1;
-            data.ChangePerSecond = m_p2;
+            data.Level = m_p1;
+            data.Tick = m_p2;
 
             return data;
         }

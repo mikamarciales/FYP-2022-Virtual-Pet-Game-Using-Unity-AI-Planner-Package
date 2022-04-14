@@ -22,7 +22,7 @@ namespace Generated.AI.Planner.Plans.PetNeeds
                 var needObject = stateData.TraitBasedObjects[needIndex];
             
                 
-                if (!(NeedBuffer[needObject.NeedIndex].Urgency >= 100))
+                if (!(NeedBuffer[needObject.NeedIndex].Level <= 0))
                     continue;
                 needObjectIndices.Dispose();
                 needFilter.Dispose();

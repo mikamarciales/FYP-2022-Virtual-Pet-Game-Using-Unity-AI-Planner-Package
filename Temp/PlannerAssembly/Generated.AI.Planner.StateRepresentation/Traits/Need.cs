@@ -11,11 +11,11 @@ namespace Generated.AI.Planner.StateRepresentation
     public struct Need : ITrait, IBufferElementData, IEquatable<Need>
     {
         public const string FieldNeedType = "NeedType";
-        public const string FieldUrgency = "Urgency";
-        public const string FieldChangePerSecond = "ChangePerSecond";
+        public const string FieldLevel = "Level";
+        public const string FieldTick = "Tick";
         public Generated.Semantic.Traits.Enums.NeedType NeedType;
-        public System.Int32 Urgency;
-        public System.Int32 ChangePerSecond;
+        public System.Int32 Level;
+        public System.Int32 Tick;
 
         public void SetField(string fieldName, object value)
         {
@@ -24,11 +24,11 @@ namespace Generated.AI.Planner.StateRepresentation
                 case nameof(NeedType):
                     NeedType = (Generated.Semantic.Traits.Enums.NeedType)Enum.ToObject(typeof(Generated.Semantic.Traits.Enums.NeedType), value);
                     break;
-                case nameof(Urgency):
-                    Urgency = (System.Int32)value;
+                case nameof(Level):
+                    Level = (System.Int32)value;
                     break;
-                case nameof(ChangePerSecond):
-                    ChangePerSecond = (System.Int32)value;
+                case nameof(Tick):
+                    Tick = (System.Int32)value;
                     break;
                 default:
                     throw new ArgumentException($"Field \"{fieldName}\" does not exist on trait Need.");
@@ -41,10 +41,10 @@ namespace Generated.AI.Planner.StateRepresentation
             {
                 case nameof(NeedType):
                     return NeedType;
-                case nameof(Urgency):
-                    return Urgency;
-                case nameof(ChangePerSecond):
-                    return ChangePerSecond;
+                case nameof(Level):
+                    return Level;
+                case nameof(Tick):
+                    return Tick;
                 default:
                     throw new ArgumentException($"Field \"{fieldName}\" does not exist on trait Need.");
             }
@@ -52,12 +52,12 @@ namespace Generated.AI.Planner.StateRepresentation
 
         public bool Equals(Need other)
         {
-            return NeedType == other.NeedType && Urgency == other.Urgency && ChangePerSecond == other.ChangePerSecond;
+            return NeedType == other.NeedType && Level == other.Level && Tick == other.Tick;
         }
 
         public override string ToString()
         {
-            return $"Need\n  NeedType: {NeedType}\n  Urgency: {Urgency}\n  ChangePerSecond: {ChangePerSecond}";
+            return $"Need\n  NeedType: {NeedType}\n  Level: {Level}\n  Tick: {Tick}";
         }
     }
 }

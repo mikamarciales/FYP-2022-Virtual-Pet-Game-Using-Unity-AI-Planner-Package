@@ -966,8 +966,8 @@ namespace Generated.AI.Planner.StateRepresentation.PetNeeds
         {
             return
                     one.NeedType == two.NeedType && 
-                    one.Urgency == two.Urgency && 
-                    one.ChangePerSecond == two.ChangePerSecond;
+                    one.Level == two.Level && 
+                    one.Tick == two.Tick;
         }
         
         bool CheckRelationsAndQueueObjects(TraitBasedObject traitBasedObjectLHS, TraitBasedObject traitBasedObjectRHS, StateData rhsState, ObjectCorrespondence objectMap)
@@ -1018,8 +1018,8 @@ namespace Generated.AI.Planner.StateRepresentation.PetNeeds
                 var element = NeedBuffer[i];
                 var value = 397
                     ^ (int) element.NeedType
-                    ^ element.Urgency.GetHashCode()
-                    ^ element.ChangePerSecond.GetHashCode();
+                    ^ element.Level.GetHashCode()
+                    ^ element.Tick.GetHashCode();
                 stateHashValue = 3860031 + (stateHashValue + value) * 2779 + (stateHashValue * value * 2);
             }
             bufferLength = Lake_DrinkBuffer.Length;
