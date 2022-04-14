@@ -8,7 +8,7 @@ using Generated.Semantic.Traits.Enums;
 namespace Generated.AI.Planner.StateRepresentation
 {
     [Serializable]
-    public struct PetAgent : ITrait, IBufferElementData, IEquatable<PetAgent>
+    public struct Moveable : ITrait, IBufferElementData, IEquatable<Moveable>
     {
 
         public void SetField(string fieldName, object value)
@@ -17,17 +17,17 @@ namespace Generated.AI.Planner.StateRepresentation
 
         public object GetField(string fieldName)
         {
-            throw new ArgumentException("No fields exist on trait PetAgent.");
+            throw new ArgumentException("No fields exist on trait Moveable.");
         }
 
-        public bool Equals(PetAgent other)
+        public bool Equals(Moveable other)
         {
             return true;
         }
 
         public override string ToString()
         {
-            return $"PetAgent";
+            return $"Moveable";
         }
     }
 }

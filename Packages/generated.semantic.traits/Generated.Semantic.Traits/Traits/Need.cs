@@ -99,7 +99,7 @@ namespace Generated.Semantic.Traits
         System.Int32 m_p1 = 0;
         [SerializeField]
         [InspectorName("ChangePerSecond")]
-        System.Int32 m_p2 = 0;
+        System.Int32 m_p2 = 1;
         #pragma warning restore 649
 
         EntityManager m_EntityManager;
