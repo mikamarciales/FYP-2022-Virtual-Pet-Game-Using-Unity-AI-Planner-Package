@@ -30,7 +30,7 @@ public class PetManager : MonoBehaviour
         {
             MovePetToRandomWaypoint();
             petMoveTimer = originalpetMoveTimer;
-            Debug.Log("Food -10 Drink -7 Happiness -2 Energy -5");
+            Debug.Log("10s passed! Needs deteriorated! (Food -10 Drink -7 Happiness -2 Energy -5)");
         }
     }
 
@@ -53,7 +53,6 @@ public class PetManager : MonoBehaviour
         if(pet.petMoving == false)
         {
             pet.Move(waypoints[11].position);
-            Debug.Log("Food +10");
             pet.petMoving = false;
             petMoveTimer = originalpetMoveTimer;
             pet.Eat();
@@ -65,7 +64,6 @@ public class PetManager : MonoBehaviour
         if(pet.petMoving == false)
         {
             pet.Move(waypoints[12].position);
-            Debug.Log("Drink +7");
             pet.petMoving = false;
             petMoveTimer = originalpetMoveTimer;
             pet.Drink();
@@ -77,7 +75,6 @@ public class PetManager : MonoBehaviour
         if(pet.petMoving == false)
         {
             pet.Move(waypoints[14].position);
-            Debug.Log("Happiness +2");
             pet.petMoving = false;
             petMoveTimer = originalpetMoveTimer;
             pet.Happy();
@@ -89,7 +86,6 @@ public class PetManager : MonoBehaviour
         if(pet.petMoving == false)
         {
             pet.Move(waypoints[13].position);
-            Debug.Log("Energy +5");
             pet.petMoving = false;
             petMoveTimer = originalpetMoveTimer;
             pet.Tired();

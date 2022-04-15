@@ -36,8 +36,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/AI.Planner/Custom/CustomNavigation.cs" />
      <Compile Include="Assets/AI.Planner/Custom/CustomUpdateNeeds.cs" />
+     <Compile Include="Assets/AI.Planner/Custom/Custom.cs" />
      <None Include="Assets/AI.Planner/Custom/Pet.Custom.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>

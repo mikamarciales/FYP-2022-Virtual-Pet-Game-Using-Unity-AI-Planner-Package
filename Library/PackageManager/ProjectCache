@@ -13,10 +13,26 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637824730320000000
-    m_Hash: 728369173
+      ticks: 637853722670000000
+    m_Hash: 3268747532
 m_EmbeddedPackageManifests:
   m_ManifestsStatus:
+    /Users/mikamarciales/Virtual Pet Game/Packages/generated.ai.planner.plans/package.json:
+      m_FilePath: /Users/mikamarciales/Virtual Pet Game/Packages/generated.ai.planner.plans/package.json
+      m_PathExists: 1
+      m_ContentTrackingEnabled: 1
+      m_ModificationDate:
+        serializedVersion: 2
+        ticks: 637855716290000000
+      m_Hash: 3265200468
+    /Users/mikamarciales/Virtual Pet Game/Packages/generated.ai.planner.staterepresentation/package.json:
+      m_FilePath: /Users/mikamarciales/Virtual Pet Game/Packages/generated.ai.planner.staterepresentation/package.json
+      m_PathExists: 1
+      m_ContentTrackingEnabled: 1
+      m_ModificationDate:
+        serializedVersion: 2
+        ticks: 637855716270000000
+      m_Hash: 3133949500
     /Users/mikamarciales/Virtual Pet Game/Packages/generated.semantic.traits/package.json:
       m_FilePath: /Users/mikamarciales/Virtual Pet Game/Packages/generated.semantic.traits/package.json
       m_PathExists: 1
@@ -3309,6 +3325,98 @@ m_PackageAssets:
         version: 1.0.0
       - name: com.unity.modules.subsystems
         version: 1.0.0
+      keywords: []
+      registry:
+        id: 
+        name: 
+        url: 
+        scopes: []
+        isDefault: 0
+        capabilities: 0
+      hasRegistry: 0
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 0
+      documentationUrl: 
+      hasRepository: 0
+      repository:
+        type: 
+        url: 
+        revision: 
+        path: 
+    - packageId: generated.ai.planner.plans@file:/Users/mikamarciales/Virtual Pet
+        Game/Packages/generated.ai.planner.plans
+      testable: 1
+      isDirectDependency: 1
+      version: 0.0.0
+      source: 3
+      resolvedPath: /Users/mikamarciales/Virtual Pet Game/Packages/generated.ai.planner.plans
+      assetPath: Packages/generated.ai.planner.plans
+      name: generated.ai.planner.plans
+      displayName: AI Planner Plans (Generated Code)
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: 
+      description: 
+      status: 4
+      errors: []
+      versions:
+        all: []
+        compatible: []
+        verified: 
+      dependencies: []
+      resolvedDependencies: []
+      keywords: []
+      registry:
+        id: 
+        name: 
+        url: 
+        scopes: []
+        isDefault: 0
+        capabilities: 0
+      hasRegistry: 0
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 0
+      documentationUrl: 
+      hasRepository: 0
+      repository:
+        type: 
+        url: 
+        revision: 
+        path: 
+    - packageId: generated.ai.planner.staterepresentation@file:/Users/mikamarciales/Virtual
+        Pet Game/Packages/generated.ai.planner.staterepresentation
+      testable: 1
+      isDirectDependency: 1
+      version: 0.0.0
+      source: 3
+      resolvedPath: /Users/mikamarciales/Virtual Pet Game/Packages/generated.ai.planner.staterepresentation
+      assetPath: Packages/generated.ai.planner.staterepresentation
+      name: generated.ai.planner.staterepresentation
+      displayName: AI Planner StateRepresentation (Generated Code)
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: 
+      description: 
+      status: 4
+      errors: []
+      versions:
+        all: []
+        compatible: []
+        verified: 
+      dependencies: []
+      resolvedDependencies: []
       keywords: []
       registry:
         id: 

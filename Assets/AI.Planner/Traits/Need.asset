@@ -17,7 +17,7 @@ MonoBehaviour:
   - id: 0
   - id: 1
   - id: 2
-  m_NextElementId: 3
+  m_NextElementId: 4
   references:
     version: 1
     00000000:
@@ -30,12 +30,12 @@ MonoBehaviour:
     00000001:
       type: {class: IntProperty, ns: Unity.Semantic.Traits, asm: Unity.Semantic.Traits}
       data:
-        m_Name: Urgency
+        m_Name: Level
         m_Id: 1
-        m_Value: 0
+        m_Value: 100
     00000002:
       type: {class: IntProperty, ns: Unity.Semantic.Traits, asm: Unity.Semantic.Traits}
       data:
-        m_Name: ChangePerSecond
+        m_Name: Tick
         m_Id: 2
-        m_Value: 0
+        m_Value: 1
