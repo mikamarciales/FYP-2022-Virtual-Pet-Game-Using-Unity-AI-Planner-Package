@@ -39,9 +39,6 @@ namespace Generated.AI.Planner.Plans.PetNeeds
         static Dictionary<Guid, string> s_ActionGuidToNameLookup = new Dictionary<Guid,string>()
         {
             { ActionScheduler.EatGuid, nameof(Eat) },
-            { ActionScheduler.DrinkGuid, nameof(Drink) },
-            { ActionScheduler.PlayGuid, nameof(Play) },
-            { ActionScheduler.SleepGuid, nameof(Sleep) },
         };
 
         PlannerStateConverter<TraitBasedObject, StateEntityKey, StateData, StateDataContext, StateManager> m_StateConverter;
@@ -68,15 +65,6 @@ namespace Generated.AI.Planner.Plans.PetNeeds
                 case var actionGuid when actionGuid == ActionScheduler.EatGuid:
                     actionName = nameof(Eat);
                     break;
-                case var actionGuid when actionGuid == ActionScheduler.DrinkGuid:
-                    actionName = nameof(Drink);
-                    break;
-                case var actionGuid when actionGuid == ActionScheduler.PlayGuid:
-                    actionName = nameof(Play);
-                    break;
-                case var actionGuid when actionGuid == ActionScheduler.SleepGuid:
-                    actionName = nameof(Sleep);
-                    break;
             }
 
             var executeInfos = GetExecutionInfo(actionName);
@@ -100,15 +88,6 @@ namespace Generated.AI.Planner.Plans.PetNeeds
                 {
                     case nameof(Eat):
                         parameterIndex = Eat.GetIndexForParameterName(traitBasedObjectName);
-                        break;
-                    case nameof(Drink):
-                        parameterIndex = Drink.GetIndexForParameterName(traitBasedObjectName);
-                        break;
-                    case nameof(Play):
-                        parameterIndex = Play.GetIndexForParameterName(traitBasedObjectName);
-                        break;
-                    case nameof(Sleep):
-                        parameterIndex = Sleep.GetIndexForParameterName(traitBasedObjectName);
                         break;
                 }
 
@@ -139,18 +118,6 @@ namespace Generated.AI.Planner.Plans.PetNeeds
                         case nameof(Need):
                             var traitNeed = stateData.GetTraitOnObjectAtIndex<Need>(traitBasedObjectIndex);
                             arguments[i] = split.Length == 3 ? traitNeed.GetField(split[2]) : traitNeed;
-                            break;
-                        case nameof(Lake_Drink):
-                            var traitLake_Drink = stateData.GetTraitOnObjectAtIndex<Lake_Drink>(traitBasedObjectIndex);
-                            arguments[i] = split.Length == 3 ? traitLake_Drink.GetField(split[2]) : traitLake_Drink;
-                            break;
-                        case nameof(Table_Happiness):
-                            var traitTable_Happiness = stateData.GetTraitOnObjectAtIndex<Table_Happiness>(traitBasedObjectIndex);
-                            arguments[i] = split.Length == 3 ? traitTable_Happiness.GetField(split[2]) : traitTable_Happiness;
-                            break;
-                        case nameof(Home_Energy):
-                            var traitHome_Energy = stateData.GetTraitOnObjectAtIndex<Home_Energy>(traitBasedObjectIndex);
-                            arguments[i] = split.Length == 3 ? traitHome_Energy.GetField(split[2]) : traitHome_Energy;
                             break;
                     }
                 }
@@ -200,15 +167,6 @@ namespace Generated.AI.Planner.Plans.PetNeeds
             {
                  case var actionGuid when actionGuid == ActionScheduler.EatGuid:
                     parameterNames = Eat.parameterNames;
-                        break;
-                 case var actionGuid when actionGuid == ActionScheduler.DrinkGuid:
-                    parameterNames = Drink.parameterNames;
-                        break;
-                 case var actionGuid when actionGuid == ActionScheduler.PlayGuid:
-                    parameterNames = Play.parameterNames;
-                        break;
-                 case var actionGuid when actionGuid == ActionScheduler.SleepGuid:
-                    parameterNames = Sleep.parameterNames;
                         break;
             }
 

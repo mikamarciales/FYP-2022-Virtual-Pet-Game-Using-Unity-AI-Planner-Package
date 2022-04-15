@@ -208,7 +208,7 @@ namespace Generated.AI.Planner.Plans.PetNeeds
             var newLocationBuffer = newState.LocationBuffer;
             {
                     var @Need = newNeedBuffer[originalhungerObject.NeedIndex];
-                    @Need.@Level = 100;
+                    @Need.@Level += 10;
                     newNeedBuffer[originalhungerObject.NeedIndex] = @Need;
             }
             {

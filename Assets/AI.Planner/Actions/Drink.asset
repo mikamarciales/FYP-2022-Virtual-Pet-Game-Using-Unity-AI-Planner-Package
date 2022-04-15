@@ -89,7 +89,7 @@ MonoBehaviour:
   m_CreatedObjects: []
   m_RemovedObjects: []
   m_ObjectModifiers:
-  - m_Operator: =
+  - m_Operator: +=
     m_CustomOperatorType: 
     m_OperandA:
       m_Parameter: thirst
@@ -102,7 +102,7 @@ MonoBehaviour:
       m_Trait: {fileID: 0}
       m_TraitPropertyId: -1
       m_Enum: {fileID: 0}
-      m_Value: 100
+      m_Value: 7
   - m_Operator: +=
     m_CustomOperatorType: 
     m_OperandA:
