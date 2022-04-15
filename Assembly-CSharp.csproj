@@ -43,6 +43,7 @@
      <Compile Include="Assets/Scripts/Controllers/NeedsController.cs" />
      <Compile Include="Assets/Scripts/Abstracts/Pet.cs" />
      <Compile Include="Assets/Scripts/Managers/GameManager.cs" />
+     <Compile Include="Assets/AI.Planner/Custom/CustomUpdateNeeds.cs" />
      <Compile Include="Assets/Resources/Art/Simple UI/Samples/IconPreview.cs" />
      <None Include="Assets/Resources/Art/Simple UI/Fonts/OFL.txt" />
     <Reference Include="UnityEngine">
@@ -690,6 +691,9 @@
     <Reference Include="Unity.2D.Animation.Triangle.Runtime">
         <HintPath>/Users/mikamarciales/Virtual Pet Game/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="AI.Planner.Custom">
+        <HintPath>/Users/mikamarciales/Virtual Pet Game/Library/ScriptAssemblies/AI.Planner.Custom.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Scenes">
         <HintPath>/Users/mikamarciales/Virtual Pet Game/Library/ScriptAssemblies/Unity.Scenes.dll</HintPath>
     </Reference>
@@ -792,6 +796,9 @@
     <Reference Include="Unity.2D.PixelPerfect.Editor">
         <HintPath>/Users/mikamarciales/Virtual Pet Game/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Generated.AI.Planner.Plans">
+        <HintPath>/Users/mikamarciales/Virtual Pet Game/Library/ScriptAssemblies/Generated.AI.Planner.Plans.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline.Editor">
         <HintPath>/Users/mikamarciales/Virtual Pet Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -824,10 +831,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Workaholic.Custom.csproj">
-      <Project>{6b29da69-e286-484b-987d-ce4cb93bd373}</Project>
-      <Name>Workaholic.Custom</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
