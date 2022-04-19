@@ -28,7 +28,7 @@ public class PetManager : MonoBehaviour
         }
         else if (petMoveTimer <= 0 && pet.petMoving == false && FindObjectOfType<GameManager>().isGameOver == false)
         {
-            MovePetToRandomWaypoint();
+            //MovePetToRandomWaypoint();
             petMoveTimer = originalpetMoveTimer;
             Debug.Log("10s passed! Needs deteriorated! (Food -10 Drink -7 Happiness -2 Energy -5)");
         }

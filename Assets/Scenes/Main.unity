@@ -483,7 +483,7 @@ GameObject:
   - component: {fileID: 126626109}
   m_Layer: 0
   m_Name: Happiness
-  m_TagString: Untagged
+  m_TagString: NeedItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4076,7 +4076,7 @@ GameObject:
   - component: {fileID: 988486355}
   m_Layer: 0
   m_Name: Food
-  m_TagString: Untagged
+  m_TagString: NeedItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4803,7 +4803,7 @@ MonoBehaviour:
   m_WorldObjectQuery: {fileID: 1407123198}
   m_ActionExecuteInfos:
   - m_ActionName: Eat
-    m_PlanExecutorStateUpdateMode: 1
+    m_PlanExecutorStateUpdateMode: 0
     m_Method: FoodOnClick
     m_SourceGameObject: {fileID: 1407123194}
     m_Source: {fileID: 1407123196}
@@ -4813,6 +4813,17 @@ MonoBehaviour:
       m_TraitPropertyId: -1
       m_Enum: {fileID: 0}
       m_Value: 1111
+  - m_ActionName: Navigate
+    m_PlanExecutorStateUpdateMode: 0
+    m_Method: Move
+    m_SourceGameObject: {fileID: 1407123194}
+    m_Source: {fileID: 1407123204}
+    m_Arguments:
+    - m_Parameter: Destination
+      m_Trait: {fileID: 0}
+      m_TraitPropertyId: -1
+      m_Enum: {fileID: 0}
+      m_Value: 
   m_AutoUpdate: 1
 --- !u!114 &1407123198
 MonoBehaviour:
@@ -4949,6 +4960,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EnableTraitInspectors: 1
+--- !u!114 &1407123204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407123194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e14e35bcc0dc34d9c8ece2bcd1a95f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ControlledBy: 1
+  m_SensorDelay: 1
+  needsController: {fileID: 1407123196}
+  petController: {fileID: 5077767372468047311}
+  moveSpeed: 7
+--- !u!114 &1407123205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407123194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3f5c82d1e91a43198ce7f298d9399f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1415335255
 GameObject:
   m_ObjectHideFlags: 0
@@ -4995,7 +5035,7 @@ GameObject:
   - component: {fileID: 1420280045}
   m_Layer: 0
   m_Name: Energy
-  m_TagString: Untagged
+  m_TagString: NeedItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5133,7 +5173,7 @@ GameObject:
   - component: {fileID: 1425289809}
   m_Layer: 0
   m_Name: Drink
-  m_TagString: Untagged
+  m_TagString: NeedItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

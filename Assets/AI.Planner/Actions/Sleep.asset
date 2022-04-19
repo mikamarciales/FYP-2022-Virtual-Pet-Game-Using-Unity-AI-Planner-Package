@@ -117,19 +117,5 @@ MonoBehaviour:
       m_TraitPropertyId: -1
       m_Enum: {fileID: 0}
       m_Value: 7
-  - m_Operator: =
-    m_CustomOperatorType: 
-    m_OperandA:
-      m_Parameter: pet
-      m_Trait: {fileID: 11400000, guid: 6b7c2cd8001b84552891cf17ebf8b587, type: 2}
-      m_TraitPropertyId: 0
-      m_Enum: {fileID: 0}
-      m_Value: 
-    m_OperandB:
-      m_Parameter: home
-      m_Trait: {fileID: 11400000, guid: 6b7c2cd8001b84552891cf17ebf8b587, type: 2}
-      m_TraitPropertyId: 0
-      m_Enum: {fileID: 0}
-      m_Value: 
   m_Reward: 0
   m_CustomRewards: []

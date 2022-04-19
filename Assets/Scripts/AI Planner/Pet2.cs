@@ -32,8 +32,9 @@ namespace VirtualPetGame
         Coroutine m_Move;
         float m_TimeOfLastWorldQuery;
 
-        public float moveSpeed;
-        public int food, drink, happiness, energy;
+        public NeedsController needsController;
+        public PetController petController;
+        public float moveSpeed = 10;
 
         bool AtTarget()
         {
@@ -47,6 +48,7 @@ namespace VirtualPetGame
             while (m_Target != null && !AtTarget())
             {
                 transform.position = Vector3.MoveTowards(transform.position, m_Target.transform.position, moveSpeed*Time.deltaTime);
+                Debug.Log("[AI] Pet moved!");
                 yield return null;
             }
 
@@ -60,18 +62,18 @@ namespace VirtualPetGame
 
         public IEnumerator Eat(GameObject target, int amount)
         {
-            food += amount;
-            drink -= 3;
-            happiness -= 1;
-            energy -= 2;
-            Debug.Log("Food eaten! (Food +" + amount + " Drink -3 Happiness -1 Energy -2)");
+            needsController.food += amount;
+            needsController.drink -= 3;
+            needsController.happiness -= 1;
+            needsController.energy -= 2;
+            Debug.Log("[AI] Food eaten! (Food +" + amount + " Drink -3 Happiness -1 Energy -2)");
 
-            //if(food <= 0)
-            //{
-            //    PetManager.instance.Die();
-            //}
+            if(needsController.food <= 0)
+            {
+                PetManager.instance.Die();
+            }
 
-            if(food > 100) food = 100;
+            //if(food > 100) food = 100;
 
             yield return new WaitForSeconds(0.5f);
         }
@@ -92,7 +94,7 @@ namespace VirtualPetGame
             {
                 if (m_Move == default)
                 {
-                    var needItem = GameObject.FindWithTag("Need Item");
+                    var needItem = GameObject.FindWithTag("NeedItem");
 
                     if (needItem != null)
                     {
