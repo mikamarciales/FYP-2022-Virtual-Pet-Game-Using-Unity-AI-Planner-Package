@@ -26,7 +26,7 @@ public class PetManager : MonoBehaviour
         {
             petMoveTimer -= Time.deltaTime;
         }
-        else if (petMoveTimer <= 0 && pet.petMoving == false && FindObjectOfType<GameManager>().isGameOver == false)
+        else if (petMoveTimer <= 0 && FindObjectOfType<GameManager>().isGameOver == false)
         {
             //MovePetToRandomWaypoint();
             petMoveTimer = originalpetMoveTimer;
@@ -37,59 +37,41 @@ public class PetManager : MonoBehaviour
     private void MovePetToRandomWaypoint()
     {
         int randomWaypoint = Random.Range(0, waypoints.Length);
-        if(pet.petMoving == false
-            && (waypoints[randomWaypoint].position != waypoints[11].position
+        if(waypoints[randomWaypoint].position != waypoints[11].position
             || waypoints[randomWaypoint].position != waypoints[12].position
             || waypoints[randomWaypoint].position != waypoints[13].position
-            || waypoints[randomWaypoint].position != waypoints[14].position))
+            || waypoints[randomWaypoint].position != waypoints[14].position)
         {
             pet.Move(waypoints[randomWaypoint].position);
-            pet.petMoving = false;
         }
     }
 
     public void MovePetToFood()
     {
-        if(pet.petMoving == false)
-        {
-            pet.Move(waypoints[11].position);
-            pet.petMoving = false;
-            petMoveTimer = originalpetMoveTimer;
-            pet.Eat();
-        }
+        pet.Move(waypoints[11].position);
+        petMoveTimer = originalpetMoveTimer;
+        pet.Eat();
     }
 
     public void MovePetToDrink()
     {
-        if(pet.petMoving == false)
-        {
-            pet.Move(waypoints[12].position);
-            pet.petMoving = false;
-            petMoveTimer = originalpetMoveTimer;
-            pet.Drink();
-        }
+        pet.Move(waypoints[12].position);
+        petMoveTimer = originalpetMoveTimer;
+        pet.Drink();
     }
 
     public void MovePetToHappiness()
     {
-        if(pet.petMoving == false)
-        {
-            pet.Move(waypoints[14].position);
-            pet.petMoving = false;
-            petMoveTimer = originalpetMoveTimer;
-            pet.Happy();
-        }
+        pet.Move(waypoints[14].position);
+        petMoveTimer = originalpetMoveTimer;
+        pet.Happy();
     }
 
-        public void MovePetToEnergy()
+    public void MovePetToEnergy()
     {
-        if(pet.petMoving == false)
-        {
-            pet.Move(waypoints[13].position);
-            pet.petMoving = false;
-            petMoveTimer = originalpetMoveTimer;
-            pet.Tired();
-        }
+        pet.Move(waypoints[13].position);
+        petMoveTimer = originalpetMoveTimer;
+        pet.Tired();
     }
 
     public void Die()

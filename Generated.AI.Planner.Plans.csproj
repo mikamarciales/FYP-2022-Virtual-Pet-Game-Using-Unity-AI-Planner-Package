@@ -52,6 +52,7 @@
      <Compile Include="Packages\generated.ai.planner.plans\Generated.AI.Planner.Plans\PetNeeds\Eat.cs" />
      <Compile Include="Packages\generated.ai.planner.plans\Generated.AI.Planner.Plans\PetNeeds\PetNeedsExecutor.cs" />
      <Compile Include="Packages\generated.ai.planner.plans\Generated.AI.Planner.Plans\PetNeeds\ActionScheduler.cs" />
+     <Compile Include="Packages\generated.ai.planner.plans\Generated.AI.Planner.Plans\PetNeeds\Navigate.cs" />
      <None Include="Packages\generated.ai.planner.plans\Generated.AI.Planner.Plans.asmref" />
  <Reference Include="UnityEngine">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>

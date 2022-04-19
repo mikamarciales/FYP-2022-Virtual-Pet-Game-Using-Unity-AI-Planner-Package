@@ -48,7 +48,7 @@ namespace VirtualPetGame
             while (m_Target != null && !AtTarget())
             {
                 transform.position = Vector3.MoveTowards(transform.position, m_Target.transform.position, moveSpeed*Time.deltaTime);
-                Debug.Log("[AI] Pet moved!");
+                Debug.Log("[AI] Pet moving!");
                 yield return null;
             }
 
@@ -62,11 +62,12 @@ namespace VirtualPetGame
 
         public IEnumerator Eat(GameObject target, int amount)
         {
+            petController.Eat();
             needsController.food += amount;
             needsController.drink -= 3;
             needsController.happiness -= 1;
             needsController.energy -= 2;
-            Debug.Log("[AI] Food eaten! (Food +" + amount + " Drink -3 Happiness -1 Energy -2)");
+            Debug.Log("[AI] Ate! (Food +" + amount + " Drink -3 Happiness -1 Energy -2)");
 
             if(needsController.food <= 0)
             {
@@ -74,6 +75,63 @@ namespace VirtualPetGame
             }
 
             //if(food > 100) food = 100;
+
+            yield return new WaitForSeconds(0.5f);
+        }
+
+        public IEnumerator Drink(GameObject target, int amount)
+        {
+            petController.Drink();
+            needsController.drink += amount;
+            needsController.food -= 5;
+            needsController.happiness -= 1;
+            needsController.energy -= 2;
+            Debug.Log("[AI] Drank! (Drink +" + amount + " Food -5 Happiness -1 Energy -2)");
+
+            if(needsController.drink <= 0)
+            {
+                PetManager.instance.Die();
+            }
+
+            //if(drink > 100) drink = 100;
+
+            yield return new WaitForSeconds(0.5f);
+        }
+
+        public IEnumerator Play(GameObject target, int amount)
+        {
+            petController.Happy();
+            needsController.happiness += amount;
+            needsController.food -= 5;
+            needsController.drink -= 3;
+            needsController.energy -= 2;
+            Debug.Log("[AI] Played! (Happiness +" + amount + " Food -5 Drink -3 Energy -2)");
+
+            if(needsController.happiness <= 0)
+            {
+                PetManager.instance.Die();
+            }
+
+            //if(happiness > 100) happiness = 100;
+
+            yield return new WaitForSeconds(0.5f);
+        }
+
+        public IEnumerator Sleep(GameObject target, int amount)
+        {
+            petController.Tired();
+            needsController.energy += amount;
+            needsController.food -= 5;
+            needsController.drink -= 3;
+            needsController.happiness -= 1;
+            Debug.Log("[AI] Slept! (Energy +" + amount + " Food -5 Drink -3 Happiness -1)");
+
+            if(needsController.energy <= 0)
+            {
+                PetManager.instance.Die();
+            }
+
+            //if(energy > 100) energy = 100;
 
             yield return new WaitForSeconds(0.5f);
         }

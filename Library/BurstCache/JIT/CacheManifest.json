@@ -2,8 +2,8 @@
   "BurstVersion": "9b99a8d2-6a5f-43d4-ad10-97789969a537",
   "Assemblies": [
     {
-      "FullName": "Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2022-04-15T22:46:55Z"
+      "FullName": "Unity.Entities, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "LastWriteTime": "2022-04-19T16:11:11Z"
     },
     {
       "FullName": "netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51",
@@ -14,12 +14,8 @@
       "LastWriteTime": "2021-11-30T10:32:37Z"
     },
     {
-      "FullName": "Unity.Entities, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2022-04-15T22:46:57Z"
-    },
-    {
       "FullName": "Unity.Collections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2022-04-15T22:46:56Z"
+      "LastWriteTime": "2022-04-19T16:11:08Z"
     },
     {
       "FullName": "UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
@@ -31,7 +27,11 @@
     },
     {
       "FullName": "Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2022-04-15T22:46:55Z"
+      "LastWriteTime": "2022-04-19T16:11:07Z"
+    },
+    {
+      "FullName": "Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "LastWriteTime": "2022-04-19T16:11:05Z"
     },
     {
       "FullName": "Unity.Burst.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=null",
@@ -43,70 +43,24 @@
     },
     {
       "FullName": "Unity.2D.Animation.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2022-04-15T22:46:59Z"
-    },
-    {
-      "FullName": "Unity.AI.Planner, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2022-04-15T22:47:00Z"
-    },
-    {
-      "FullName": "Generated.AI.Planner.StateRepresentation, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2022-04-15T22:47:01Z"
-    },
-    {
-      "FullName": "Unity.Jobs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2022-04-15T22:46:56Z"
-    },
-    {
-      "FullName": "Generated.AI.Planner.Plans, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2022-04-15T22:47:01Z"
-    },
-    {
-      "FullName": "Generated.Semantic.Traits, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2022-04-15T22:46:59Z"
-    },
-    {
-      "FullName": "System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
-      "LastWriteTime": "2021-11-30T10:32:37Z"
+      "LastWriteTime": "2022-04-19T16:11:17Z"
     }
   ],
   "Functions": [
-    {
-      "FullName": "System.Int32 Unity.Burst.Intrinsics.X86::DoGetCSRTrampoline()",
-      "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "4bb389d6693154768cd9d327d9666684",
-      "LinkName": "CDCA4A5193BE5947",
-      "AssemblyDependencyIndices": [
-        0,
-        1,
-        2
-      ]
-    },
-    {
-      "FullName": "System.Void Unity.Burst.Intrinsics.X86::DoSetCSRTrampoline(System.Int32)",
-      "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "1d90c1dc9de4a0c920d25a625f7b6ec4",
-      "LinkName": "801E9A000BB37B05",
-      "AssemblyDependencyIndices": [
-        0,
-        1,
-        2
-      ]
-    },
     {
       "FullName": "System.Boolean Unity.Entities.StructuralChange::_mono_to_burst_AddComponentEntity(System.IntPtr,System.IntPtr,System.Int32)",
       "ModuleOptionsHash": 8794384452606821980,
       "ModuleHash": "adf94a2e87cf27063de0eb9c1fb08180",
       "LinkName": "1744DD3AD0FF1C74",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
+        3,
         4,
         5,
         6,
         7,
-        0,
         8,
         9
       ]
@@ -117,14 +71,14 @@
       "ModuleHash": "23f77f21e87d14338a55edbb13870a1a",
       "LinkName": "81A40D824FF4844C",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
+        3,
         4,
         5,
         6,
         7,
-        0,
         8,
         9
       ]
@@ -135,14 +89,14 @@
       "ModuleHash": "cfeabfcca7387c763a87a15a0196fd51",
       "LinkName": "5D3E4EE7A21958B6",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
+        3,
         4,
         5,
         6,
         7,
-        0,
         8,
         9
       ]
@@ -153,14 +107,14 @@
       "ModuleHash": "4d4021057e12ae6d8662148ddb3d92dc",
       "LinkName": "E1BCFDE8B3FAD8E9",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
+        3,
         4,
         5,
         6,
         7,
-        0,
         8,
         9
       ]
@@ -171,14 +125,14 @@
       "ModuleHash": "9dfef88cf461074f55f651abe2ca5634",
       "LinkName": "EA945FB302D5F89A",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
+        3,
         4,
         5,
         6,
         7,
-        0,
         8,
         9
       ]
@@ -189,14 +143,14 @@
       "ModuleHash": "eb5a7fe05b8c9cd117ebf3e9155ed8bb",
       "LinkName": "74E50FA3D6683F1B",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
+        3,
         4,
         5,
         6,
         7,
-        0,
         8,
         9
       ]
@@ -207,14 +161,14 @@
       "ModuleHash": "4ba611187f78d5186dd27ad45c3f9dca",
       "LinkName": "07105AE7A2BE89D1",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
+        3,
         4,
         5,
         6,
         7,
-        0,
         8,
         9
       ]
@@ -225,14 +179,14 @@
       "ModuleHash": "af37af3415f1f14308c7dc75d4257370",
       "LinkName": "7E60233A1433A8FB",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
+        3,
         4,
         5,
         6,
         7,
-        0,
         8,
         9
       ]
@@ -243,14 +197,14 @@
       "ModuleHash": "4aee59f552a6e4bc3ed23457f9319ae3",
       "LinkName": "9CBA98416B171500",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
+        3,
         4,
         5,
         6,
         7,
-        0,
         8,
         9
       ]
@@ -261,14 +215,14 @@
       "ModuleHash": "d19c7cc184c938b8d8b6af370d8d665f",
       "LinkName": "35E2B18C90FEF8CE",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
+        3,
         4,
         5,
         6,
         7,
-        0,
         8,
         9
       ]
@@ -279,12 +233,12 @@
       "ModuleHash": "4c91e4752b8c5aa254ed8ac641621216",
       "LinkName": "760C73C7FA644074",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
+        3,
         4,
-        5,
-        6
+        5
       ]
     },
     {
@@ -293,14 +247,14 @@
       "ModuleHash": "c7c375f4443bec74b88508acf527fa70",
       "LinkName": "F147725FBD6D5A56",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
+        3,
         4,
         5,
         6,
         7,
-        0,
         8,
         9
       ]
@@ -311,14 +265,14 @@
       "ModuleHash": "5c26be5368f8c3a0d51c2bd0bf28cfde",
       "LinkName": "F888A7E0D6AB66B5",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
+        3,
         4,
         5,
         6,
         7,
-        0,
         8,
         9
       ]
@@ -329,14 +283,14 @@
       "ModuleHash": "8b0e4b3529d15e922171e1eb172c46b6",
       "LinkName": "CD19BDBBEE0601EA",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
+        3,
         4,
         5,
-        6,
-        0,
         7,
+        6,
         8,
         9
       ]
@@ -347,10 +301,10 @@
       "ModuleHash": "37a6a9f243517e2866214e55f61fe86c",
       "LinkName": "A0049CBD0622BA54",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
-        4
+        3
       ]
     },
     {
@@ -359,13 +313,13 @@
       "ModuleHash": "55889490f2976cbdbe0a4f43cd0f7d1f",
       "LinkName": "D05CABF75DA16DA5",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
+        3,
+        6,
         4,
-        7,
-        5,
-        6
+        5
       ]
     },
     {
@@ -374,7 +328,7 @@
       "ModuleHash": "8741e7627647a5474695e4163e530e75",
       "LinkName": "E7F478CD6DAFD7F9",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2
       ]
@@ -385,10 +339,10 @@
       "ModuleHash": "5b2d05a7571f1bd5b3f79ced91ee983b",
       "LinkName": "34775B2BD609D778",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
-        4
+        3
       ]
     },
     {
@@ -397,10 +351,10 @@
       "ModuleHash": "82c120296a4e1def7002e95101286397",
       "LinkName": "F2836BA2DDFA7C9F",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
-        4
+        3
       ]
     },
     {
@@ -409,11 +363,11 @@
       "ModuleHash": "1bc65cc979483307cafe334c6e063198",
       "LinkName": "9263AC1F7F4532AF",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
-        5,
-        6
+        4,
+        5
       ]
     },
     {
@@ -422,13 +376,13 @@
       "ModuleHash": "b82289c0c24a3404867739a5ebd4a4f6",
       "LinkName": "E8F595813F284552",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
+        3,
         4,
         5,
-        6,
-        7
+        6
       ]
     },
     {
@@ -437,13 +391,13 @@
       "ModuleHash": "233609c5ae590b816f25d62f59af1e58",
       "LinkName": "A30E37D6F4626E6B",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
+        3,
         4,
         5,
-        6,
-        7
+        6
       ]
     },
     {
@@ -452,13 +406,13 @@
       "ModuleHash": "0f913ea2b62e31d4df2ee0bf3ae7f5d7",
       "LinkName": "93671A2D9C6C41C9",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
+        3,
         4,
         5,
-        6,
-        7
+        6
       ]
     },
     {
@@ -467,10 +421,10 @@
       "ModuleHash": "c6c6534429bed611fdf3d8573820cf2c",
       "LinkName": "964588A3D81036BD",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
-        4
+        3
       ]
     },
     {
@@ -479,10 +433,10 @@
       "ModuleHash": "231507f05a96e10e2394aa855e0b1e1b",
       "LinkName": "387A20A828970925",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
-        4
+        3
       ]
     },
     {
@@ -491,10 +445,10 @@
       "ModuleHash": "12c9b868bec8ba51603153265363886c",
       "LinkName": "BDAE786D084F5F37",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
-        4
+        3
       ]
     },
     {
@@ -503,13 +457,13 @@
       "ModuleHash": "b3ccd75bb0582ec6d13151cf90b581f2",
       "LinkName": "1C01F8613D4CE537",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
-        5,
-        6,
         4,
-        0,
+        5,
+        3,
+        7,
         8,
         9
       ]
@@ -520,14 +474,14 @@
       "ModuleHash": "60e5f145c7a5ac24b7676ea8c4592704",
       "LinkName": "F83E91528E50AB83",
       "AssemblyDependencyIndices": [
-        3,
+        0,
         1,
         2,
+        3,
         4,
         5,
         6,
         7,
-        0,
         8,
         9
       ]
@@ -538,10 +492,10 @@
       "ModuleHash": "54fb69bf54ebb3761d6ede508b5eb3ba",
       "LinkName": "B30AC9D957A7897F",
       "AssemblyDependencyIndices": [
-        5,
+        4,
         10,
+        5,
         6,
-        7,
         1,
         2
       ]
@@ -552,10 +506,10 @@
       "ModuleHash": "ec4a0718c5bf94d08daa00876fdc1e31",
       "LinkName": "E7F55F6439D819D3",
       "AssemblyDependencyIndices": [
-        5,
+        4,
         10,
+        5,
         6,
-        7,
         1,
         2
       ]
@@ -566,12 +520,12 @@
       "ModuleHash": "eb210a1fa06f52f7fddb9864be7f17dd",
       "LinkName": "021A15CCA2B997C2",
       "AssemblyDependencyIndices": [
-        5,
+        4,
         10,
-        6,
+        5,
         1,
         2,
-        7
+        6
       ]
     },
     {
@@ -580,12 +534,12 @@
       "ModuleHash": "16f9f057261273ca7d81be0200106aca",
       "LinkName": "03BB6990D3D7DB46",
       "AssemblyDependencyIndices": [
-        5,
+        4,
         10,
-        6,
+        5,
         1,
         2,
-        7
+        6
       ]
     },
     {
@@ -594,13 +548,13 @@
       "ModuleHash": "893688b9e5c60aed5206f731e8002cf6",
       "LinkName": "CB8EA58100FBA76F",
       "AssemblyDependencyIndices": [
-        5,
+        4,
         10,
+        5,
         6,
-        7,
         1,
         2,
-        4
+        3
       ]
     },
     {
@@ -609,12 +563,12 @@
       "ModuleHash": "0775846800f70a8ebece9404e1d78df3",
       "LinkName": "6FB51AFD1286439E",
       "AssemblyDependencyIndices": [
-        5,
+        4,
         10,
-        6,
+        5,
         1,
         2,
-        7
+        6
       ]
     },
     {
@@ -623,9 +577,9 @@
       "ModuleHash": "08517a0cc5e01402bb2bf1720e8bd107",
       "LinkName": "0ABBF75E63FED3E4",
       "AssemblyDependencyIndices": [
-        5,
+        4,
         10,
-        6,
+        5,
         1,
         2
       ]
@@ -636,199 +590,12 @@
       "ModuleHash": "02259893c91c3938d538843ad481da59",
       "LinkName": "103306C9ECB1440E",
       "AssemblyDependencyIndices": [
-        5,
+        4,
         10,
-        6,
-        1,
-        2,
-        7
-      ]
-    },
-    {
-      "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.AI.Planner.Jobs.SelectionJob`2<Generated.AI.Planner.StateRepresentation.PetNeeds.StateEntityKey,Unity.AI.Planner.Traits.ActionKey>>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "c5017bebb797379fa953e4aacf3088a5",
-      "LinkName": "1B4A77C693EE6B54",
-      "AssemblyDependencyIndices": [
         5,
-        11,
-        12,
-        6,
         1,
         2,
-        4,
-        3,
-        7,
-        0,
-        8,
-        9
-      ]
-    },
-    {
-      "FullName": "System.Void Unity.Jobs.IJobParallelForDeferExtensions/JobParallelForDeferProducer`1<Generated.AI.Planner.Plans.PetNeeds.Eat>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "fb337992a54a5a745bdd18f2e4e8ed47",
-      "LinkName": "5704F3BB8A60A764",
-      "AssemblyDependencyIndices": [
-        13,
-        14,
-        1,
-        2,
-        5,
-        6,
-        12,
-        3,
-        11,
-        4,
-        15,
-        7,
-        0,
-        8,
-        9
-      ]
-    },
-    {
-      "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.AI.Planner.Jobs.PrepareForExpansionJob`2<Generated.AI.Planner.StateRepresentation.PetNeeds.StateEntityKey,Unity.AI.Planner.Traits.ActionKey>>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "f4435de469df08518735a9c0d972f563",
-      "LinkName": "8891890287C0233A",
-      "AssemblyDependencyIndices": [
-        5,
-        11,
-        12,
-        6,
-        1,
-        2,
-        4,
-        3,
-        7,
-        0,
-        8,
-        9
-      ]
-    },
-    {
-      "FullName": "System.Void Unity.Jobs.IJobParallelForDeferExtensions/JobParallelForDeferProducer`1<Unity.AI.Planner.Jobs.GraphExpansionJob`4<Generated.AI.Planner.StateRepresentation.PetNeeds.StateEntityKey,Generated.AI.Planner.StateRepresentation.PetNeeds.StateData,Generated.AI.Planner.StateRepresentation.PetNeeds.StateDataContext,Unity.AI.Planner.Traits.ActionKey>>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "4a2879b6021fbf01df1328ad46c09aef",
-      "LinkName": "0F67F744BC20CFCF",
-      "AssemblyDependencyIndices": [
-        13,
-        11,
-        12,
-        1,
-        2,
-        5,
-        6,
-        3,
-        4,
-        15,
-        7,
-        0,
-        8,
-        9
-      ]
-    },
-    {
-      "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.AI.Planner.Jobs.DestroyStatesJob`3<Generated.AI.Planner.StateRepresentation.PetNeeds.StateEntityKey,Generated.AI.Planner.StateRepresentation.PetNeeds.StateData,Generated.AI.Planner.StateRepresentation.PetNeeds.StateDataContext>>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "a44b9d775489f030dbaf1eb8f66d0c87",
-      "LinkName": "B47393A56460A82C",
-      "AssemblyDependencyIndices": [
-        5,
-        11,
-        12,
-        6,
-        1,
-        2,
-        4,
-        3,
-        15,
-        7,
-        0,
-        8,
-        9
-      ]
-    },
-    {
-      "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.AI.Planner.Jobs.QueueToListJob`1<Generated.AI.Planner.StateRepresentation.PetNeeds.StateEntityKey>>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "c62802c800aa3d901ddba49f18d1e380",
-      "LinkName": "DC333E9FD1015054",
-      "AssemblyDependencyIndices": [
-        5,
-        11,
-        12,
-        6,
-        1,
-        2,
-        4,
-        3,
-        7,
-        0,
-        8,
-        9
-      ]
-    },
-    {
-      "FullName": "System.Void Unity.Jobs.IJobParallelForDeferExtensions/JobParallelForDeferProducer`1<Unity.AI.Planner.Jobs.EvaluateNewStatesJob`5<Generated.AI.Planner.StateRepresentation.PetNeeds.StateEntityKey,Generated.AI.Planner.StateRepresentation.PetNeeds.StateData,Generated.AI.Planner.StateRepresentation.PetNeeds.StateDataContext,Generated.AI.Planner.Plans.PetNeeds.DefaultCumulativeRewardEstimator,Generated.AI.Planner.Plans.PetNeeds.TerminationEvaluator>>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "ef42ec2387a7687b6c81c590b3d804bb",
-      "LinkName": "99EA77FC987C6CB0",
-      "AssemblyDependencyIndices": [
-        13,
-        11,
-        12,
-        14,
-        1,
-        2,
-        5,
-        6,
-        3,
-        4,
-        15,
-        7,
-        16,
-        0,
-        8,
-        9
-      ]
-    },
-    {
-      "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.AI.Planner.Jobs.BackpropagationJob`2<Generated.AI.Planner.StateRepresentation.PetNeeds.StateEntityKey,Unity.AI.Planner.Traits.ActionKey>>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "22b81a30edaad1074c2df18ea1658065",
-      "LinkName": "1933B315CE82C87D",
-      "AssemblyDependencyIndices": [
-        5,
-        11,
-        12,
-        6,
-        1,
-        2,
-        4,
-        3,
-        7,
-        0,
-        8,
-        9
-      ]
-    },
-    {
-      "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.Collections.LowLevel.Unsafe.UnsafeHashMapDataDisposeJob>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "2eae739789a29d1fa38c43fc2eef75c0",
-      "LinkName": "C0BB42F31A3089F2",
-      "AssemblyDependencyIndices": [
-        5,
-        4,
-        6,
-        1,
-        2,
-        7,
-        0,
-        8,
-        9
+        6
       ]
     }
   ]

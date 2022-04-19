@@ -1,8 +1,10 @@
 #if PLANNER_DOMAIN_GENERATED
 using System;
 using AI.Planner.Domains;
+//using AI.Planner.Domains.dll;
 using Unity.AI.Planner.DomainLanguage.TraitBased;
 using Unity.Entities;
+//using AI.Planner.Custom;
 
 namespace AI.Planner.Actions.PetAgent
 {
@@ -25,7 +27,7 @@ namespace AI.Planner.Actions.PetAgent
                 if (domainObject.MatchesTraitFilter(needFilter))
                 {
                     var need = needBuffer[domainObject.NeedIndex];
-                    need.Urgency += need.ChangePerSecond * deltaTime;
+                    need.Level -= need.ChangePerSecond * deltaTime;
                     needBuffer[domainObject.NeedIndex] = need;
                 }
             }
