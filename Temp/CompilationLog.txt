@@ -1,4 +1,12 @@
+# Starting compiling AI.Planner.Custom.dll
+/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-169f8b68efe4340f096e5bfd03d6bf92
+# Starting IL post processing on AI.Planner.Custom.dll
+/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/MonoBleedingEdge/bin/mono "/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"/Users/mikamarciales/Virtual Pet Game/Temp/UnityTempFile-1ae04abbfd15e4a7c92aa10243dd0920"
+# Starting compiling Generated.AI.Planner.Plans.dll
+/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-7266375a15167457085d431a6ab6640f
+# Starting IL post processing on Generated.AI.Planner.Plans.dll
+/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/MonoBleedingEdge/bin/mono "/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"/Users/mikamarciales/Virtual Pet Game/Temp/UnityTempFile-9ebf99d5c66454d4d989cd7e65ac95ff"
 # Starting compiling Assembly-CSharp.dll
-/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-4ade9db4ca71d4b9990ceb1393f02f95
+/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-cc675c522c7bf4d1f87a30913cbac991
 # Starting IL post processing on Assembly-CSharp.dll
-/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/MonoBleedingEdge/bin/mono "/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"/Users/mikamarciales/Virtual Pet Game/Temp/UnityTempFile-5adbf635aae2e41589cc343f71647a2c"
+/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/MonoBleedingEdge/bin/mono "/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"/Users/mikamarciales/Virtual Pet Game/Temp/UnityTempFile-d11d96f4b03de4b32bbedbee99ca52f1"

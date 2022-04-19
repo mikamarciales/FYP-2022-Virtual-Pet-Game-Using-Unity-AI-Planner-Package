@@ -5,6 +5,12 @@ using AI.Planner.Domains;
 using Unity.AI.Planner.DomainLanguage.TraitBased;
 using Unity.Entities;
 //using AI.Planner.Custom;
+using Generated.AI.Planner.StateRepresentation.PetAgent;
+using Generated.Semantic.Traits;
+using Unity.AI.Planner;
+using Unity.Collections;
+using Unity.Entities;
+using Unity.Mathematics;
 
 namespace AI.Planner.Actions.PetAgent
 {

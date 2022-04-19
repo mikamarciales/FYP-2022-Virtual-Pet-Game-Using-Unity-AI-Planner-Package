@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{5c883bf4-9aae-75e1-93be-b459029da8c5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualPetAgent.Custom", "VirtualPetAgent.Custom.csproj", "{87df82eb-d5d8-f535-f754-3f5ac00ccfc5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,8 +10,6 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5c883bf4-9aae-75e1-93be-b459029da8c5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5c883bf4-9aae-75e1-93be-b459029da8c5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{87df82eb-d5d8-f535-f754-3f5ac00ccfc5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{87df82eb-d5d8-f535-f754-3f5ac00ccfc5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
