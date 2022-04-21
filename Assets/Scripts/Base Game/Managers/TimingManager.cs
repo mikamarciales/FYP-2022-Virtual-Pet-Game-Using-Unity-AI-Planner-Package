@@ -2,23 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimingManager : MonoBehaviour
+namespace VirtualPetGame
 {
-    public static float gameHourTimer, gameTickTimer;
-    public float hourLength, tickLength;
-
-    private void Update()
+    public class TimingManager : MonoBehaviour
     {
-        if (gameHourTimer <= 0 && gameTickTimer <=0)
-        {
-            gameHourTimer = hourLength;
-            gameTickTimer = tickLength;
-        }
-        else
-        {
-            gameHourTimer -= Time.deltaTime;
-            gameTickTimer -= Time.deltaTime;
-        }
-    }
+        public static float gameHourTimer, gameTickTimer;
+        public float hourLength, tickLength;
 
+        private void Update()
+        {
+            if (gameHourTimer <= 0 && gameTickTimer <=0)
+            {
+                gameHourTimer = hourLength;
+                gameTickTimer = tickLength;
+            }
+            else
+            {
+                gameHourTimer -= Time.deltaTime;
+                gameTickTimer -= Time.deltaTime;
+            }
+        }
+
+    }
 }

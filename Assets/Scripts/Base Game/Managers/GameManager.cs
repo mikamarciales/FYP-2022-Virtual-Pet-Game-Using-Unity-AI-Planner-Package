@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+namespace VirtualPetGame
 {
-    public Image gameOverBG;
-    public bool isGameOver = false;
-
-    public void GameOver()
+    public class GameManager : MonoBehaviour
     {
-        if (isGameOver == false)
+        public Image gameOverBG;
+        public bool isGameOver = false;
+
+        public void GameOver()
         {
-            isGameOver = true;
-            gameOverBG.gameObject.SetActive(true);
-            Debug.Log("Pet is dead! GAME OVER");
+            if (isGameOver == false)
+            {
+                isGameOver = true;
+                gameOverBG.gameObject.SetActive(true);
+                Debug.Log("Pet is dead! GAME OVER");
+            }
         }
     }
 }
