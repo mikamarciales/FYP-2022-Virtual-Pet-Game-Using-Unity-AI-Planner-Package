@@ -1,8 +1,0 @@
-# Starting compiling Generated.AI.Planner.StateRepresentation.dll
-/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-7180ffba77a234c5dae22cf6bd4a2fe0
-# Starting IL post processing on Generated.AI.Planner.StateRepresentation.dll
-/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/MonoBleedingEdge/bin/mono "/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"/Users/mikamarciales/Virtual Pet Game/Temp/UnityTempFile-4ff9d7e12275f4b158bdbadb66883a55"
-# Starting compiling Generated.AI.Planner.Plans.dll
-/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-856278cc70fe04fe78b03d4c4022f3d3
-# Starting IL post processing on Generated.AI.Planner.Plans.dll
-/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/MonoBleedingEdge/bin/mono "/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"/Users/mikamarciales/Virtual Pet Game/Temp/UnityTempFile-69324e09fd6b147f8ab2faf377099364"

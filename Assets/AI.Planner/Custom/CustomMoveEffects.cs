@@ -16,11 +16,11 @@ namespace AI.Planner.Custom.PetAgentPlan
             TraitBasedObject moverObject = newState.GetTraitBasedObject(moverObjectId);
             Need needs = newState.GetTraitOnObject<Need>(moverObject);
     
-            needs.HungerLevel = Mathf.Max(0, needs.HungerLevel - 10);
+            needs.HungerLevel = Mathf.Max(0, needs.HungerLevel - 1);
             //nc.food -= 10;
-            needs.ThirstLevel = Mathf.Max(0, needs.ThirstLevel - 7);
-            needs.HappinessLevel = Mathf.Max(0, needs.HappinessLevel - 2);
-            needs.EnergyLevel = Mathf.Max(0, needs.EnergyLevel - 5);
+            needs.ThirstLevel = Mathf.Max(0, needs.ThirstLevel - 1);
+            needs.HappinessLevel = Mathf.Max(0, needs.HappinessLevel - 1);
+            needs.EnergyLevel = Mathf.Max(0, needs.EnergyLevel - 1);
 
             //Debug.Log("[AI] Moved! CURRENT LEVELS - Hunger: " + needs.HungerLevel + " Thirst: " + needs.HungerLevel + " Happiness: " + needs.HappinessLevel + " Energy: " + needs.EnergyLevel);
     
