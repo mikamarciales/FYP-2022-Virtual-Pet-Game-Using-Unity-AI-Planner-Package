@@ -110,7 +110,6 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
             hungerObjectIndices.Clear();
             stateData.GetTraitBasedObjectIndices(hungerObjectIndices, hungerFilter);
             
-            var LocationBuffer = stateData.LocationBuffer;
             var NeedBuffer = stateData.NeedBuffer;
             
             
@@ -124,8 +123,6 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
                 
                 
                 
-                
-                
             
             
 
@@ -133,10 +130,6 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
             {
                 var treeIndex = treeObjectIndices[i1];
                 var treeObject = stateData.TraitBasedObjects[treeIndex];
-                
-                if (!(LocationBuffer[agentObject.LocationIndex].Position == LocationBuffer[treeObject.LocationIndex].Position))
-                    continue;
-                
                 
                 
                 
@@ -154,8 +147,6 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
                 
                 
                 
-                
-                
             
             
 
@@ -164,11 +155,7 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
                 var hungerIndex = hungerObjectIndices[i3];
                 var hungerObject = stateData.TraitBasedObjects[hungerIndex];
                 
-                
-                if (!(NeedBuffer[hungerObject.NeedIndex].NeedType == NeedType.Hunger))
-                    continue;
-                
-                if (!(NeedBuffer[hungerObject.NeedIndex].Level <= 90))
+                if (!(NeedBuffer[hungerObject.NeedIndex].HungerLevel <= 90))
                     continue;
                 
                 
@@ -210,8 +197,11 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
             }
             {
                     var @Need = newNeedBuffer[originalhungerObject.NeedIndex];
-                    @Need.@Level += 10;
+                    @Need.HungerLevel += newNeedBuffer[originalhungerObject.NeedIndex].HungerTick;
                     newNeedBuffer[originalhungerObject.NeedIndex] = @Need;
+            }
+            {
+                    new global::AI.Planner.Custom.PetAgentPlan.CustomFedEffects().ApplyCustomActionEffectsToState(originalState, action, newState);
             }
 
             

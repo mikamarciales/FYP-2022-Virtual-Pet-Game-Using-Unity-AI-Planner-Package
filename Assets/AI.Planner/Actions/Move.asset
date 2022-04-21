@@ -62,20 +62,20 @@ MonoBehaviour:
       m_TraitPropertyId: 0
       m_Enum: {fileID: 0}
       m_Value: 
-  - m_Operator: -=
-    m_CustomOperatorType: 
+  - m_Operator: Custom
+    m_CustomOperatorType: AI.Planner.Custom.PetAgentPlan.CustomMoveEffects
     m_OperandA:
       m_Parameter: Mover
-      m_Trait: {fileID: 11400000, guid: b738c091b6daf4a29bdc0b46da0dd3f8, type: 2}
-      m_TraitPropertyId: 1
+      m_Trait: {fileID: 11400000, guid: 6b7c2cd8001b84552891cf17ebf8b587, type: 2}
+      m_TraitPropertyId: 0
       m_Enum: {fileID: 0}
       m_Value: 
     m_OperandB:
-      m_Parameter: 
-      m_Trait: {fileID: 0}
-      m_TraitPropertyId: -1
+      m_Parameter: Destination
+      m_Trait: {fileID: 11400000, guid: 6b7c2cd8001b84552891cf17ebf8b587, type: 2}
+      m_TraitPropertyId: 0
       m_Enum: {fileID: 0}
-      m_Value: 1
+      m_Value: 
   m_Reward: 0
   m_CustomRewards:
   - m_Operator: -=

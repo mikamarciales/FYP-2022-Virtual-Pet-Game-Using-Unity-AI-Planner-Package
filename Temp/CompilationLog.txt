@@ -1,12 +1,8 @@
-# Starting compiling AI.Planner.Custom.dll
-/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-d8138192c8669423c977e7c36bf9dc42
-# Starting IL post processing on AI.Planner.Custom.dll
-/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/MonoBleedingEdge/bin/mono "/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"/Users/mikamarciales/Virtual Pet Game/Temp/UnityTempFile-60f7f1d5bed2541c5b814b8a2137574c"
+# Starting compiling Generated.AI.Planner.StateRepresentation.dll
+/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-7180ffba77a234c5dae22cf6bd4a2fe0
+# Starting IL post processing on Generated.AI.Planner.StateRepresentation.dll
+/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/MonoBleedingEdge/bin/mono "/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"/Users/mikamarciales/Virtual Pet Game/Temp/UnityTempFile-4ff9d7e12275f4b158bdbadb66883a55"
 # Starting compiling Generated.AI.Planner.Plans.dll
-/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-c214ed44c0c634e71908a7644f3e3494
+/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-856278cc70fe04fe78b03d4c4022f3d3
 # Starting IL post processing on Generated.AI.Planner.Plans.dll
-/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/MonoBleedingEdge/bin/mono "/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"/Users/mikamarciales/Virtual Pet Game/Temp/UnityTempFile-ce8c798881796442481e393de5ea3b88"
-# Starting compiling Assembly-CSharp.dll
-/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-ca0acecfc42aa4bc2a84c2903aa2234e
-# Starting IL post processing on Assembly-CSharp.dll
-/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/MonoBleedingEdge/bin/mono "/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"/Users/mikamarciales/Virtual Pet Game/Temp/UnityTempFile-e72ff9fc13a984f61b8ddfaa73d17332"
+/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/MonoBleedingEdge/bin/mono "/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"/Users/mikamarciales/Virtual Pet Game/Temp/UnityTempFile-69324e09fd6b147f8ab2faf377099364"

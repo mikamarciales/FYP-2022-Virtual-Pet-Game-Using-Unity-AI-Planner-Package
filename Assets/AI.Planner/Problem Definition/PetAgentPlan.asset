@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: PetAgentPlan
   m_EditorClassIdentifier: 
   m_ActionDefinitions:
+  - {fileID: 11400000, guid: 6d0ce9bb88a8f4c68ab6b6137626c06a, type: 2}
   - {fileID: 11400000, guid: 34a074403a1444d408b7adda7d57febd, type: 2}
-  - {fileID: 11400000, guid: edf2aa0ff46ac4a81afb2f2612e6b90a, type: 2}
+  - {fileID: 11400000, guid: fc0dc890c76f94932ace8da16770b3ad, type: 2}
+  - {fileID: 11400000, guid: 6d48c90d8f2964d9bb980081f628c4ec, type: 2}
+  - {fileID: 11400000, guid: 307b5760454ec40aab84e08ece52f058, type: 2}
   m_StateTerminationDefinitions:
   - {fileID: 11400000, guid: d19f404eceb644ed4abd2a345e2b5a65, type: 2}
   m_CustomCumulativeRewardEstimator: 

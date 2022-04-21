@@ -37,27 +37,33 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
         static TraitArrayIndex()
         {
             var typeIndex = TypeManager.GetTypeIndex<T>();
-            if (typeIndex == TypeManager.GetTypeIndex<Pet>())
+            if (typeIndex == TypeManager.GetTypeIndex<Moveable>())
                 Index = 0;
             else if (typeIndex == TypeManager.GetTypeIndex<Location>())
                 Index = 1;
-            else if (typeIndex == TypeManager.GetTypeIndex<Tree_Food>())
-                Index = 2;
-            else if (typeIndex == TypeManager.GetTypeIndex<Pet_Time>())
-                Index = 3;
             else if (typeIndex == TypeManager.GetTypeIndex<Need>())
+                Index = 2;
+            else if (typeIndex == TypeManager.GetTypeIndex<Pet>())
+                Index = 3;
+            else if (typeIndex == TypeManager.GetTypeIndex<Tree_Food>())
                 Index = 4;
-            else if (typeIndex == TypeManager.GetTypeIndex<Moveable>())
+            else if (typeIndex == TypeManager.GetTypeIndex<Pet_Time>())
                 Index = 5;
-            else if (typeIndex == TypeManager.GetTypeIndex<PlanningAgent>())
+            else if (typeIndex == TypeManager.GetTypeIndex<Lake_Drink>())
                 Index = 6;
+            else if (typeIndex == TypeManager.GetTypeIndex<Table_Happiness>())
+                Index = 7;
+            else if (typeIndex == TypeManager.GetTypeIndex<Home_Energy>())
+                Index = 8;
+            else if (typeIndex == TypeManager.GetTypeIndex<PlanningAgent>())
+                Index = 9;
         }
     }
 
-    [StructLayout(LayoutKind.Sequential, Size=8)]
+    [StructLayout(LayoutKind.Sequential, Size=12)]
     public struct TraitBasedObject : ITraitBasedObject, IEquatable<TraitBasedObject>
     {
-        public int Length => 7;
+        public int Length => 10;
 
         public byte this[int i]
         {
@@ -66,18 +72,24 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                 switch (i)
                 {
                     case 0:
-                        return PetIndex;
+                        return MoveableIndex;
                     case 1:
                         return LocationIndex;
                     case 2:
-                        return Tree_FoodIndex;
-                    case 3:
-                        return Pet_TimeIndex;
-                    case 4:
                         return NeedIndex;
+                    case 3:
+                        return PetIndex;
+                    case 4:
+                        return Tree_FoodIndex;
                     case 5:
-                        return MoveableIndex;
+                        return Pet_TimeIndex;
                     case 6:
+                        return Lake_DrinkIndex;
+                    case 7:
+                        return Table_HappinessIndex;
+                    case 8:
+                        return Home_EnergyIndex;
+                    case 9:
                         return PlanningAgentIndex;
                 }
 
@@ -88,24 +100,33 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                 switch (i)
                 {
                     case 0:
-                        PetIndex = value;
+                        MoveableIndex = value;
                         break;
                     case 1:
                         LocationIndex = value;
                         break;
                     case 2:
-                        Tree_FoodIndex = value;
-                        break;
-                    case 3:
-                        Pet_TimeIndex = value;
-                        break;
-                    case 4:
                         NeedIndex = value;
                         break;
+                    case 3:
+                        PetIndex = value;
+                        break;
+                    case 4:
+                        Tree_FoodIndex = value;
+                        break;
                     case 5:
-                        MoveableIndex = value;
+                        Pet_TimeIndex = value;
                         break;
                     case 6:
+                        Lake_DrinkIndex = value;
+                        break;
+                    case 7:
+                        Table_HappinessIndex = value;
+                        break;
+                    case 8:
+                        Home_EnergyIndex = value;
+                        break;
+                    case 9:
                         PlanningAgentIndex = value;
                         break;
                 }
@@ -116,31 +137,40 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
 
         public static TraitBasedObject Default => new TraitBasedObject
         {
-            PetIndex = Unset,
+            MoveableIndex = Unset,
             LocationIndex = Unset,
+            NeedIndex = Unset,
+            PetIndex = Unset,
             Tree_FoodIndex = Unset,
             Pet_TimeIndex = Unset,
-            NeedIndex = Unset,
-            MoveableIndex = Unset,
+            Lake_DrinkIndex = Unset,
+            Table_HappinessIndex = Unset,
+            Home_EnergyIndex = Unset,
             PlanningAgentIndex = Unset,
         };
 
 
-        public byte PetIndex;
+        public byte MoveableIndex;
         public byte LocationIndex;
+        public byte NeedIndex;
+        public byte PetIndex;
         public byte Tree_FoodIndex;
         public byte Pet_TimeIndex;
-        public byte NeedIndex;
-        public byte MoveableIndex;
+        public byte Lake_DrinkIndex;
+        public byte Table_HappinessIndex;
+        public byte Home_EnergyIndex;
         public byte PlanningAgentIndex;
 
 
-        static readonly int s_PetTypeIndex = TypeManager.GetTypeIndex<Pet>();
+        static readonly int s_MoveableTypeIndex = TypeManager.GetTypeIndex<Moveable>();
         static readonly int s_LocationTypeIndex = TypeManager.GetTypeIndex<Location>();
+        static readonly int s_NeedTypeIndex = TypeManager.GetTypeIndex<Need>();
+        static readonly int s_PetTypeIndex = TypeManager.GetTypeIndex<Pet>();
         static readonly int s_Tree_FoodTypeIndex = TypeManager.GetTypeIndex<Tree_Food>();
         static readonly int s_Pet_TimeTypeIndex = TypeManager.GetTypeIndex<Pet_Time>();
-        static readonly int s_NeedTypeIndex = TypeManager.GetTypeIndex<Need>();
-        static readonly int s_MoveableTypeIndex = TypeManager.GetTypeIndex<Moveable>();
+        static readonly int s_Lake_DrinkTypeIndex = TypeManager.GetTypeIndex<Lake_Drink>();
+        static readonly int s_Table_HappinessTypeIndex = TypeManager.GetTypeIndex<Table_Happiness>();
+        static readonly int s_Home_EnergyTypeIndex = TypeManager.GetTypeIndex<Home_Energy>();
         static readonly int s_PlanningAgentTypeIndex = TypeManager.GetTypeIndex<PlanningAgent>();
 
         public bool HasSameTraits(TraitBasedObject other)
@@ -176,14 +206,24 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                 {
                     // This seems to be necessary for Burst compilation; Doesn't happen with non-Burst compilation
                 }
-                else if (t.TypeIndex == s_PetTypeIndex)
+                else if (t.TypeIndex == s_MoveableTypeIndex)
                 {
-                    if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ PetIndex == Unset)
+                    if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ MoveableIndex == Unset)
                         return false;
                 }
                 else if (t.TypeIndex == s_LocationTypeIndex)
                 {
                     if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ LocationIndex == Unset)
+                        return false;
+                }
+                else if (t.TypeIndex == s_NeedTypeIndex)
+                {
+                    if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ NeedIndex == Unset)
+                        return false;
+                }
+                else if (t.TypeIndex == s_PetTypeIndex)
+                {
+                    if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ PetIndex == Unset)
                         return false;
                 }
                 else if (t.TypeIndex == s_Tree_FoodTypeIndex)
@@ -196,14 +236,19 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                     if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ Pet_TimeIndex == Unset)
                         return false;
                 }
-                else if (t.TypeIndex == s_NeedTypeIndex)
+                else if (t.TypeIndex == s_Lake_DrinkTypeIndex)
                 {
-                    if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ NeedIndex == Unset)
+                    if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ Lake_DrinkIndex == Unset)
                         return false;
                 }
-                else if (t.TypeIndex == s_MoveableTypeIndex)
+                else if (t.TypeIndex == s_Table_HappinessTypeIndex)
                 {
-                    if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ MoveableIndex == Unset)
+                    if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ Table_HappinessIndex == Unset)
+                        return false;
+                }
+                else if (t.TypeIndex == s_Home_EnergyTypeIndex)
+                {
+                    if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ Home_EnergyIndex == Unset)
                         return false;
                 }
                 else if (t.TypeIndex == s_PlanningAgentTypeIndex)
@@ -227,14 +272,24 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                 {
                     // This seems to be necessary for Burst compilation; Doesn't happen with non-Burst compilation
                 }
-                else if (t.TypeIndex == s_PetTypeIndex)
+                else if (t.TypeIndex == s_MoveableTypeIndex)
                 {
-                    if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ PetIndex == Unset)
+                    if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ MoveableIndex == Unset)
                         return false;
                 }
                 else if (t.TypeIndex == s_LocationTypeIndex)
                 {
                     if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ LocationIndex == Unset)
+                        return false;
+                }
+                else if (t.TypeIndex == s_NeedTypeIndex)
+                {
+                    if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ NeedIndex == Unset)
+                        return false;
+                }
+                else if (t.TypeIndex == s_PetTypeIndex)
+                {
+                    if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ PetIndex == Unset)
                         return false;
                 }
                 else if (t.TypeIndex == s_Tree_FoodTypeIndex)
@@ -247,14 +302,19 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                     if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ Pet_TimeIndex == Unset)
                         return false;
                 }
-                else if (t.TypeIndex == s_NeedTypeIndex)
+                else if (t.TypeIndex == s_Lake_DrinkTypeIndex)
                 {
-                    if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ NeedIndex == Unset)
+                    if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ Lake_DrinkIndex == Unset)
                         return false;
                 }
-                else if (t.TypeIndex == s_MoveableTypeIndex)
+                else if (t.TypeIndex == s_Table_HappinessTypeIndex)
                 {
-                    if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ MoveableIndex == Unset)
+                    if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ Table_HappinessIndex == Unset)
+                        return false;
+                }
+                else if (t.TypeIndex == s_Home_EnergyTypeIndex)
+                {
+                    if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ Home_EnergyIndex == Unset)
                         return false;
                 }
                 else if (t.TypeIndex == s_PlanningAgentTypeIndex)
@@ -272,7 +332,7 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
         public bool Equals(TraitBasedObject other)
         {
 
-                return PetIndex == other.PetIndex && LocationIndex == other.LocationIndex && Tree_FoodIndex == other.Tree_FoodIndex && Pet_TimeIndex == other.Pet_TimeIndex && NeedIndex == other.NeedIndex && MoveableIndex == other.MoveableIndex && PlanningAgentIndex == other.PlanningAgentIndex;
+                return MoveableIndex == other.MoveableIndex && LocationIndex == other.LocationIndex && NeedIndex == other.NeedIndex && PetIndex == other.PetIndex && Tree_FoodIndex == other.Tree_FoodIndex && Pet_TimeIndex == other.Pet_TimeIndex && Lake_DrinkIndex == other.Lake_DrinkIndex && Table_HappinessIndex == other.Table_HappinessIndex && Home_EnergyIndex == other.Home_EnergyIndex && PlanningAgentIndex == other.PlanningAgentIndex;
         }
 
         public override bool Equals(object obj)
@@ -285,13 +345,16 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
             unchecked
             {
 
-                    var hashCode = PetIndex.GetHashCode();
+                    var hashCode = MoveableIndex.GetHashCode();
                     
                      hashCode = (hashCode * 397) ^ LocationIndex.GetHashCode();
+                     hashCode = (hashCode * 397) ^ NeedIndex.GetHashCode();
+                     hashCode = (hashCode * 397) ^ PetIndex.GetHashCode();
                      hashCode = (hashCode * 397) ^ Tree_FoodIndex.GetHashCode();
                      hashCode = (hashCode * 397) ^ Pet_TimeIndex.GetHashCode();
-                     hashCode = (hashCode * 397) ^ NeedIndex.GetHashCode();
-                     hashCode = (hashCode * 397) ^ MoveableIndex.GetHashCode();
+                     hashCode = (hashCode * 397) ^ Lake_DrinkIndex.GetHashCode();
+                     hashCode = (hashCode * 397) ^ Table_HappinessIndex.GetHashCode();
+                     hashCode = (hashCode * 397) ^ Home_EnergyIndex.GetHashCode();
                      hashCode = (hashCode * 397) ^ PlanningAgentIndex.GetHashCode();
                 return hashCode;
             }
@@ -304,20 +367,26 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
         public DynamicBuffer<TraitBasedObject> TraitBasedObjects;
         public DynamicBuffer<TraitBasedObjectId> TraitBasedObjectIds;
 
-        public DynamicBuffer<Pet> PetBuffer;
+        public DynamicBuffer<Moveable> MoveableBuffer;
         public DynamicBuffer<Location> LocationBuffer;
+        public DynamicBuffer<Need> NeedBuffer;
+        public DynamicBuffer<Pet> PetBuffer;
         public DynamicBuffer<Tree_Food> Tree_FoodBuffer;
         public DynamicBuffer<Pet_Time> Pet_TimeBuffer;
-        public DynamicBuffer<Need> NeedBuffer;
-        public DynamicBuffer<Moveable> MoveableBuffer;
+        public DynamicBuffer<Lake_Drink> Lake_DrinkBuffer;
+        public DynamicBuffer<Table_Happiness> Table_HappinessBuffer;
+        public DynamicBuffer<Home_Energy> Home_EnergyBuffer;
         public DynamicBuffer<PlanningAgent> PlanningAgentBuffer;
 
-        static readonly int s_PetTypeIndex = TypeManager.GetTypeIndex<Pet>();
+        static readonly int s_MoveableTypeIndex = TypeManager.GetTypeIndex<Moveable>();
         static readonly int s_LocationTypeIndex = TypeManager.GetTypeIndex<Location>();
+        static readonly int s_NeedTypeIndex = TypeManager.GetTypeIndex<Need>();
+        static readonly int s_PetTypeIndex = TypeManager.GetTypeIndex<Pet>();
         static readonly int s_Tree_FoodTypeIndex = TypeManager.GetTypeIndex<Tree_Food>();
         static readonly int s_Pet_TimeTypeIndex = TypeManager.GetTypeIndex<Pet_Time>();
-        static readonly int s_NeedTypeIndex = TypeManager.GetTypeIndex<Need>();
-        static readonly int s_MoveableTypeIndex = TypeManager.GetTypeIndex<Moveable>();
+        static readonly int s_Lake_DrinkTypeIndex = TypeManager.GetTypeIndex<Lake_Drink>();
+        static readonly int s_Table_HappinessTypeIndex = TypeManager.GetTypeIndex<Table_Happiness>();
+        static readonly int s_Home_EnergyTypeIndex = TypeManager.GetTypeIndex<Home_Energy>();
         static readonly int s_PlanningAgentTypeIndex = TypeManager.GetTypeIndex<PlanningAgent>();
 
         public StateData(ExclusiveEntityTransaction transaction, Entity stateEntity)
@@ -326,12 +395,15 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
             TraitBasedObjects = transaction.GetBuffer<TraitBasedObject>(stateEntity);
             TraitBasedObjectIds = transaction.GetBuffer<TraitBasedObjectId>(stateEntity);
 
-            PetBuffer = transaction.GetBuffer<Pet>(stateEntity);
+            MoveableBuffer = transaction.GetBuffer<Moveable>(stateEntity);
             LocationBuffer = transaction.GetBuffer<Location>(stateEntity);
+            NeedBuffer = transaction.GetBuffer<Need>(stateEntity);
+            PetBuffer = transaction.GetBuffer<Pet>(stateEntity);
             Tree_FoodBuffer = transaction.GetBuffer<Tree_Food>(stateEntity);
             Pet_TimeBuffer = transaction.GetBuffer<Pet_Time>(stateEntity);
-            NeedBuffer = transaction.GetBuffer<Need>(stateEntity);
-            MoveableBuffer = transaction.GetBuffer<Moveable>(stateEntity);
+            Lake_DrinkBuffer = transaction.GetBuffer<Lake_Drink>(stateEntity);
+            Table_HappinessBuffer = transaction.GetBuffer<Table_Happiness>(stateEntity);
+            Home_EnergyBuffer = transaction.GetBuffer<Home_Energy>(stateEntity);
             PlanningAgentBuffer = transaction.GetBuffer<PlanningAgent>(stateEntity);
         }
 
@@ -341,12 +413,15 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
             TraitBasedObjects = entityCommandBuffer.AddBuffer<TraitBasedObject>(jobIndex, stateEntity);
             TraitBasedObjectIds = entityCommandBuffer.AddBuffer<TraitBasedObjectId>(jobIndex, stateEntity);
 
-            PetBuffer = entityCommandBuffer.AddBuffer<Pet>(jobIndex, stateEntity);
+            MoveableBuffer = entityCommandBuffer.AddBuffer<Moveable>(jobIndex, stateEntity);
             LocationBuffer = entityCommandBuffer.AddBuffer<Location>(jobIndex, stateEntity);
+            NeedBuffer = entityCommandBuffer.AddBuffer<Need>(jobIndex, stateEntity);
+            PetBuffer = entityCommandBuffer.AddBuffer<Pet>(jobIndex, stateEntity);
             Tree_FoodBuffer = entityCommandBuffer.AddBuffer<Tree_Food>(jobIndex, stateEntity);
             Pet_TimeBuffer = entityCommandBuffer.AddBuffer<Pet_Time>(jobIndex, stateEntity);
-            NeedBuffer = entityCommandBuffer.AddBuffer<Need>(jobIndex, stateEntity);
-            MoveableBuffer = entityCommandBuffer.AddBuffer<Moveable>(jobIndex, stateEntity);
+            Lake_DrinkBuffer = entityCommandBuffer.AddBuffer<Lake_Drink>(jobIndex, stateEntity);
+            Table_HappinessBuffer = entityCommandBuffer.AddBuffer<Table_Happiness>(jobIndex, stateEntity);
+            Home_EnergyBuffer = entityCommandBuffer.AddBuffer<Home_Energy>(jobIndex, stateEntity);
             PlanningAgentBuffer = entityCommandBuffer.AddBuffer<PlanningAgent>(jobIndex, stateEntity);
         }
 
@@ -358,18 +433,24 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
             var traitBasedObjectIds = entityCommandBuffer.SetBuffer<TraitBasedObjectId>(jobIndex, stateEntity);
             traitBasedObjectIds.CopyFrom(TraitBasedObjectIds.AsNativeArray());
 
-            var Pets = entityCommandBuffer.SetBuffer<Pet>(jobIndex, stateEntity);
-            Pets.CopyFrom(PetBuffer.AsNativeArray());
+            var Moveables = entityCommandBuffer.SetBuffer<Moveable>(jobIndex, stateEntity);
+            Moveables.CopyFrom(MoveableBuffer.AsNativeArray());
             var Locations = entityCommandBuffer.SetBuffer<Location>(jobIndex, stateEntity);
             Locations.CopyFrom(LocationBuffer.AsNativeArray());
+            var Needs = entityCommandBuffer.SetBuffer<Need>(jobIndex, stateEntity);
+            Needs.CopyFrom(NeedBuffer.AsNativeArray());
+            var Pets = entityCommandBuffer.SetBuffer<Pet>(jobIndex, stateEntity);
+            Pets.CopyFrom(PetBuffer.AsNativeArray());
             var Tree_Foods = entityCommandBuffer.SetBuffer<Tree_Food>(jobIndex, stateEntity);
             Tree_Foods.CopyFrom(Tree_FoodBuffer.AsNativeArray());
             var Pet_Times = entityCommandBuffer.SetBuffer<Pet_Time>(jobIndex, stateEntity);
             Pet_Times.CopyFrom(Pet_TimeBuffer.AsNativeArray());
-            var Needs = entityCommandBuffer.SetBuffer<Need>(jobIndex, stateEntity);
-            Needs.CopyFrom(NeedBuffer.AsNativeArray());
-            var Moveables = entityCommandBuffer.SetBuffer<Moveable>(jobIndex, stateEntity);
-            Moveables.CopyFrom(MoveableBuffer.AsNativeArray());
+            var Lake_Drinks = entityCommandBuffer.SetBuffer<Lake_Drink>(jobIndex, stateEntity);
+            Lake_Drinks.CopyFrom(Lake_DrinkBuffer.AsNativeArray());
+            var Table_Happinesss = entityCommandBuffer.SetBuffer<Table_Happiness>(jobIndex, stateEntity);
+            Table_Happinesss.CopyFrom(Table_HappinessBuffer.AsNativeArray());
+            var Home_Energys = entityCommandBuffer.SetBuffer<Home_Energy>(jobIndex, stateEntity);
+            Home_Energys.CopyFrom(Home_EnergyBuffer.AsNativeArray());
             var PlanningAgents = entityCommandBuffer.SetBuffer<PlanningAgent>(jobIndex, stateEntity);
             PlanningAgents.CopyFrom(PlanningAgentBuffer.AsNativeArray());
 
@@ -379,12 +460,15 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                 TraitBasedObjects = traitBasedObjects,
                 TraitBasedObjectIds = traitBasedObjectIds,
 
-                PetBuffer = Pets,
+                MoveableBuffer = Moveables,
                 LocationBuffer = Locations,
+                NeedBuffer = Needs,
+                PetBuffer = Pets,
                 Tree_FoodBuffer = Tree_Foods,
                 Pet_TimeBuffer = Pet_Times,
-                NeedBuffer = Needs,
-                MoveableBuffer = Moveables,
+                Lake_DrinkBuffer = Lake_Drinks,
+                Table_HappinessBuffer = Table_Happinesss,
+                Home_EnergyBuffer = Home_Energys,
                 PlanningAgentBuffer = PlanningAgents,
             };
         }
@@ -399,15 +483,25 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
             for (int i = 0; i < types.Length; i++)
             {
                 var t = types[i];
-                if (t.TypeIndex == s_PetTypeIndex)
+                if (t.TypeIndex == s_MoveableTypeIndex)
                 {
-                    PetBuffer.Add(default);
-                    traitBasedObject.PetIndex = (byte) (PetBuffer.Length - 1);
+                    MoveableBuffer.Add(default);
+                    traitBasedObject.MoveableIndex = (byte) (MoveableBuffer.Length - 1);
                 }
                 else if (t.TypeIndex == s_LocationTypeIndex)
                 {
                     LocationBuffer.Add(default);
                     traitBasedObject.LocationIndex = (byte) (LocationBuffer.Length - 1);
+                }
+                else if (t.TypeIndex == s_NeedTypeIndex)
+                {
+                    NeedBuffer.Add(default);
+                    traitBasedObject.NeedIndex = (byte) (NeedBuffer.Length - 1);
+                }
+                else if (t.TypeIndex == s_PetTypeIndex)
+                {
+                    PetBuffer.Add(default);
+                    traitBasedObject.PetIndex = (byte) (PetBuffer.Length - 1);
                 }
                 else if (t.TypeIndex == s_Tree_FoodTypeIndex)
                 {
@@ -419,15 +513,20 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                     Pet_TimeBuffer.Add(default);
                     traitBasedObject.Pet_TimeIndex = (byte) (Pet_TimeBuffer.Length - 1);
                 }
-                else if (t.TypeIndex == s_NeedTypeIndex)
+                else if (t.TypeIndex == s_Lake_DrinkTypeIndex)
                 {
-                    NeedBuffer.Add(default);
-                    traitBasedObject.NeedIndex = (byte) (NeedBuffer.Length - 1);
+                    Lake_DrinkBuffer.Add(default);
+                    traitBasedObject.Lake_DrinkIndex = (byte) (Lake_DrinkBuffer.Length - 1);
                 }
-                else if (t.TypeIndex == s_MoveableTypeIndex)
+                else if (t.TypeIndex == s_Table_HappinessTypeIndex)
                 {
-                    MoveableBuffer.Add(default);
-                    traitBasedObject.MoveableIndex = (byte) (MoveableBuffer.Length - 1);
+                    Table_HappinessBuffer.Add(default);
+                    traitBasedObject.Table_HappinessIndex = (byte) (Table_HappinessBuffer.Length - 1);
+                }
+                else if (t.TypeIndex == s_Home_EnergyTypeIndex)
+                {
+                    Home_EnergyBuffer.Add(default);
+                    traitBasedObject.Home_EnergyIndex = (byte) (Home_EnergyBuffer.Length - 1);
                 }
                 else if (t.TypeIndex == s_PlanningAgentTypeIndex)
                 {
@@ -461,17 +560,17 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                         UnsafeUtility.CopyStructureToPtr(ref traitData, UnsafeUtility.AddressOf(ref plannerTraitData));
                         SetTraitOnObject(plannerTraitData, ref traitBasedObject);
                     }
-                    if (type == typeof(Generated.Semantic.Traits.Pet_TimeData))
-                    {
-                        var traitData = sourceEntityManager.GetComponentData<Generated.Semantic.Traits.Pet_TimeData>(sourceEntity);
-                        var plannerTraitData = new Pet_Time();
-                        UnsafeUtility.CopyStructureToPtr(ref traitData, UnsafeUtility.AddressOf(ref plannerTraitData));
-                        SetTraitOnObject(plannerTraitData, ref traitBasedObject);
-                    }
                     if (type == typeof(Generated.Semantic.Traits.NeedData))
                     {
                         var traitData = sourceEntityManager.GetComponentData<Generated.Semantic.Traits.NeedData>(sourceEntity);
                         var plannerTraitData = new Need();
+                        UnsafeUtility.CopyStructureToPtr(ref traitData, UnsafeUtility.AddressOf(ref plannerTraitData));
+                        SetTraitOnObject(plannerTraitData, ref traitBasedObject);
+                    }
+                    if (type == typeof(Generated.Semantic.Traits.Pet_TimeData))
+                    {
+                        var traitData = sourceEntityManager.GetComponentData<Generated.Semantic.Traits.Pet_TimeData>(sourceEntity);
+                        var plannerTraitData = new Pet_Time();
                         UnsafeUtility.CopyStructureToPtr(ref traitData, UnsafeUtility.AddressOf(ref plannerTraitData));
                         SetTraitOnObject(plannerTraitData, ref traitBasedObject);
                     }
@@ -481,18 +580,24 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
 
         public void SetTraitOnObject(ITrait trait, ref TraitBasedObject traitBasedObject)
         {
-            if (trait is Pet PetTrait)
-                SetTraitOnObject(PetTrait, ref traitBasedObject);
+            if (trait is Moveable MoveableTrait)
+                SetTraitOnObject(MoveableTrait, ref traitBasedObject);
             else if (trait is Location LocationTrait)
                 SetTraitOnObject(LocationTrait, ref traitBasedObject);
+            else if (trait is Need NeedTrait)
+                SetTraitOnObject(NeedTrait, ref traitBasedObject);
+            else if (trait is Pet PetTrait)
+                SetTraitOnObject(PetTrait, ref traitBasedObject);
             else if (trait is Tree_Food Tree_FoodTrait)
                 SetTraitOnObject(Tree_FoodTrait, ref traitBasedObject);
             else if (trait is Pet_Time Pet_TimeTrait)
                 SetTraitOnObject(Pet_TimeTrait, ref traitBasedObject);
-            else if (trait is Need NeedTrait)
-                SetTraitOnObject(NeedTrait, ref traitBasedObject);
-            else if (trait is Moveable MoveableTrait)
-                SetTraitOnObject(MoveableTrait, ref traitBasedObject);
+            else if (trait is Lake_Drink Lake_DrinkTrait)
+                SetTraitOnObject(Lake_DrinkTrait, ref traitBasedObject);
+            else if (trait is Table_Happiness Table_HappinessTrait)
+                SetTraitOnObject(Table_HappinessTrait, ref traitBasedObject);
+            else if (trait is Home_Energy Home_EnergyTrait)
+                SetTraitOnObject(Home_EnergyTrait, ref traitBasedObject);
             else if (trait is PlanningAgent PlanningAgentTrait)
                 SetTraitOnObject(PlanningAgentTrait, ref traitBasedObject);
             else 
@@ -501,18 +606,24 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
 
         public void SetTraitOnObjectAtIndex(ITrait trait, int traitBasedObjectIndex)
         {
-            if (trait is Pet PetTrait)
-                SetTraitOnObjectAtIndex(PetTrait, traitBasedObjectIndex);
+            if (trait is Moveable MoveableTrait)
+                SetTraitOnObjectAtIndex(MoveableTrait, traitBasedObjectIndex);
             else if (trait is Location LocationTrait)
                 SetTraitOnObjectAtIndex(LocationTrait, traitBasedObjectIndex);
+            else if (trait is Need NeedTrait)
+                SetTraitOnObjectAtIndex(NeedTrait, traitBasedObjectIndex);
+            else if (trait is Pet PetTrait)
+                SetTraitOnObjectAtIndex(PetTrait, traitBasedObjectIndex);
             else if (trait is Tree_Food Tree_FoodTrait)
                 SetTraitOnObjectAtIndex(Tree_FoodTrait, traitBasedObjectIndex);
             else if (trait is Pet_Time Pet_TimeTrait)
                 SetTraitOnObjectAtIndex(Pet_TimeTrait, traitBasedObjectIndex);
-            else if (trait is Need NeedTrait)
-                SetTraitOnObjectAtIndex(NeedTrait, traitBasedObjectIndex);
-            else if (trait is Moveable MoveableTrait)
-                SetTraitOnObjectAtIndex(MoveableTrait, traitBasedObjectIndex);
+            else if (trait is Lake_Drink Lake_DrinkTrait)
+                SetTraitOnObjectAtIndex(Lake_DrinkTrait, traitBasedObjectIndex);
+            else if (trait is Table_Happiness Table_HappinessTrait)
+                SetTraitOnObjectAtIndex(Table_HappinessTrait, traitBasedObjectIndex);
+            else if (trait is Home_Energy Home_EnergyTrait)
+                SetTraitOnObjectAtIndex(Home_EnergyTrait, traitBasedObjectIndex);
             else if (trait is PlanningAgent PlanningAgentTrait)
                 SetTraitOnObjectAtIndex(PlanningAgentTrait, traitBasedObjectIndex);
             else 
@@ -618,12 +729,15 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                 return false;
 
 
-            RemoveTraitOnObject<Pet>(ref traitBasedObject);
+            RemoveTraitOnObject<Moveable>(ref traitBasedObject);
             RemoveTraitOnObject<Location>(ref traitBasedObject);
+            RemoveTraitOnObject<Need>(ref traitBasedObject);
+            RemoveTraitOnObject<Pet>(ref traitBasedObject);
             RemoveTraitOnObject<Tree_Food>(ref traitBasedObject);
             RemoveTraitOnObject<Pet_Time>(ref traitBasedObject);
-            RemoveTraitOnObject<Need>(ref traitBasedObject);
-            RemoveTraitOnObject<Moveable>(ref traitBasedObject);
+            RemoveTraitOnObject<Lake_Drink>(ref traitBasedObject);
+            RemoveTraitOnObject<Table_Happiness>(ref traitBasedObject);
+            RemoveTraitOnObject<Home_Energy>(ref traitBasedObject);
             RemoveTraitOnObject<PlanningAgent>(ref traitBasedObject);
 
             TraitBasedObjects.RemoveAt(objectIndex);
@@ -709,12 +823,15 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
 
         public bool RemoveTraitBasedObjectAtIndex(int traitBasedObjectIndex)
         {
-            RemoveTraitOnObjectAtIndex<Pet>(traitBasedObjectIndex);
+            RemoveTraitOnObjectAtIndex<Moveable>(traitBasedObjectIndex);
             RemoveTraitOnObjectAtIndex<Location>(traitBasedObjectIndex);
+            RemoveTraitOnObjectAtIndex<Need>(traitBasedObjectIndex);
+            RemoveTraitOnObjectAtIndex<Pet>(traitBasedObjectIndex);
             RemoveTraitOnObjectAtIndex<Tree_Food>(traitBasedObjectIndex);
             RemoveTraitOnObjectAtIndex<Pet_Time>(traitBasedObjectIndex);
-            RemoveTraitOnObjectAtIndex<Need>(traitBasedObjectIndex);
-            RemoveTraitOnObjectAtIndex<Moveable>(traitBasedObjectIndex);
+            RemoveTraitOnObjectAtIndex<Lake_Drink>(traitBasedObjectIndex);
+            RemoveTraitOnObjectAtIndex<Table_Happiness>(traitBasedObjectIndex);
+            RemoveTraitOnObjectAtIndex<Home_Energy>(traitBasedObjectIndex);
             RemoveTraitOnObjectAtIndex<PlanningAgent>(traitBasedObjectIndex);
 
             TraitBasedObjects.RemoveAt(traitBasedObjectIndex);
@@ -807,18 +924,24 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
             switch (index)
             {
                 case 0:
-                    return PetBuffer.Reinterpret<T>();
+                    return MoveableBuffer.Reinterpret<T>();
                 case 1:
                     return LocationBuffer.Reinterpret<T>();
                 case 2:
-                    return Tree_FoodBuffer.Reinterpret<T>();
-                case 3:
-                    return Pet_TimeBuffer.Reinterpret<T>();
-                case 4:
                     return NeedBuffer.Reinterpret<T>();
+                case 3:
+                    return PetBuffer.Reinterpret<T>();
+                case 4:
+                    return Tree_FoodBuffer.Reinterpret<T>();
                 case 5:
-                    return MoveableBuffer.Reinterpret<T>();
+                    return Pet_TimeBuffer.Reinterpret<T>();
                 case 6:
+                    return Lake_DrinkBuffer.Reinterpret<T>();
+                case 7:
+                    return Table_HappinessBuffer.Reinterpret<T>();
+                case 8:
+                    return Home_EnergyBuffer.Reinterpret<T>();
+                case 9:
                     return PlanningAgentBuffer.Reinterpret<T>();
             }
 
@@ -834,12 +957,15 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
 
             // Easy check is to make sure each state has the same number of trait-based objects
             if (TraitBasedObjects.Length != rhsState.TraitBasedObjects.Length
-                || PetBuffer.Length != rhsState.PetBuffer.Length
+                || MoveableBuffer.Length != rhsState.MoveableBuffer.Length
                 || LocationBuffer.Length != rhsState.LocationBuffer.Length
+                || NeedBuffer.Length != rhsState.NeedBuffer.Length
+                || PetBuffer.Length != rhsState.PetBuffer.Length
                 || Tree_FoodBuffer.Length != rhsState.Tree_FoodBuffer.Length
                 || Pet_TimeBuffer.Length != rhsState.Pet_TimeBuffer.Length
-                || NeedBuffer.Length != rhsState.NeedBuffer.Length
-                || MoveableBuffer.Length != rhsState.MoveableBuffer.Length
+                || Lake_DrinkBuffer.Length != rhsState.Lake_DrinkBuffer.Length
+                || Table_HappinessBuffer.Length != rhsState.Table_HappinessBuffer.Length
+                || Home_EnergyBuffer.Length != rhsState.Home_EnergyBuffer.Length
                 || PlanningAgentBuffer.Length != rhsState.PlanningAgentBuffer.Length)
                 return false;
 
@@ -854,12 +980,15 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
         {
             // Easy check is to make sure each state has the same number of domain objects
             if (TraitBasedObjects.Length != rhsState.TraitBasedObjects.Length
-                || PetBuffer.Length != rhsState.PetBuffer.Length
+                || MoveableBuffer.Length != rhsState.MoveableBuffer.Length
                 || LocationBuffer.Length != rhsState.LocationBuffer.Length
+                || NeedBuffer.Length != rhsState.NeedBuffer.Length
+                || PetBuffer.Length != rhsState.PetBuffer.Length
                 || Tree_FoodBuffer.Length != rhsState.Tree_FoodBuffer.Length
                 || Pet_TimeBuffer.Length != rhsState.Pet_TimeBuffer.Length
-                || NeedBuffer.Length != rhsState.NeedBuffer.Length
-                || MoveableBuffer.Length != rhsState.MoveableBuffer.Length
+                || Lake_DrinkBuffer.Length != rhsState.Lake_DrinkBuffer.Length
+                || Table_HappinessBuffer.Length != rhsState.Table_HappinessBuffer.Length
+                || Home_EnergyBuffer.Length != rhsState.Home_EnergyBuffer.Length
                 || PlanningAgentBuffer.Length != rhsState.PlanningAgentBuffer.Length)
                 return false;
 
@@ -933,15 +1062,18 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                 return false;
 
 
+            if (traitBasedObjectLHS.NeedIndex != TraitBasedObject.Unset
+                && !NeedTraitAttributesEqual(NeedBuffer[traitBasedObjectLHS.NeedIndex], rhsState.NeedBuffer[traitBasedObjectRHS.NeedIndex]))
+                return false;
+
+
+
 
             if (traitBasedObjectLHS.Pet_TimeIndex != TraitBasedObject.Unset
                 && !Pet_TimeTraitAttributesEqual(Pet_TimeBuffer[traitBasedObjectLHS.Pet_TimeIndex], rhsState.Pet_TimeBuffer[traitBasedObjectRHS.Pet_TimeIndex]))
                 return false;
 
 
-            if (traitBasedObjectLHS.NeedIndex != TraitBasedObject.Unset
-                && !NeedTraitAttributesEqual(NeedBuffer[traitBasedObjectLHS.NeedIndex], rhsState.NeedBuffer[traitBasedObjectRHS.NeedIndex]))
-                return false;
 
 
 
@@ -956,18 +1088,24 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                     one.Forward == two.Forward;
         }
         
-        bool Pet_TimeTraitAttributesEqual(Pet_Time one, Pet_Time two)
-        {
-            return
-                    one.Value == two.Value;
-        }
-        
         bool NeedTraitAttributesEqual(Need one, Need two)
         {
             return
                     one.NeedType == two.NeedType && 
-                    one.Level == two.Level && 
-                    one.Tick == two.Tick;
+                    one.HungerLevel == two.HungerLevel && 
+                    one.HungerTick == two.HungerTick && 
+                    one.ThirstLevel == two.ThirstLevel && 
+                    one.ThirstTick == two.ThirstTick && 
+                    one.HappinessLevel == two.HappinessLevel && 
+                    one.HappinessTick == two.HappinessTick && 
+                    one.EnergyLevel == two.EnergyLevel && 
+                    one.EnergyTick == two.EnergyTick;
+        }
+        
+        bool Pet_TimeTraitAttributesEqual(Pet_Time one, Pet_Time two)
+        {
+            return
+                    one.Value == two.Value;
         }
         
         bool CheckRelationsAndQueueObjects(TraitBasedObject traitBasedObjectLHS, TraitBasedObject traitBasedObjectRHS, StateData rhsState, ObjectCorrespondence objectMap)
@@ -983,7 +1121,7 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
 
             int bufferLength;
 
-            bufferLength = PetBuffer.Length;
+            bufferLength = MoveableBuffer.Length;
             for (int i = 0; i < bufferLength; i++)
             {
                 var value = 397;
@@ -996,6 +1134,28 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                 var value = 397
                     ^ element.Position.GetHashCode()
                     ^ element.Forward.GetHashCode();
+                stateHashValue = 3860031 + (stateHashValue + value) * 2779 + (stateHashValue * value * 2);
+            }
+            bufferLength = NeedBuffer.Length;
+            for (int i = 0; i < bufferLength; i++)
+            {
+                var element = NeedBuffer[i];
+                var value = 397
+                    ^ (int) element.NeedType
+                    ^ element.HungerLevel.GetHashCode()
+                    ^ element.HungerTick.GetHashCode()
+                    ^ element.ThirstLevel.GetHashCode()
+                    ^ element.ThirstTick.GetHashCode()
+                    ^ element.HappinessLevel.GetHashCode()
+                    ^ element.HappinessTick.GetHashCode()
+                    ^ element.EnergyLevel.GetHashCode()
+                    ^ element.EnergyTick.GetHashCode();
+                stateHashValue = 3860031 + (stateHashValue + value) * 2779 + (stateHashValue * value * 2);
+            }
+            bufferLength = PetBuffer.Length;
+            for (int i = 0; i < bufferLength; i++)
+            {
+                var value = 397;
                 stateHashValue = 3860031 + (stateHashValue + value) * 2779 + (stateHashValue * value * 2);
             }
             bufferLength = Tree_FoodBuffer.Length;
@@ -1012,17 +1172,19 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                     ^ element.Value.GetHashCode();
                 stateHashValue = 3860031 + (stateHashValue + value) * 2779 + (stateHashValue * value * 2);
             }
-            bufferLength = NeedBuffer.Length;
+            bufferLength = Lake_DrinkBuffer.Length;
             for (int i = 0; i < bufferLength; i++)
             {
-                var element = NeedBuffer[i];
-                var value = 397
-                    ^ (int) element.NeedType
-                    ^ element.Level.GetHashCode()
-                    ^ element.Tick.GetHashCode();
+                var value = 397;
                 stateHashValue = 3860031 + (stateHashValue + value) * 2779 + (stateHashValue * value * 2);
             }
-            bufferLength = MoveableBuffer.Length;
+            bufferLength = Table_HappinessBuffer.Length;
+            for (int i = 0; i < bufferLength; i++)
+            {
+                var value = 397;
+                stateHashValue = 3860031 + (stateHashValue + value) * 2779 + (stateHashValue * value * 2);
+            }
+            bufferLength = Home_EnergyBuffer.Length;
             for (int i = 0; i < bufferLength; i++)
             {
                 var value = 397;
@@ -1054,11 +1216,19 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
 
                 var traitIndex = traitBasedObject[i++];
                 if (traitIndex != TraitBasedObject.Unset)
-                    sb.AppendLine(PetBuffer[traitIndex].ToString());
+                    sb.AppendLine(MoveableBuffer[traitIndex].ToString());
 
                 traitIndex = traitBasedObject[i++];
                 if (traitIndex != TraitBasedObject.Unset)
                     sb.AppendLine(LocationBuffer[traitIndex].ToString());
+
+                traitIndex = traitBasedObject[i++];
+                if (traitIndex != TraitBasedObject.Unset)
+                    sb.AppendLine(NeedBuffer[traitIndex].ToString());
+
+                traitIndex = traitBasedObject[i++];
+                if (traitIndex != TraitBasedObject.Unset)
+                    sb.AppendLine(PetBuffer[traitIndex].ToString());
 
                 traitIndex = traitBasedObject[i++];
                 if (traitIndex != TraitBasedObject.Unset)
@@ -1070,11 +1240,15 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
 
                 traitIndex = traitBasedObject[i++];
                 if (traitIndex != TraitBasedObject.Unset)
-                    sb.AppendLine(NeedBuffer[traitIndex].ToString());
+                    sb.AppendLine(Lake_DrinkBuffer[traitIndex].ToString());
 
                 traitIndex = traitBasedObject[i++];
                 if (traitIndex != TraitBasedObject.Unset)
-                    sb.AppendLine(MoveableBuffer[traitIndex].ToString());
+                    sb.AppendLine(Table_HappinessBuffer[traitIndex].ToString());
+
+                traitIndex = traitBasedObject[i++];
+                if (traitIndex != TraitBasedObject.Unset)
+                    sb.AppendLine(Home_EnergyBuffer[traitIndex].ToString());
 
                 traitIndex = traitBasedObject[i++];
                 if (traitIndex != TraitBasedObject.Unset)
@@ -1097,12 +1271,15 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
         [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<TraitBasedObject> TraitBasedObjects;
         [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<TraitBasedObjectId> TraitBasedObjectIds;
 
-        [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<Pet> PetData;
+        [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<Moveable> MoveableData;
         [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<Location> LocationData;
+        [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<Need> NeedData;
+        [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<Pet> PetData;
         [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<Tree_Food> Tree_FoodData;
         [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<Pet_Time> Pet_TimeData;
-        [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<Need> NeedData;
-        [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<Moveable> MoveableData;
+        [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<Lake_Drink> Lake_DrinkData;
+        [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<Table_Happiness> Table_HappinessData;
+        [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<Home_Energy> Home_EnergyData;
         [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<PlanningAgent> PlanningAgentData;
 
         [NativeDisableContainerSafetyRestriction,ReadOnly] ObjectCorrespondence m_ObjectCorrespondence;
@@ -1113,12 +1290,15 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
             TraitBasedObjects = system.GetBufferFromEntity<TraitBasedObject>(true);
             TraitBasedObjectIds = system.GetBufferFromEntity<TraitBasedObjectId>(true);
 
-            PetData = system.GetBufferFromEntity<Pet>(true);
+            MoveableData = system.GetBufferFromEntity<Moveable>(true);
             LocationData = system.GetBufferFromEntity<Location>(true);
+            NeedData = system.GetBufferFromEntity<Need>(true);
+            PetData = system.GetBufferFromEntity<Pet>(true);
             Tree_FoodData = system.GetBufferFromEntity<Tree_Food>(true);
             Pet_TimeData = system.GetBufferFromEntity<Pet_Time>(true);
-            NeedData = system.GetBufferFromEntity<Need>(true);
-            MoveableData = system.GetBufferFromEntity<Moveable>(true);
+            Lake_DrinkData = system.GetBufferFromEntity<Lake_Drink>(true);
+            Table_HappinessData = system.GetBufferFromEntity<Table_Happiness>(true);
+            Home_EnergyData = system.GetBufferFromEntity<Home_Energy>(true);
             PlanningAgentData = system.GetBufferFromEntity<PlanningAgent>(true);
 
             m_StateArchetype = stateArchetype;
@@ -1137,12 +1317,15 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                 TraitBasedObjects = TraitBasedObjects[stateEntity],
                 TraitBasedObjectIds = TraitBasedObjectIds[stateEntity],
 
-                PetBuffer = PetData[stateEntity],
+                MoveableBuffer = MoveableData[stateEntity],
                 LocationBuffer = LocationData[stateEntity],
+                NeedBuffer = NeedData[stateEntity],
+                PetBuffer = PetData[stateEntity],
                 Tree_FoodBuffer = Tree_FoodData[stateEntity],
                 Pet_TimeBuffer = Pet_TimeData[stateEntity],
-                NeedBuffer = NeedData[stateEntity],
-                MoveableBuffer = MoveableData[stateEntity],
+                Lake_DrinkBuffer = Lake_DrinkData[stateEntity],
+                Table_HappinessBuffer = Table_HappinessData[stateEntity],
+                Home_EnergyBuffer = Home_EnergyData[stateEntity],
                 PlanningAgentBuffer = PlanningAgentData[stateEntity],
             };
         }
@@ -1233,12 +1416,15 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
         protected override void OnCreate()
         {
             m_StateArchetype = base.EntityManager.CreateArchetype(typeof(State), typeof(TraitBasedObject), typeof(TraitBasedObjectId), typeof(HashCode),
-                typeof(Pet),
+                typeof(Moveable),
                 typeof(Location),
+                typeof(Need),
+                typeof(Pet),
                 typeof(Tree_Food),
                 typeof(Pet_Time),
-                typeof(Need),
-                typeof(Moveable),
+                typeof(Lake_Drink),
+                typeof(Table_Happiness),
+                typeof(Home_Energy),
                 typeof(PlanningAgent));
 
             m_EntityCommandBuffers = new List<EntityCommandBuffer>();
