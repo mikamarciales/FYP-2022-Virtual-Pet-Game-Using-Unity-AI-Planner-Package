@@ -5,7 +5,7 @@ using UnityEngine;
 //[System.Serializable]
 namespace VirtualPetGame
 {
-    public class Pet : MonoBehaviour
+    public abstract class Pet : MonoBehaviour
     {
         public string lastTimeFed, lastTimeDrank, lastTimeHappy, lastTimeEnergised;
         public int food, drink, happiness, energy;
