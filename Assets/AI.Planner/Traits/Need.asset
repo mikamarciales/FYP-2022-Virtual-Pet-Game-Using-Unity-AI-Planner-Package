@@ -17,7 +17,13 @@ MonoBehaviour:
   - id: 0
   - id: 1
   - id: 2
-  m_NextElementId: 4
+  - id: 3
+  - id: 4
+  - id: 5
+  - id: 6
+  - id: 7
+  - id: 8
+  m_NextElementId: 10
   references:
     version: 1
     00000000:
@@ -30,12 +36,48 @@ MonoBehaviour:
     00000001:
       type: {class: IntProperty, ns: Unity.Semantic.Traits, asm: Unity.Semantic.Traits}
       data:
-        m_Name: Level
+        m_Name: HungerLevel
         m_Id: 1
         m_Value: 100
     00000002:
       type: {class: IntProperty, ns: Unity.Semantic.Traits, asm: Unity.Semantic.Traits}
       data:
-        m_Name: Tick
+        m_Name: HungerTick
         m_Id: 2
-        m_Value: 1
+        m_Value: 10
+    00000003:
+      type: {class: IntProperty, ns: Unity.Semantic.Traits, asm: Unity.Semantic.Traits}
+      data:
+        m_Name: ThirstLevel
+        m_Id: 4
+        m_Value: 100
+    00000004:
+      type: {class: IntProperty, ns: Unity.Semantic.Traits, asm: Unity.Semantic.Traits}
+      data:
+        m_Name: ThirstTick
+        m_Id: 5
+        m_Value: 7
+    00000005:
+      type: {class: IntProperty, ns: Unity.Semantic.Traits, asm: Unity.Semantic.Traits}
+      data:
+        m_Name: HappinessLevel
+        m_Id: 6
+        m_Value: 100
+    00000006:
+      type: {class: IntProperty, ns: Unity.Semantic.Traits, asm: Unity.Semantic.Traits}
+      data:
+        m_Name: HappinessTick
+        m_Id: 7
+        m_Value: 2
+    00000007:
+      type: {class: IntProperty, ns: Unity.Semantic.Traits, asm: Unity.Semantic.Traits}
+      data:
+        m_Name: EnergyLevel
+        m_Id: 8
+        m_Value: 100
+    00000008:
+      type: {class: IntProperty, ns: Unity.Semantic.Traits, asm: Unity.Semantic.Traits}
+      data:
+        m_Name: EnergyTick
+        m_Id: 9
+        m_Value: 5

@@ -10,17 +10,23 @@ namespace Generated.Semantic.Traits
     public partial struct NeedData : ITraitData, IEquatable<NeedData>
     {
         public Generated.Semantic.Traits.Enums.NeedType NeedType;
-        public System.Int32 Level;
-        public System.Int32 Tick;
+        public System.Int32 HungerLevel;
+        public System.Int32 HungerTick;
+        public System.Int32 ThirstLevel;
+        public System.Int32 ThirstTick;
+        public System.Int32 HappinessLevel;
+        public System.Int32 HappinessTick;
+        public System.Int32 EnergyLevel;
+        public System.Int32 EnergyTick;
 
         public bool Equals(NeedData other)
         {
-            return NeedType.Equals(other.NeedType) && Level.Equals(other.Level) && Tick.Equals(other.Tick);
+            return NeedType.Equals(other.NeedType) && HungerLevel.Equals(other.HungerLevel) && HungerTick.Equals(other.HungerTick) && ThirstLevel.Equals(other.ThirstLevel) && ThirstTick.Equals(other.ThirstTick) && HappinessLevel.Equals(other.HappinessLevel) && HappinessTick.Equals(other.HappinessTick) && EnergyLevel.Equals(other.EnergyLevel) && EnergyTick.Equals(other.EnergyTick);
         }
 
         public override string ToString()
         {
-            return $"Need: {NeedType} {Level} {Tick}";
+            return $"Need: {NeedType} {HungerLevel} {HungerTick} {ThirstLevel} {ThirstTick} {HappinessLevel} {HappinessTick} {EnergyLevel} {EnergyTick}";
         }
     }
 }

@@ -44,40 +44,12 @@ MonoBehaviour:
     m_LimitComparerType: 
     m_LimitComparerReference: 
   m_Preconditions:
-  - m_Operator: '!='
-    m_CustomOperatorType: 
-    m_OperandA:
-      m_Parameter: agent
-      m_Trait: {fileID: 11400000, guid: 6b7c2cd8001b84552891cf17ebf8b587, type: 2}
-      m_TraitPropertyId: 0
-      m_Enum: {fileID: 0}
-      m_Value: 
-    m_OperandB:
-      m_Parameter: table
-      m_Trait: {fileID: 11400000, guid: 6b7c2cd8001b84552891cf17ebf8b587, type: 2}
-      m_TraitPropertyId: 0
-      m_Enum: {fileID: 0}
-      m_Value: 
-  - m_Operator: ==
-    m_CustomOperatorType: 
-    m_OperandA:
-      m_Parameter: happiness
-      m_Trait: {fileID: 11400000, guid: b738c091b6daf4a29bdc0b46da0dd3f8, type: 2}
-      m_TraitPropertyId: 0
-      m_Enum: {fileID: 0}
-      m_Value: 
-    m_OperandB:
-      m_Parameter: 
-      m_Trait: {fileID: 0}
-      m_TraitPropertyId: -1
-      m_Enum: {fileID: 11400000, guid: dec1700a15b4e433693d524d77540c63, type: 2}
-      m_Value: Happiness
   - m_Operator: <=
     m_CustomOperatorType: 
     m_OperandA:
       m_Parameter: happiness
       m_Trait: {fileID: 11400000, guid: b738c091b6daf4a29bdc0b46da0dd3f8, type: 2}
-      m_TraitPropertyId: 1
+      m_TraitPropertyId: 6
       m_Enum: {fileID: 0}
       m_Value: 
     m_OperandB:
@@ -89,20 +61,20 @@ MonoBehaviour:
   m_CreatedObjects: []
   m_RemovedObjects: []
   m_ObjectModifiers:
-  - m_Operator: =
+  - m_Operator: +=
     m_CustomOperatorType: 
     m_OperandA:
       m_Parameter: happiness
       m_Trait: {fileID: 11400000, guid: b738c091b6daf4a29bdc0b46da0dd3f8, type: 2}
-      m_TraitPropertyId: 1
+      m_TraitPropertyId: 6
       m_Enum: {fileID: 0}
       m_Value: 
     m_OperandB:
-      m_Parameter: 
-      m_Trait: {fileID: 0}
-      m_TraitPropertyId: -1
+      m_Parameter: happiness
+      m_Trait: {fileID: 11400000, guid: b738c091b6daf4a29bdc0b46da0dd3f8, type: 2}
+      m_TraitPropertyId: 7
       m_Enum: {fileID: 0}
-      m_Value: 100
+      m_Value: 
   - m_Operator: +=
     m_CustomOperatorType: 
     m_OperandA:
@@ -117,19 +89,19 @@ MonoBehaviour:
       m_TraitPropertyId: -1
       m_Enum: {fileID: 0}
       m_Value: 4
-  - m_Operator: =
-    m_CustomOperatorType: 
+  - m_Operator: Custom
+    m_CustomOperatorType: AI.Planner.Custom.PetAgentPlan.CustomPlayedEffects
     m_OperandA:
-      m_Parameter: agent
-      m_Trait: {fileID: 11400000, guid: 6b7c2cd8001b84552891cf17ebf8b587, type: 2}
+      m_Parameter: time
+      m_Trait: {fileID: 11400000, guid: 2c6580743559942118cb567835c8ed57, type: 2}
       m_TraitPropertyId: 0
       m_Enum: {fileID: 0}
       m_Value: 
     m_OperandB:
-      m_Parameter: table
-      m_Trait: {fileID: 11400000, guid: 6b7c2cd8001b84552891cf17ebf8b587, type: 2}
-      m_TraitPropertyId: 0
+      m_Parameter: 
+      m_Trait: {fileID: 0}
+      m_TraitPropertyId: -1
       m_Enum: {fileID: 0}
-      m_Value: 
-  m_Reward: -5
+      m_Value: 4
+  m_Reward: -2
   m_CustomRewards: []

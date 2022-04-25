@@ -36,14 +36,14 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/Scripts/Managers/PetManager.cs" />
-     <Compile Include="Assets/Scripts/Managers/TimingManager.cs" />
-     <Compile Include="Assets/Scripts/Controllers/PetController.cs" />
-     <Compile Include="Assets/Scripts/Controllers/UI/PetUIController.cs" />
-     <Compile Include="Assets/Scripts/Controllers/NeedsController.cs" />
-     <Compile Include="Assets/Scripts/Abstracts/Pet.cs" />
-     <Compile Include="Assets/Scripts/Managers/GameManager.cs" />
-     <Compile Include="Assets/AI.Planner/Custom/CustomUpdateNeeds.cs" />
+     <Compile Include="Assets/Scripts/AI Planner/PetAgent.cs" />
+     <Compile Include="Assets/Scripts/Base Game/Managers/PetManager.cs" />
+     <Compile Include="Assets/Scripts/Base Game/Managers/TimingManager.cs" />
+     <Compile Include="Assets/Scripts/Base Game/Controllers/PetController.cs" />
+     <Compile Include="Assets/Scripts/Base Game/Controllers/UI/PetUIController.cs" />
+     <Compile Include="Assets/Scripts/Base Game/Controllers/NeedsController.cs" />
+     <Compile Include="Assets/Scripts/Base Game/Abstracts/Pet.cs" />
+     <Compile Include="Assets/Scripts/Base Game/Managers/GameManager.cs" />
      <Compile Include="Assets/Resources/Art/Simple UI/Samples/IconPreview.cs" />
      <None Include="Assets/Resources/Art/Simple UI/Fonts/OFL.txt" />
     <Reference Include="UnityEngine">
@@ -691,9 +691,6 @@
     <Reference Include="Unity.2D.Animation.Triangle.Runtime">
         <HintPath>/Users/mikamarciales/Virtual Pet Game/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="AI.Planner.Custom">
-        <HintPath>/Users/mikamarciales/Virtual Pet Game/Library/ScriptAssemblies/AI.Planner.Custom.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Scenes">
         <HintPath>/Users/mikamarciales/Virtual Pet Game/Library/ScriptAssemblies/Unity.Scenes.dll</HintPath>
     </Reference>
@@ -712,11 +709,11 @@
     <Reference Include="Unity.Collections">
         <HintPath>/Users/mikamarciales/Virtual Pet Game/Library/ScriptAssemblies/Unity.Collections.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Common.Editor">
-        <HintPath>/Users/mikamarciales/Virtual Pet Game/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Transforms.Editor">
         <HintPath>/Users/mikamarciales/Virtual Pet Game/Library/ScriptAssemblies/Unity.Transforms.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Common.Editor">
+        <HintPath>/Users/mikamarciales/Virtual Pet Game/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Build.SlimPlayerRuntime">
         <HintPath>/Users/mikamarciales/Virtual Pet Game/Library/ScriptAssemblies/Unity.Build.SlimPlayerRuntime.dll</HintPath>
@@ -831,6 +828,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="AI.Planner.Custom.csproj">
+      <Project>{ec82f1c3-3b9b-6d76-29d5-6ee2ac32def2}</Project>
+      <Name>AI.Planner.Custom</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
