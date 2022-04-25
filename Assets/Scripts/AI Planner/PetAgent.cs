@@ -77,7 +77,7 @@ namespace VirtualPetGame
                 PetManager.instance.Die();
             }
 
-            //if(needsController.food > 100) needsController.food = 100;
+            if(needsController.food > 100) needsController.food = 100;
 
             yield return new WaitForSeconds(0.5f);
         }

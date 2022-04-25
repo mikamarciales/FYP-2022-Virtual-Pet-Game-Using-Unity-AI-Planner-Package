@@ -60,7 +60,7 @@ namespace VirtualPetGame
             {
                 PetManager.instance.Die();
             }
-            //else if(food > 100) food = 100;
+            else if(food > 100) food = 100;
         }
 
         public void FoodOnClick(int amount)
@@ -78,7 +78,7 @@ namespace VirtualPetGame
             {
                 PetManager.instance.Die();
             }
-            //else if(food > 100) food = 100;
+            else if(food > 100) food = 100;
         }
 
         public void ChangeDrink(int amount)
