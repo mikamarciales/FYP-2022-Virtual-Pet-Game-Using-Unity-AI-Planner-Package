@@ -50,7 +50,7 @@ namespace VirtualPetGame
             while (m_Target != null && !AtTarget())
             {
                 transform.position = Vector3.MoveTowards(transform.position, m_Target.transform.position, moveSpeed*Time.deltaTime);
-                Debug.Log("[AI] Pet moving!");
+                Debug.Log("[AI] Pet moving towards " + target + "!");
                 yield return null;
             }
 
@@ -76,7 +76,7 @@ namespace VirtualPetGame
                 PetManager.instance.Die();
             }
 
-            //if(food > 100) food = 100;
+            if(needsController.food > 100) needsController.food = 100;
 
             yield return new WaitForSeconds(0.5f);
         }
@@ -95,7 +95,7 @@ namespace VirtualPetGame
                 PetManager.instance.Die();
             }
 
-            //if(drink > 100) drink = 100;
+            if(needsController.drink > 100) needsController.drink = 100;
 
             yield return new WaitForSeconds(0.5f);
         }
@@ -114,7 +114,7 @@ namespace VirtualPetGame
                 PetManager.instance.Die();
             }
 
-            //if(happiness > 100) happiness = 100;
+            if(needsController.happiness > 100) needsController.happiness = 100;
 
             yield return new WaitForSeconds(0.5f);
         }
@@ -133,7 +133,7 @@ namespace VirtualPetGame
                 PetManager.instance.Die();
             }
 
-            //if(energy > 100) energy = 100;
+            if(needsController.energy > 100) needsController.energy = 100;
 
             yield return new WaitForSeconds(0.5f);
         }
@@ -154,7 +154,7 @@ namespace VirtualPetGame
             {
                 if (m_Move == default)
                 {
-                    var needItem = GameObject.FindWithTag("NeedItem");
+                    GameObject needItem = GameObject.FindGameObjectWithTag("NeedItem");
 
                     if (needItem != null)
                     {

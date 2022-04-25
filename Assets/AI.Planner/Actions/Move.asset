@@ -76,7 +76,7 @@ MonoBehaviour:
       m_TraitPropertyId: 0
       m_Enum: {fileID: 0}
       m_Value: 
-  m_Reward: 0
+  m_Reward: -2
   m_CustomRewards:
   - m_Operator: -=
     m_Typename: Unity.AI.Planner.Navigation.LocationDistance
