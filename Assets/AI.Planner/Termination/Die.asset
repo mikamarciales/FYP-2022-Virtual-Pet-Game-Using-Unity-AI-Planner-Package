@@ -35,5 +35,47 @@ MonoBehaviour:
       m_TraitPropertyId: -1
       m_Enum: {fileID: 0}
       m_Value: 0
+  - m_Operator: <=
+    m_CustomOperatorType: 
+    m_OperandA:
+      m_Parameter: need
+      m_Trait: {fileID: 11400000, guid: b738c091b6daf4a29bdc0b46da0dd3f8, type: 2}
+      m_TraitPropertyId: 4
+      m_Enum: {fileID: 0}
+      m_Value: 
+    m_OperandB:
+      m_Parameter: 
+      m_Trait: {fileID: 0}
+      m_TraitPropertyId: -1
+      m_Enum: {fileID: 0}
+      m_Value: 0
+  - m_Operator: <=
+    m_CustomOperatorType: 
+    m_OperandA:
+      m_Parameter: need
+      m_Trait: {fileID: 11400000, guid: b738c091b6daf4a29bdc0b46da0dd3f8, type: 2}
+      m_TraitPropertyId: 6
+      m_Enum: {fileID: 0}
+      m_Value: 
+    m_OperandB:
+      m_Parameter: 
+      m_Trait: {fileID: 0}
+      m_TraitPropertyId: -1
+      m_Enum: {fileID: 0}
+      m_Value: 0
+  - m_Operator: <=
+    m_CustomOperatorType: 
+    m_OperandA:
+      m_Parameter: need
+      m_Trait: {fileID: 11400000, guid: b738c091b6daf4a29bdc0b46da0dd3f8, type: 2}
+      m_TraitPropertyId: 8
+      m_Enum: {fileID: 0}
+      m_Value: 
+    m_OperandB:
+      m_Parameter: 
+      m_Trait: {fileID: 0}
+      m_TraitPropertyId: -1
+      m_Enum: {fileID: 0}
+      m_Value: 0
   m_TerminalReward: 0
   m_CustomTerminalRewards: []

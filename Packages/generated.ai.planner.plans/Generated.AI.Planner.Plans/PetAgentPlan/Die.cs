@@ -24,6 +24,15 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
                 
                 if (!(NeedBuffer[needObject.NeedIndex].HungerLevel <= 0))
                     continue;
+                
+                if (!(NeedBuffer[needObject.NeedIndex].ThirstLevel <= 0))
+                    continue;
+                
+                if (!(NeedBuffer[needObject.NeedIndex].HappinessLevel <= 0))
+                    continue;
+                
+                if (!(NeedBuffer[needObject.NeedIndex].EnergyLevel <= 0))
+                    continue;
                 needObjectIndices.Dispose();
                 needFilter.Dispose();
                 return true;

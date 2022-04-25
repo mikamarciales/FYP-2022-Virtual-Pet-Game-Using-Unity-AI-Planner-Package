@@ -40,7 +40,7 @@ namespace VirtualPetGame
 
         bool AtTarget()
         {
-            return Vector3.Distance(transform.position, m_Target.transform.position) < 0.1f;
+            return Vector3.Distance(transform.position, m_Target.transform.position) < 0.3f;
         }
 
         public IEnumerator Move(GameObject target)
@@ -50,7 +50,7 @@ namespace VirtualPetGame
             while (m_Target != null && !AtTarget())
             {
                 transform.position = Vector3.MoveTowards(transform.position, m_Target.transform.position, moveSpeed*Time.deltaTime);
-                Debug.Log("[AI] Pet moving towards " + target + "!");
+                //Debug.Log("[AI] Pet moving towards " + target + "!");
                 yield return null;
             }
 
@@ -64,6 +64,7 @@ namespace VirtualPetGame
 
         public IEnumerator Eat(GameObject target, int amount)
         {
+            Move(target);
             petController.Eat();
             needsController.food += amount;
             needsController.drink -= 3;
@@ -76,13 +77,14 @@ namespace VirtualPetGame
                 PetManager.instance.Die();
             }
 
-            if(needsController.food > 100) needsController.food = 100;
+            //if(needsController.food > 100) needsController.food = 100;
 
             yield return new WaitForSeconds(0.5f);
         }
 
         public IEnumerator Drink(GameObject target, int amount)
         {
+            Move(target);
             petController.Drink();
             needsController.drink += amount;
             needsController.food -= 5;
@@ -102,6 +104,7 @@ namespace VirtualPetGame
 
         public IEnumerator Play(GameObject target, int amount)
         {
+            Move(target);
             petController.Happy();
             needsController.happiness += amount;
             needsController.food -= 5;
@@ -121,6 +124,7 @@ namespace VirtualPetGame
 
         public IEnumerator Sleep(GameObject target, int amount)
         {
+            Move(target);
             petController.Tired();
             needsController.energy += amount;
             needsController.food -= 5;

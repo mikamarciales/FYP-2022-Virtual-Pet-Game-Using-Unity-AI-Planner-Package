@@ -51,7 +51,7 @@
     },
     {
       "FullName": "Generated.AI.Planner.StateRepresentation, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2022-04-21T16:30:13Z"
+      "LastWriteTime": "2022-04-25T23:12:14Z"
     },
     {
       "FullName": "Unity.Jobs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
@@ -59,15 +59,15 @@
     },
     {
       "FullName": "Generated.AI.Planner.Plans, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2022-04-21T16:30:13Z"
+      "LastWriteTime": "2022-04-25T23:12:15Z"
     },
     {
       "FullName": "Generated.Semantic.Traits, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2022-04-21T15:17:28Z"
+      "LastWriteTime": "2022-04-25T10:42:23Z"
     },
     {
       "FullName": "AI.Planner.Custom, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2022-04-21T16:28:13Z"
+      "LastWriteTime": "2022-04-25T23:14:22Z"
     },
     {
       "FullName": "System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
@@ -649,6 +649,40 @@
       ]
     },
     {
+      "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.Collections.NativeListDisposeJob>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
+      "ModuleOptionsHash": 8794384452606821980,
+      "ModuleHash": "96443db019558fb18ad5bebfb509e09d",
+      "LinkName": "352B6D5D03F8F621",
+      "AssemblyDependencyIndices": [
+        4,
+        3,
+        5,
+        1,
+        2,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.Collections.LowLevel.Unsafe.UnsafeHashMapDataDisposeJob>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
+      "ModuleOptionsHash": 8794384452606821980,
+      "ModuleHash": "2eae739789a29d1fa38c43fc2eef75c0",
+      "LinkName": "C0BB42F31A3089F2",
+      "AssemblyDependencyIndices": [
+        4,
+        3,
+        5,
+        1,
+        2,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
       "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.AI.Planner.Jobs.SelectionJob`2<Generated.AI.Planner.StateRepresentation.PetAgentPlan.StateEntityKey,Unity.AI.Planner.Traits.ActionKey>>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
       "ModuleOptionsHash": 8794384452606821980,
       "ModuleHash": "413c944a37cebbd10bd224b6f0f845bf",
@@ -669,9 +703,33 @@
       ]
     },
     {
+      "FullName": "System.Void Unity.Jobs.IJobParallelForDeferExtensions/JobParallelForDeferProducer`1<Generated.AI.Planner.Plans.PetAgentPlan.Move>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
+      "ModuleOptionsHash": 8794384452606821980,
+      "ModuleHash": "4992fcc9e1cef31b6f48e2d0a21abe04",
+      "LinkName": "64170F86C4CE8CB9",
+      "AssemblyDependencyIndices": [
+        13,
+        14,
+        1,
+        2,
+        4,
+        5,
+        12,
+        0,
+        11,
+        3,
+        15,
+        6,
+        16,
+        7,
+        8,
+        9
+      ]
+    },
+    {
       "FullName": "System.Void Unity.Jobs.IJobParallelForDeferExtensions/JobParallelForDeferProducer`1<Generated.AI.Planner.Plans.PetAgentPlan.Eat>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
       "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "eaae5c96a1a8b7c30a68f31afcb7ac64",
+      "ModuleHash": "1f584af3d6d279741a93fef3bd2f54cb",
       "LinkName": "41EC3BBF7B1FD821",
       "AssemblyDependencyIndices": [
         13,
@@ -693,10 +751,58 @@
       ]
     },
     {
-      "FullName": "System.Void Unity.Jobs.IJobParallelForDeferExtensions/JobParallelForDeferProducer`1<Generated.AI.Planner.Plans.PetAgentPlan.Move>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
+      "FullName": "System.Void Unity.Jobs.IJobParallelForDeferExtensions/JobParallelForDeferProducer`1<Generated.AI.Planner.Plans.PetAgentPlan.Drink>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
       "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "3056fcdb48013d0c663d449243956f52",
-      "LinkName": "64170F86C4CE8CB9",
+      "ModuleHash": "b44c64121f0de45e981370c38edfbffd",
+      "LinkName": "8186998465F79181",
+      "AssemblyDependencyIndices": [
+        13,
+        14,
+        1,
+        2,
+        4,
+        5,
+        12,
+        0,
+        11,
+        3,
+        15,
+        6,
+        16,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "FullName": "System.Void Unity.Jobs.IJobParallelForDeferExtensions/JobParallelForDeferProducer`1<Generated.AI.Planner.Plans.PetAgentPlan.Play>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
+      "ModuleOptionsHash": 8794384452606821980,
+      "ModuleHash": "5507e795fe2714d828fbbae9555bf192",
+      "LinkName": "D8C35939217DDDCD",
+      "AssemblyDependencyIndices": [
+        13,
+        14,
+        1,
+        2,
+        4,
+        5,
+        12,
+        0,
+        11,
+        3,
+        15,
+        6,
+        16,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "FullName": "System.Void Unity.Jobs.IJobParallelForDeferExtensions/JobParallelForDeferProducer`1<Generated.AI.Planner.Plans.PetAgentPlan.Sleep>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
+      "ModuleOptionsHash": 8794384452606821980,
+      "ModuleHash": "2de580d5267b6f75f54ccceea03d9783",
+      "LinkName": "3A9258F39ECCDAD1",
       "AssemblyDependencyIndices": [
         13,
         14,
@@ -739,7 +845,7 @@
     {
       "FullName": "System.Void Unity.Jobs.IJobParallelForDeferExtensions/JobParallelForDeferProducer`1<Unity.AI.Planner.Jobs.GraphExpansionJob`4<Generated.AI.Planner.StateRepresentation.PetAgentPlan.StateEntityKey,Generated.AI.Planner.StateRepresentation.PetAgentPlan.StateData,Generated.AI.Planner.StateRepresentation.PetAgentPlan.StateDataContext,Unity.AI.Planner.Traits.ActionKey>>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
       "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "8963b59aa8027f8f498b120a9f2b1d86",
+      "ModuleHash": "d6e588a55f20ce7dbfaa87506f8ea1a9",
       "LinkName": "563DAEF270EFC6E6",
       "AssemblyDependencyIndices": [
         13,
@@ -761,7 +867,7 @@
     {
       "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.AI.Planner.Jobs.DestroyStatesJob`3<Generated.AI.Planner.StateRepresentation.PetAgentPlan.StateEntityKey,Generated.AI.Planner.StateRepresentation.PetAgentPlan.StateData,Generated.AI.Planner.StateRepresentation.PetAgentPlan.StateDataContext>>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
       "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "aee7b7f599462e446246056766dcfdc8",
+      "ModuleHash": "42943907d1dc81bc7a8594b8f86d5fe2",
       "LinkName": "6E3ACCEC431BB44F",
       "AssemblyDependencyIndices": [
         4,
@@ -802,7 +908,7 @@
     {
       "FullName": "System.Void Unity.Jobs.IJobParallelForDeferExtensions/JobParallelForDeferProducer`1<Unity.AI.Planner.Jobs.EvaluateNewStatesJob`5<Generated.AI.Planner.StateRepresentation.PetAgentPlan.StateEntityKey,Generated.AI.Planner.StateRepresentation.PetAgentPlan.StateData,Generated.AI.Planner.StateRepresentation.PetAgentPlan.StateDataContext,Generated.AI.Planner.Plans.PetAgentPlan.DefaultCumulativeRewardEstimator,Generated.AI.Planner.Plans.PetAgentPlan.TerminationEvaluator>>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
       "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "561941ad9ac3583417d907ec926eebee",
+      "ModuleHash": "12eaa2cbd01812d37a2d1914edcfa8c5",
       "LinkName": "B242B7ABEF3EC83D",
       "AssemblyDependencyIndices": [
         13,
@@ -844,109 +950,45 @@
       ]
     },
     {
-      "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.Collections.NativeListDisposeJob>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
+      "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.AI.Planner.PlannerScheduler`9/CollectReachableStatesJob<Generated.AI.Planner.StateRepresentation.PetAgentPlan.StateEntityKey,Unity.AI.Planner.Traits.ActionKey,Generated.AI.Planner.StateRepresentation.PetAgentPlan.StateManager,Generated.AI.Planner.StateRepresentation.PetAgentPlan.StateData,Generated.AI.Planner.StateRepresentation.PetAgentPlan.StateDataContext,Generated.AI.Planner.Plans.PetAgentPlan.ActionScheduler,Generated.AI.Planner.Plans.PetAgentPlan.DefaultCumulativeRewardEstimator,Generated.AI.Planner.Plans.PetAgentPlan.TerminationEvaluator,Generated.AI.Planner.StateRepresentation.PetAgentPlan.DestroyStatesJobScheduler>>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
       "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "96443db019558fb18ad5bebfb509e09d",
-      "LinkName": "352B6D5D03F8F621",
+      "ModuleHash": "ff3e59dc110b281f7e31cdc74cda8e4b",
+      "LinkName": "14EF8F66DEBD6CF2",
       "AssemblyDependencyIndices": [
         4,
-        3,
+        11,
+        12,
+        14,
         5,
         1,
         2,
+        0,
+        3,
         6,
+        15,
         7,
         8,
         9
       ]
     },
     {
-      "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.Collections.LowLevel.Unsafe.UnsafeHashMapDataDisposeJob>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
+      "FullName": "System.Void Unity.Jobs.IJobParallelForDeferExtensions/JobParallelForDeferProducer`1<Unity.AI.Planner.PlannerScheduler`9/CopyPlanDataJob<Generated.AI.Planner.StateRepresentation.PetAgentPlan.StateEntityKey,Unity.AI.Planner.Traits.ActionKey,Generated.AI.Planner.StateRepresentation.PetAgentPlan.StateManager,Generated.AI.Planner.StateRepresentation.PetAgentPlan.StateData,Generated.AI.Planner.StateRepresentation.PetAgentPlan.StateDataContext,Generated.AI.Planner.Plans.PetAgentPlan.ActionScheduler,Generated.AI.Planner.Plans.PetAgentPlan.DefaultCumulativeRewardEstimator,Generated.AI.Planner.Plans.PetAgentPlan.TerminationEvaluator,Generated.AI.Planner.StateRepresentation.PetAgentPlan.DestroyStatesJobScheduler>>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
       "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "2eae739789a29d1fa38c43fc2eef75c0",
-      "LinkName": "C0BB42F31A3089F2",
-      "AssemblyDependencyIndices": [
-        4,
-        3,
-        5,
-        1,
-        2,
-        6,
-        7,
-        8,
-        9
-      ]
-    },
-    {
-      "FullName": "System.Void Unity.Jobs.IJobParallelForDeferExtensions/JobParallelForDeferProducer`1<Generated.AI.Planner.Plans.PetAgentPlan.Drink>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "58b58e4eba1fd84d58795e0a6e1ca926",
-      "LinkName": "8186998465F79181",
+      "ModuleHash": "9cc703d2674118f8f62edeabc3ed081c",
+      "LinkName": "FEBC189EA292F713",
       "AssemblyDependencyIndices": [
         13,
+        11,
+        12,
         14,
         1,
         2,
         4,
         5,
-        12,
         0,
-        11,
         3,
-        15,
         6,
-        16,
-        7,
-        8,
-        9
-      ]
-    },
-    {
-      "FullName": "System.Void Unity.Jobs.IJobParallelForDeferExtensions/JobParallelForDeferProducer`1<Generated.AI.Planner.Plans.PetAgentPlan.Play>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "ea08fc30f65cc262f5b3dd971be39460",
-      "LinkName": "D8C35939217DDDCD",
-      "AssemblyDependencyIndices": [
-        13,
-        14,
-        1,
-        2,
-        4,
-        5,
-        12,
-        0,
-        11,
-        3,
-        15,
-        6,
-        16,
-        7,
-        8,
-        9
-      ]
-    },
-    {
-      "FullName": "System.Void Unity.Jobs.IJobParallelForDeferExtensions/JobParallelForDeferProducer`1<Generated.AI.Planner.Plans.PetAgentPlan.Sleep>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "cffb51e0331f27b615faa7376715b20c",
-      "LinkName": "3A9258F39ECCDAD1",
-      "AssemblyDependencyIndices": [
-        13,
-        14,
-        1,
-        2,
-        4,
-        5,
-        12,
-        0,
-        11,
-        3,
-        15,
-        6,
-        16,
-        7,
-        8,
-        9
+        15
       ]
     }
   ]

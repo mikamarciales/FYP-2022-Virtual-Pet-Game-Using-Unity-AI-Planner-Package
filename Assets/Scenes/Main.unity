@@ -500,7 +500,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 1
   m_Sprite: {fileID: 8144239757783211683, guid: 2f644f73a688e4cf29b277eb830ab82d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4093,7 +4093,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 1
   m_Sprite: {fileID: -4451659854089282795, guid: 2f644f73a688e4cf29b277eb830ab82d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4649,7 +4649,7 @@ MonoBehaviour:
   m_WorldObjectQuery: {fileID: 1407123198}
   m_ActionExecuteInfos:
   - m_ActionName: Eat
-    m_PlanExecutorStateUpdateMode: 1
+    m_PlanExecutorStateUpdateMode: 0
     m_Method: Eat
     m_SourceGameObject: {fileID: 1407123194}
     m_Source: {fileID: 1407123204}
@@ -4659,13 +4659,13 @@ MonoBehaviour:
       m_TraitPropertyId: -1
       m_Enum: {fileID: 0}
       m_Value: 
-    - m_Parameter: 
-      m_Trait: {fileID: 0}
-      m_TraitPropertyId: -1
+    - m_Parameter: hunger
+      m_Trait: {fileID: 11400000, guid: b738c091b6daf4a29bdc0b46da0dd3f8, type: 2}
+      m_TraitPropertyId: 2
       m_Enum: {fileID: 0}
-      m_Value: 10
+      m_Value: 
   - m_ActionName: Move
-    m_PlanExecutorStateUpdateMode: 1
+    m_PlanExecutorStateUpdateMode: 0
     m_Method: Move
     m_SourceGameObject: {fileID: 1407123194}
     m_Source: {fileID: 1407123204}
@@ -4676,7 +4676,7 @@ MonoBehaviour:
       m_Enum: {fileID: 0}
       m_Value: 
   - m_ActionName: Drink
-    m_PlanExecutorStateUpdateMode: 1
+    m_PlanExecutorStateUpdateMode: 0
     m_Method: Drink
     m_SourceGameObject: {fileID: 1407123194}
     m_Source: {fileID: 1407123204}
@@ -4686,13 +4686,13 @@ MonoBehaviour:
       m_TraitPropertyId: -1
       m_Enum: {fileID: 0}
       m_Value: 
-    - m_Parameter: 
-      m_Trait: {fileID: 0}
-      m_TraitPropertyId: -1
+    - m_Parameter: thirst
+      m_Trait: {fileID: 11400000, guid: b738c091b6daf4a29bdc0b46da0dd3f8, type: 2}
+      m_TraitPropertyId: 5
       m_Enum: {fileID: 0}
-      m_Value: 7
+      m_Value: 
   - m_ActionName: Play
-    m_PlanExecutorStateUpdateMode: 1
+    m_PlanExecutorStateUpdateMode: 0
     m_Method: Play
     m_SourceGameObject: {fileID: 1407123194}
     m_Source: {fileID: 1407123204}
@@ -4702,13 +4702,13 @@ MonoBehaviour:
       m_TraitPropertyId: -1
       m_Enum: {fileID: 0}
       m_Value: 
-    - m_Parameter: 
-      m_Trait: {fileID: 0}
-      m_TraitPropertyId: -1
+    - m_Parameter: happiness
+      m_Trait: {fileID: 11400000, guid: b738c091b6daf4a29bdc0b46da0dd3f8, type: 2}
+      m_TraitPropertyId: 7
       m_Enum: {fileID: 0}
-      m_Value: 2
+      m_Value: 
   - m_ActionName: Sleep
-    m_PlanExecutorStateUpdateMode: 1
+    m_PlanExecutorStateUpdateMode: 0
     m_Method: Sleep
     m_SourceGameObject: {fileID: 1407123194}
     m_Source: {fileID: 1407123204}
@@ -4718,11 +4718,11 @@ MonoBehaviour:
       m_TraitPropertyId: -1
       m_Enum: {fileID: 0}
       m_Value: 
-    - m_Parameter: 
-      m_Trait: {fileID: 0}
-      m_TraitPropertyId: -1
+    - m_Parameter: energy
+      m_Trait: {fileID: 11400000, guid: b738c091b6daf4a29bdc0b46da0dd3f8, type: 2}
+      m_TraitPropertyId: 9
       m_Enum: {fileID: 0}
-      m_Value: 5
+      m_Value: 
   m_AutoUpdate: 1
 --- !u!114 &1407123198
 MonoBehaviour:
@@ -4894,6 +4894,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f5c82d1e91a43198ce7f298d9399f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1407123206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407123194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27581023c92604f86aca6430d3264edd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_p0: 0
 --- !u!1 &1415335255
 GameObject:
   m_ObjectHideFlags: 0
@@ -5036,7 +5049,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 1
   m_Sprite: {fileID: 4509194191500002913, guid: 2f644f73a688e4cf29b277eb830ab82d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5174,7 +5187,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 1
   m_Sprite: {fileID: -6596983918817155818, guid: 2f644f73a688e4cf29b277eb830ab82d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
