@@ -155,7 +155,7 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
                 var thirstIndex = thirstObjectIndices[i3];
                 var thirstObject = stateData.TraitBasedObjects[thirstIndex];
                 
-                if (!(NeedBuffer[thirstObject.NeedIndex].ThirstTick <= 85))
+                if (!(NeedBuffer[thirstObject.NeedIndex].ThirstLevel <= 85))
                     continue;
                 
                 

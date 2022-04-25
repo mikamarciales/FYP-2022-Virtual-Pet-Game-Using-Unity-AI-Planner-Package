@@ -135,10 +135,6 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
                             var traitLocation = stateData.GetTraitOnObjectAtIndex<Location>(traitBasedObjectIndex);
                             arguments[i] = split.Length == 3 ? traitLocation.GetField(split[2]) : traitLocation;
                             break;
-                        case nameof(Need):
-                            var traitNeed = stateData.GetTraitOnObjectAtIndex<Need>(traitBasedObjectIndex);
-                            arguments[i] = split.Length == 3 ? traitNeed.GetField(split[2]) : traitNeed;
-                            break;
                         case nameof(Pet):
                             var traitPet = stateData.GetTraitOnObjectAtIndex<Pet>(traitBasedObjectIndex);
                             arguments[i] = split.Length == 3 ? traitPet.GetField(split[2]) : traitPet;
@@ -150,6 +146,10 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
                         case nameof(Pet_Time):
                             var traitPet_Time = stateData.GetTraitOnObjectAtIndex<Pet_Time>(traitBasedObjectIndex);
                             arguments[i] = split.Length == 3 ? traitPet_Time.GetField(split[2]) : traitPet_Time;
+                            break;
+                        case nameof(Need):
+                            var traitNeed = stateData.GetTraitOnObjectAtIndex<Need>(traitBasedObjectIndex);
+                            arguments[i] = split.Length == 3 ? traitNeed.GetField(split[2]) : traitNeed;
                             break;
                         case nameof(Lake_Drink):
                             var traitLake_Drink = stateData.GetTraitOnObjectAtIndex<Lake_Drink>(traitBasedObjectIndex);

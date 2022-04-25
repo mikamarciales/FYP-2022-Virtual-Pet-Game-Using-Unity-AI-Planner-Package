@@ -3997,7 +3997,7 @@ GameObject:
   - component: {fileID: 988486355}
   m_Layer: 0
   m_Name: Food
-  m_TagString: Tree
+  m_TagString: NeedItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5211,7 +5211,7 @@ GameObject:
   - component: {fileID: 1658833108}
   m_Layer: 0
   m_Name: Needs Objects
-  m_TagString: Untagged
+  m_TagString: NeedItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -49,7 +49,7 @@ MonoBehaviour:
     m_OperandA:
       m_Parameter: thirst
       m_Trait: {fileID: 11400000, guid: b738c091b6daf4a29bdc0b46da0dd3f8, type: 2}
-      m_TraitPropertyId: 5
+      m_TraitPropertyId: 4
       m_Enum: {fileID: 0}
       m_Value: 
     m_OperandB:

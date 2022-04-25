@@ -184,21 +184,21 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
         {
             var originalState = m_StateDataContext.GetStateData(originalStateEntityKey);
             var originalStateObjectBuffer = originalState.TraitBasedObjects;
-            var originaltimeObject = originalStateObjectBuffer[action[k_timeIndex]];
             var originalhungerObject = originalStateObjectBuffer[action[k_hungerIndex]];
+            var originaltimeObject = originalStateObjectBuffer[action[k_timeIndex]];
 
             var newState = m_StateDataContext.CopyStateData(originalState);
-            var newPet_TimeBuffer = newState.Pet_TimeBuffer;
             var newNeedBuffer = newState.NeedBuffer;
-            {
-                    var @Pet_Time = newPet_TimeBuffer[originaltimeObject.Pet_TimeIndex];
-                    @Pet_Time.@Value += 1;
-                    newPet_TimeBuffer[originaltimeObject.Pet_TimeIndex] = @Pet_Time;
-            }
+            var newPet_TimeBuffer = newState.Pet_TimeBuffer;
             {
                     var @Need = newNeedBuffer[originalhungerObject.NeedIndex];
                     @Need.HungerLevel += newNeedBuffer[originalhungerObject.NeedIndex].HungerTick;
                     newNeedBuffer[originalhungerObject.NeedIndex] = @Need;
+            }
+            {
+                    var @Pet_Time = newPet_TimeBuffer[originaltimeObject.Pet_TimeIndex];
+                    @Pet_Time.@Value += 1;
+                    newPet_TimeBuffer[originaltimeObject.Pet_TimeIndex] = @Pet_Time;
             }
             {
                     new global::AI.Planner.Custom.PetAgentPlan.CustomFedEffects().ApplyCustomActionEffectsToState(originalState, action, newState);

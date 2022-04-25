@@ -56,7 +56,7 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
 
         void InitializeLocalContainers()
         {
-            MoverFilter = new NativeArray<ComponentType>(3, Allocator.Temp){[0] = ComponentType.ReadWrite<Moveable>(),[1] = ComponentType.ReadWrite<Location>(),[2] = ComponentType.ReadWrite<Need>(),  };
+            MoverFilter = new NativeArray<ComponentType>(2, Allocator.Temp){[0] = ComponentType.ReadWrite<Moveable>(),[1] = ComponentType.ReadWrite<Location>(),  };
             MoverObjectIndices = new NativeList<int>(2, Allocator.Temp);
             DestinationFilter = new NativeArray<ComponentType>(2, Allocator.Temp){[0] = ComponentType.ReadWrite<Location>(), [1] = ComponentType.Exclude<Moveable>(),  };
             DestinationObjectIndices = new NativeList<int>(2, Allocator.Temp);
