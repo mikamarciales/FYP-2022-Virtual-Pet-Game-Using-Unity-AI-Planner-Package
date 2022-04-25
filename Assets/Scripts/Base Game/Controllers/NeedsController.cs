@@ -60,7 +60,7 @@ namespace VirtualPetGame
             {
                 PetManager.instance.Die();
             }
-            //else if(food > 100) food = 100;
+            else if(food > 100) food = 100;
         }
 
         public void FoodOnClick(int amount)
@@ -78,7 +78,7 @@ namespace VirtualPetGame
             {
                 PetManager.instance.Die();
             }
-            //else if(food > 100) food = 100;
+            else if(food > 100) food = 100;
         }
 
         public void ChangeDrink(int amount)
@@ -92,7 +92,7 @@ namespace VirtualPetGame
             {
                 PetManager.instance.Die();
             }
-            //else if(drink > 100) drink = 100;
+            else if(drink > 100) drink = 100;
         }
 
         public void DrinkOnClick(int amount)
@@ -110,7 +110,7 @@ namespace VirtualPetGame
             {
                 PetManager.instance.Die();
             }
-            //else if(drink > 100) drink = 100;
+            else if(drink > 100) drink = 100;
         }
 
         public void ChangeHappiness(int amount)
@@ -124,7 +124,7 @@ namespace VirtualPetGame
             {
                 PetManager.instance.Die();
             }
-            //else if(happiness > 100) happiness = 100;
+            else if(happiness > 100) happiness = 100;
         }
 
         public void HappinessOnClick(int amount)
@@ -142,7 +142,7 @@ namespace VirtualPetGame
             {
                 PetManager.instance.Die();
             }
-            //else if(happiness > 100) happiness = 100;
+            else if(happiness > 100) happiness = 100;
         }
 
         public void ChangeEnergy(int amount)
@@ -156,7 +156,7 @@ namespace VirtualPetGame
             {
                 PetManager.instance.Die();
             }
-            //else if(energy > 100) energy = 100;
+            else if(energy > 100) energy = 100;
         }
 
         public void EnergyOnClick(int amount)
@@ -174,7 +174,7 @@ namespace VirtualPetGame
             {
                 PetManager.instance.Die();
             }
-            //else if(energy > 100) energy = 100;
+            else if(energy > 100) energy = 100;
         }
     }
 }
