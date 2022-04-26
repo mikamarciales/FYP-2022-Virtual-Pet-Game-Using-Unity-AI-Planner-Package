@@ -1,3 +1,7 @@
+// PetManager class created to be used in the base game
+// Updates timer and facilitates random movement; moving pet methods defined in this class
+// Structure based on the Education Ecosystem's 'How To Create A Virtual Pet Game In Unity' tutorial: https://www.youtube.com/watch?v=MAK2Qzu0j40&list=PLQbzkJk10-f6mK42ieiFoU6YGQN7BM_nE&ab_channel=EducationEcosystem
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +19,7 @@ namespace VirtualPetGame
         private void Awake()
         {
             originalpetMoveTimer = petMoveTimer;
-            if(instance == null)
+            if (instance == null)
             {
                 instance = this;
             }
@@ -24,7 +28,7 @@ namespace VirtualPetGame
 
         private void Update()
         {
-            if(petMoveTimer > 0 && FindObjectOfType<GameManager>().isGameOver == false)
+            if (petMoveTimer > 0 && FindObjectOfType<GameManager>().isGameOver == false)
             {
                 petMoveTimer -= Time.deltaTime;
             }
@@ -39,7 +43,7 @@ namespace VirtualPetGame
         private void MovePetToRandomWaypoint()
         {
             int randomWaypoint = Random.Range(0, waypoints.Length);
-            if(waypoints[randomWaypoint].position != waypoints[11].position
+            if (waypoints[randomWaypoint].position != waypoints[11].position
                 || waypoints[randomWaypoint].position != waypoints[12].position
                 || waypoints[randomWaypoint].position != waypoints[13].position
                 || waypoints[randomWaypoint].position != waypoints[14].position)

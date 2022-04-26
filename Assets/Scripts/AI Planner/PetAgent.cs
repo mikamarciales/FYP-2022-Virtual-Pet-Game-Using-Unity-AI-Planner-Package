@@ -1,3 +1,8 @@
+// PetAgent class created to be used by AI Planner
+// Defines action callbacks with coroutine classification
+// Structure based on the VacuumRobot.cs script from Unity's VacuumRobot project in ai-planner-samples repository: https://github.com/Unity-Technologies/ai-planner-samples/blob/master/VacuumRobot/Assets/Scripts/VacuumRobot.cs
+// Uses AI Planner package library
+
 using System.Collections;
 using System.Collections.Generic;
 using Unity.AI.Planner;
@@ -47,7 +52,7 @@ namespace VirtualPetGame
 
             while (m_Target != null && !AtTarget())
             {
-                transform.position = Vector3.MoveTowards(transform.position, m_Target.transform.position, moveSpeed*Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, m_Target.transform.position, moveSpeed * Time.deltaTime);
                 //Debug.Log("[AI] Pet moving towards " + target + "!");
                 yield return null;
             }
@@ -70,12 +75,12 @@ namespace VirtualPetGame
             needsController.energy -= 2;
             Debug.Log("[AI] Ate! (Food +" + amount + " Drink -3 Happiness -1 Energy -2)");
 
-            if(needsController.food <= 0)
+            if (needsController.food <= 0)
             {
                 PetManager.instance.Die();
             }
 
-            if(needsController.food > 100) needsController.food = 100;
+            if (needsController.food > 100) needsController.food = 100;
 
             yield return new WaitForSeconds(0.5f);
         }
@@ -90,12 +95,12 @@ namespace VirtualPetGame
             needsController.energy -= 2;
             Debug.Log("[AI] Drank! (Drink +" + amount + " Food -5 Happiness -1 Energy -2)");
 
-            if(needsController.drink <= 0)
+            if (needsController.drink <= 0)
             {
                 PetManager.instance.Die();
             }
 
-            if(needsController.drink > 100) needsController.drink = 100;
+            if (needsController.drink > 100) needsController.drink = 100;
 
             yield return new WaitForSeconds(0.5f);
         }
@@ -110,12 +115,12 @@ namespace VirtualPetGame
             needsController.energy -= 2;
             Debug.Log("[AI] Played! (Happiness +" + amount + " Food -5 Drink -3 Energy -2)");
 
-            if(needsController.happiness <= 0)
+            if (needsController.happiness <= 0)
             {
                 PetManager.instance.Die();
             }
 
-            if(needsController.happiness > 100) needsController.happiness = 100;
+            if (needsController.happiness > 100) needsController.happiness = 100;
 
             yield return new WaitForSeconds(0.5f);
         }
@@ -130,12 +135,12 @@ namespace VirtualPetGame
             needsController.happiness -= 1;
             Debug.Log("[AI] Slept! (Energy +" + amount + " Food -5 Drink -3 Happiness -1)");
 
-            if(needsController.energy <= 0)
+            if (needsController.energy <= 0)
             {
                 PetManager.instance.Die();
             }
 
-            if(needsController.energy > 100) needsController.energy = 100;
+            if (needsController.energy > 100) needsController.energy = 100;
 
             yield return new WaitForSeconds(0.5f);
         }

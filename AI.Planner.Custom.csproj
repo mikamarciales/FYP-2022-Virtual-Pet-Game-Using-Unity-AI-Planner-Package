@@ -37,7 +37,6 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets/AI.Planner/Custom/CustomDrankEffects.cs" />
-     <Compile Include="Assets/AI.Planner/Custom/CustomHungryPrecondition.cs" />
      <Compile Include="Library/PackageCache/com.unity.ai.planner@0.3.0-preview.3/Runtime/Modules/Navigation/CustomMethods/RewardModifiers.cs" />
      <Compile Include="Assets/AI.Planner/Custom/CustomFedEffects.cs" />
      <Compile Include="Assets/AI.Planner/Custom/CustomSleptEffects.cs" />

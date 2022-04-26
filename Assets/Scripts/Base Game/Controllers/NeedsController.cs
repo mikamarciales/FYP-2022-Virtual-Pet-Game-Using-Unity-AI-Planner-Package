@@ -1,3 +1,7 @@
+// NeedsController class created to be used in the base game and by AI Planner
+// Initialises pet need levels and tick rates and contains methods needed for changing need levels
+// Structure based on the Education Ecosystem's 'How To Create A Virtual Pet Game In Unity' tutorial: https://www.youtube.com/watch?v=MAK2Qzu0j40&list=PLQbzkJk10-f6mK42ieiFoU6YGQN7BM_nE&ab_channel=EducationEcosystem
+
 using System.Collections;
 using System.Collections.Generic;
 using Unity.AI.Planner;
@@ -36,7 +40,7 @@ namespace VirtualPetGame
 
         private void Update()
         {
-            if(TimingManager.gameHourTimer < 0 && FindObjectOfType<GameManager>().isGameOver == false)
+            if (TimingManager.gameHourTimer < 0 && FindObjectOfType<GameManager>().isGameOver == false)
             {
                 ChangeFood(-foodTickRate);
                 ChangeDrink(-drinkTickRate);
@@ -52,15 +56,15 @@ namespace VirtualPetGame
         public void ChangeFood(int amount)
         {
             food += amount;
-            if(amount > 0)
+            if (amount > 0)
             {
                 lastTimeFed = System.DateTime.Now;
             }
-            if(food <= 0)
+            if (food <= 0)
             {
                 PetManager.instance.Die();
             }
-            else if(food > 100) food = 100;
+            else if (food > 100) food = 100;
         }
 
         public void FoodOnClick(int amount)
@@ -70,29 +74,29 @@ namespace VirtualPetGame
             drink -= 3;
             happiness -= 1;
             energy -= 2;
-            if(amount > 0)
+            if (amount > 0)
             {
                 lastTimeFed = System.DateTime.Now;
             }
-            if(food <= 0)
+            if (food <= 0)
             {
                 PetManager.instance.Die();
             }
-            else if(food > 100) food = 100;
+            else if (food > 100) food = 100;
         }
 
         public void ChangeDrink(int amount)
         {
             drink += amount;
-            if(amount > 0)
+            if (amount > 0)
             {
                 lastTimeDrank = System.DateTime.Now;
             }
-            if(drink <= 0)
+            if (drink <= 0)
             {
                 PetManager.instance.Die();
             }
-            else if(drink > 100) drink = 100;
+            else if (drink > 100) drink = 100;
         }
 
         public void DrinkOnClick(int amount)
@@ -102,29 +106,29 @@ namespace VirtualPetGame
             food -= 5;
             happiness -= 1;
             energy -= 2;
-            if(amount > 0)
+            if (amount > 0)
             {
                 lastTimeDrank = System.DateTime.Now;
             }
-            if(drink <= 0)
+            if (drink <= 0)
             {
                 PetManager.instance.Die();
             }
-            else if(drink > 100) drink = 100;
+            else if (drink > 100) drink = 100;
         }
 
         public void ChangeHappiness(int amount)
         {
             happiness += amount;
-            if(amount > 0)
+            if (amount > 0)
             {
                 lastTimeHappy = System.DateTime.Now;
             }
-            if(happiness <= 0)
+            if (happiness <= 0)
             {
                 PetManager.instance.Die();
             }
-            else if(happiness > 100) happiness = 100;
+            else if (happiness > 100) happiness = 100;
         }
 
         public void HappinessOnClick(int amount)
@@ -134,29 +138,29 @@ namespace VirtualPetGame
             drink -= 3;
             food -= 5;
             energy -= 2;
-            if(amount > 0)
+            if (amount > 0)
             {
                 lastTimeHappy = System.DateTime.Now;
             }
-            if(happiness <= 0)
+            if (happiness <= 0)
             {
                 PetManager.instance.Die();
             }
-            else if(happiness > 100) happiness = 100;
+            else if (happiness > 100) happiness = 100;
         }
 
         public void ChangeEnergy(int amount)
         {
             energy += amount;
-            if(amount > 0)
+            if (amount > 0)
             {
                 lastTimeEnergised = System.DateTime.Now;
             }
-            if(energy <= 0)
+            if (energy <= 0)
             {
                 PetManager.instance.Die();
             }
-            else if(energy > 100) energy = 100;
+            else if (energy > 100) energy = 100;
         }
 
         public void EnergyOnClick(int amount)
@@ -166,15 +170,15 @@ namespace VirtualPetGame
             drink -= 3;
             happiness -= 1;
             food -= 5;
-            if(amount > 0)
+            if (amount > 0)
             {
                 lastTimeEnergised = System.DateTime.Now;
             }
-            if(energy <= 0)
+            if (energy <= 0)
             {
                 PetManager.instance.Die();
             }
-            else if(energy > 100) energy = 100;
+            else if (energy > 100) energy = 100;
         }
     }
 }

@@ -1,3 +1,6 @@
+// GameManager class created to be used in the base game
+// Manages the Game Over screen and defines boolean to check if the game is over
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
