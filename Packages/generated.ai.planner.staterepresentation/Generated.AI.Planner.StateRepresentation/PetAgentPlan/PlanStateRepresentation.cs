@@ -41,11 +41,11 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                 Index = 0;
             else if (typeIndex == TypeManager.GetTypeIndex<Location>())
                 Index = 1;
-            else if (typeIndex == TypeManager.GetTypeIndex<Pet>())
-                Index = 2;
-            else if (typeIndex == TypeManager.GetTypeIndex<Tree_Food>())
-                Index = 3;
             else if (typeIndex == TypeManager.GetTypeIndex<Pet_Time>())
+                Index = 2;
+            else if (typeIndex == TypeManager.GetTypeIndex<Pet>())
+                Index = 3;
+            else if (typeIndex == TypeManager.GetTypeIndex<Tree_Food>())
                 Index = 4;
             else if (typeIndex == TypeManager.GetTypeIndex<Need>())
                 Index = 5;
@@ -76,11 +76,11 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                     case 1:
                         return LocationIndex;
                     case 2:
-                        return PetIndex;
-                    case 3:
-                        return Tree_FoodIndex;
-                    case 4:
                         return Pet_TimeIndex;
+                    case 3:
+                        return PetIndex;
+                    case 4:
+                        return Tree_FoodIndex;
                     case 5:
                         return NeedIndex;
                     case 6:
@@ -106,13 +106,13 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                         LocationIndex = value;
                         break;
                     case 2:
-                        PetIndex = value;
+                        Pet_TimeIndex = value;
                         break;
                     case 3:
-                        Tree_FoodIndex = value;
+                        PetIndex = value;
                         break;
                     case 4:
-                        Pet_TimeIndex = value;
+                        Tree_FoodIndex = value;
                         break;
                     case 5:
                         NeedIndex = value;
@@ -139,9 +139,9 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
         {
             MoveableIndex = Unset,
             LocationIndex = Unset,
+            Pet_TimeIndex = Unset,
             PetIndex = Unset,
             Tree_FoodIndex = Unset,
-            Pet_TimeIndex = Unset,
             NeedIndex = Unset,
             Lake_DrinkIndex = Unset,
             Table_HappinessIndex = Unset,
@@ -152,9 +152,9 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
 
         public byte MoveableIndex;
         public byte LocationIndex;
+        public byte Pet_TimeIndex;
         public byte PetIndex;
         public byte Tree_FoodIndex;
-        public byte Pet_TimeIndex;
         public byte NeedIndex;
         public byte Lake_DrinkIndex;
         public byte Table_HappinessIndex;
@@ -164,9 +164,9 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
 
         static readonly int s_MoveableTypeIndex = TypeManager.GetTypeIndex<Moveable>();
         static readonly int s_LocationTypeIndex = TypeManager.GetTypeIndex<Location>();
+        static readonly int s_Pet_TimeTypeIndex = TypeManager.GetTypeIndex<Pet_Time>();
         static readonly int s_PetTypeIndex = TypeManager.GetTypeIndex<Pet>();
         static readonly int s_Tree_FoodTypeIndex = TypeManager.GetTypeIndex<Tree_Food>();
-        static readonly int s_Pet_TimeTypeIndex = TypeManager.GetTypeIndex<Pet_Time>();
         static readonly int s_NeedTypeIndex = TypeManager.GetTypeIndex<Need>();
         static readonly int s_Lake_DrinkTypeIndex = TypeManager.GetTypeIndex<Lake_Drink>();
         static readonly int s_Table_HappinessTypeIndex = TypeManager.GetTypeIndex<Table_Happiness>();
@@ -216,6 +216,11 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                     if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ LocationIndex == Unset)
                         return false;
                 }
+                else if (t.TypeIndex == s_Pet_TimeTypeIndex)
+                {
+                    if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ Pet_TimeIndex == Unset)
+                        return false;
+                }
                 else if (t.TypeIndex == s_PetTypeIndex)
                 {
                     if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ PetIndex == Unset)
@@ -224,11 +229,6 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                 else if (t.TypeIndex == s_Tree_FoodTypeIndex)
                 {
                     if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ Tree_FoodIndex == Unset)
-                        return false;
-                }
-                else if (t.TypeIndex == s_Pet_TimeTypeIndex)
-                {
-                    if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ Pet_TimeIndex == Unset)
                         return false;
                 }
                 else if (t.TypeIndex == s_NeedTypeIndex)
@@ -282,6 +282,11 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                     if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ LocationIndex == Unset)
                         return false;
                 }
+                else if (t.TypeIndex == s_Pet_TimeTypeIndex)
+                {
+                    if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ Pet_TimeIndex == Unset)
+                        return false;
+                }
                 else if (t.TypeIndex == s_PetTypeIndex)
                 {
                     if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ PetIndex == Unset)
@@ -290,11 +295,6 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                 else if (t.TypeIndex == s_Tree_FoodTypeIndex)
                 {
                     if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ Tree_FoodIndex == Unset)
-                        return false;
-                }
-                else if (t.TypeIndex == s_Pet_TimeTypeIndex)
-                {
-                    if (t.AccessModeType == ComponentType.AccessMode.Exclude ^ Pet_TimeIndex == Unset)
                         return false;
                 }
                 else if (t.TypeIndex == s_NeedTypeIndex)
@@ -332,7 +332,7 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
         public bool Equals(TraitBasedObject other)
         {
 
-                return MoveableIndex == other.MoveableIndex && LocationIndex == other.LocationIndex && PetIndex == other.PetIndex && Tree_FoodIndex == other.Tree_FoodIndex && Pet_TimeIndex == other.Pet_TimeIndex && NeedIndex == other.NeedIndex && Lake_DrinkIndex == other.Lake_DrinkIndex && Table_HappinessIndex == other.Table_HappinessIndex && Home_EnergyIndex == other.Home_EnergyIndex && PlanningAgentIndex == other.PlanningAgentIndex;
+                return MoveableIndex == other.MoveableIndex && LocationIndex == other.LocationIndex && Pet_TimeIndex == other.Pet_TimeIndex && PetIndex == other.PetIndex && Tree_FoodIndex == other.Tree_FoodIndex && NeedIndex == other.NeedIndex && Lake_DrinkIndex == other.Lake_DrinkIndex && Table_HappinessIndex == other.Table_HappinessIndex && Home_EnergyIndex == other.Home_EnergyIndex && PlanningAgentIndex == other.PlanningAgentIndex;
         }
 
         public override bool Equals(object obj)
@@ -348,9 +348,9 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                     var hashCode = MoveableIndex.GetHashCode();
                     
                      hashCode = (hashCode * 397) ^ LocationIndex.GetHashCode();
+                     hashCode = (hashCode * 397) ^ Pet_TimeIndex.GetHashCode();
                      hashCode = (hashCode * 397) ^ PetIndex.GetHashCode();
                      hashCode = (hashCode * 397) ^ Tree_FoodIndex.GetHashCode();
-                     hashCode = (hashCode * 397) ^ Pet_TimeIndex.GetHashCode();
                      hashCode = (hashCode * 397) ^ NeedIndex.GetHashCode();
                      hashCode = (hashCode * 397) ^ Lake_DrinkIndex.GetHashCode();
                      hashCode = (hashCode * 397) ^ Table_HappinessIndex.GetHashCode();
@@ -369,9 +369,9 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
 
         public DynamicBuffer<Moveable> MoveableBuffer;
         public DynamicBuffer<Location> LocationBuffer;
+        public DynamicBuffer<Pet_Time> Pet_TimeBuffer;
         public DynamicBuffer<Pet> PetBuffer;
         public DynamicBuffer<Tree_Food> Tree_FoodBuffer;
-        public DynamicBuffer<Pet_Time> Pet_TimeBuffer;
         public DynamicBuffer<Need> NeedBuffer;
         public DynamicBuffer<Lake_Drink> Lake_DrinkBuffer;
         public DynamicBuffer<Table_Happiness> Table_HappinessBuffer;
@@ -380,9 +380,9 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
 
         static readonly int s_MoveableTypeIndex = TypeManager.GetTypeIndex<Moveable>();
         static readonly int s_LocationTypeIndex = TypeManager.GetTypeIndex<Location>();
+        static readonly int s_Pet_TimeTypeIndex = TypeManager.GetTypeIndex<Pet_Time>();
         static readonly int s_PetTypeIndex = TypeManager.GetTypeIndex<Pet>();
         static readonly int s_Tree_FoodTypeIndex = TypeManager.GetTypeIndex<Tree_Food>();
-        static readonly int s_Pet_TimeTypeIndex = TypeManager.GetTypeIndex<Pet_Time>();
         static readonly int s_NeedTypeIndex = TypeManager.GetTypeIndex<Need>();
         static readonly int s_Lake_DrinkTypeIndex = TypeManager.GetTypeIndex<Lake_Drink>();
         static readonly int s_Table_HappinessTypeIndex = TypeManager.GetTypeIndex<Table_Happiness>();
@@ -397,9 +397,9 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
 
             MoveableBuffer = transaction.GetBuffer<Moveable>(stateEntity);
             LocationBuffer = transaction.GetBuffer<Location>(stateEntity);
+            Pet_TimeBuffer = transaction.GetBuffer<Pet_Time>(stateEntity);
             PetBuffer = transaction.GetBuffer<Pet>(stateEntity);
             Tree_FoodBuffer = transaction.GetBuffer<Tree_Food>(stateEntity);
-            Pet_TimeBuffer = transaction.GetBuffer<Pet_Time>(stateEntity);
             NeedBuffer = transaction.GetBuffer<Need>(stateEntity);
             Lake_DrinkBuffer = transaction.GetBuffer<Lake_Drink>(stateEntity);
             Table_HappinessBuffer = transaction.GetBuffer<Table_Happiness>(stateEntity);
@@ -415,9 +415,9 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
 
             MoveableBuffer = entityCommandBuffer.AddBuffer<Moveable>(jobIndex, stateEntity);
             LocationBuffer = entityCommandBuffer.AddBuffer<Location>(jobIndex, stateEntity);
+            Pet_TimeBuffer = entityCommandBuffer.AddBuffer<Pet_Time>(jobIndex, stateEntity);
             PetBuffer = entityCommandBuffer.AddBuffer<Pet>(jobIndex, stateEntity);
             Tree_FoodBuffer = entityCommandBuffer.AddBuffer<Tree_Food>(jobIndex, stateEntity);
-            Pet_TimeBuffer = entityCommandBuffer.AddBuffer<Pet_Time>(jobIndex, stateEntity);
             NeedBuffer = entityCommandBuffer.AddBuffer<Need>(jobIndex, stateEntity);
             Lake_DrinkBuffer = entityCommandBuffer.AddBuffer<Lake_Drink>(jobIndex, stateEntity);
             Table_HappinessBuffer = entityCommandBuffer.AddBuffer<Table_Happiness>(jobIndex, stateEntity);
@@ -437,12 +437,12 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
             Moveables.CopyFrom(MoveableBuffer.AsNativeArray());
             var Locations = entityCommandBuffer.SetBuffer<Location>(jobIndex, stateEntity);
             Locations.CopyFrom(LocationBuffer.AsNativeArray());
+            var Pet_Times = entityCommandBuffer.SetBuffer<Pet_Time>(jobIndex, stateEntity);
+            Pet_Times.CopyFrom(Pet_TimeBuffer.AsNativeArray());
             var Pets = entityCommandBuffer.SetBuffer<Pet>(jobIndex, stateEntity);
             Pets.CopyFrom(PetBuffer.AsNativeArray());
             var Tree_Foods = entityCommandBuffer.SetBuffer<Tree_Food>(jobIndex, stateEntity);
             Tree_Foods.CopyFrom(Tree_FoodBuffer.AsNativeArray());
-            var Pet_Times = entityCommandBuffer.SetBuffer<Pet_Time>(jobIndex, stateEntity);
-            Pet_Times.CopyFrom(Pet_TimeBuffer.AsNativeArray());
             var Needs = entityCommandBuffer.SetBuffer<Need>(jobIndex, stateEntity);
             Needs.CopyFrom(NeedBuffer.AsNativeArray());
             var Lake_Drinks = entityCommandBuffer.SetBuffer<Lake_Drink>(jobIndex, stateEntity);
@@ -462,9 +462,9 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
 
                 MoveableBuffer = Moveables,
                 LocationBuffer = Locations,
+                Pet_TimeBuffer = Pet_Times,
                 PetBuffer = Pets,
                 Tree_FoodBuffer = Tree_Foods,
-                Pet_TimeBuffer = Pet_Times,
                 NeedBuffer = Needs,
                 Lake_DrinkBuffer = Lake_Drinks,
                 Table_HappinessBuffer = Table_Happinesss,
@@ -493,6 +493,11 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                     LocationBuffer.Add(default);
                     traitBasedObject.LocationIndex = (byte) (LocationBuffer.Length - 1);
                 }
+                else if (t.TypeIndex == s_Pet_TimeTypeIndex)
+                {
+                    Pet_TimeBuffer.Add(default);
+                    traitBasedObject.Pet_TimeIndex = (byte) (Pet_TimeBuffer.Length - 1);
+                }
                 else if (t.TypeIndex == s_PetTypeIndex)
                 {
                     PetBuffer.Add(default);
@@ -502,11 +507,6 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                 {
                     Tree_FoodBuffer.Add(default);
                     traitBasedObject.Tree_FoodIndex = (byte) (Tree_FoodBuffer.Length - 1);
-                }
-                else if (t.TypeIndex == s_Pet_TimeTypeIndex)
-                {
-                    Pet_TimeBuffer.Add(default);
-                    traitBasedObject.Pet_TimeIndex = (byte) (Pet_TimeBuffer.Length - 1);
                 }
                 else if (t.TypeIndex == s_NeedTypeIndex)
                 {
@@ -584,12 +584,12 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                 SetTraitOnObject(MoveableTrait, ref traitBasedObject);
             else if (trait is Location LocationTrait)
                 SetTraitOnObject(LocationTrait, ref traitBasedObject);
+            else if (trait is Pet_Time Pet_TimeTrait)
+                SetTraitOnObject(Pet_TimeTrait, ref traitBasedObject);
             else if (trait is Pet PetTrait)
                 SetTraitOnObject(PetTrait, ref traitBasedObject);
             else if (trait is Tree_Food Tree_FoodTrait)
                 SetTraitOnObject(Tree_FoodTrait, ref traitBasedObject);
-            else if (trait is Pet_Time Pet_TimeTrait)
-                SetTraitOnObject(Pet_TimeTrait, ref traitBasedObject);
             else if (trait is Need NeedTrait)
                 SetTraitOnObject(NeedTrait, ref traitBasedObject);
             else if (trait is Lake_Drink Lake_DrinkTrait)
@@ -610,12 +610,12 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                 SetTraitOnObjectAtIndex(MoveableTrait, traitBasedObjectIndex);
             else if (trait is Location LocationTrait)
                 SetTraitOnObjectAtIndex(LocationTrait, traitBasedObjectIndex);
+            else if (trait is Pet_Time Pet_TimeTrait)
+                SetTraitOnObjectAtIndex(Pet_TimeTrait, traitBasedObjectIndex);
             else if (trait is Pet PetTrait)
                 SetTraitOnObjectAtIndex(PetTrait, traitBasedObjectIndex);
             else if (trait is Tree_Food Tree_FoodTrait)
                 SetTraitOnObjectAtIndex(Tree_FoodTrait, traitBasedObjectIndex);
-            else if (trait is Pet_Time Pet_TimeTrait)
-                SetTraitOnObjectAtIndex(Pet_TimeTrait, traitBasedObjectIndex);
             else if (trait is Need NeedTrait)
                 SetTraitOnObjectAtIndex(NeedTrait, traitBasedObjectIndex);
             else if (trait is Lake_Drink Lake_DrinkTrait)
@@ -731,9 +731,9 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
 
             RemoveTraitOnObject<Moveable>(ref traitBasedObject);
             RemoveTraitOnObject<Location>(ref traitBasedObject);
+            RemoveTraitOnObject<Pet_Time>(ref traitBasedObject);
             RemoveTraitOnObject<Pet>(ref traitBasedObject);
             RemoveTraitOnObject<Tree_Food>(ref traitBasedObject);
-            RemoveTraitOnObject<Pet_Time>(ref traitBasedObject);
             RemoveTraitOnObject<Need>(ref traitBasedObject);
             RemoveTraitOnObject<Lake_Drink>(ref traitBasedObject);
             RemoveTraitOnObject<Table_Happiness>(ref traitBasedObject);
@@ -825,9 +825,9 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
         {
             RemoveTraitOnObjectAtIndex<Moveable>(traitBasedObjectIndex);
             RemoveTraitOnObjectAtIndex<Location>(traitBasedObjectIndex);
+            RemoveTraitOnObjectAtIndex<Pet_Time>(traitBasedObjectIndex);
             RemoveTraitOnObjectAtIndex<Pet>(traitBasedObjectIndex);
             RemoveTraitOnObjectAtIndex<Tree_Food>(traitBasedObjectIndex);
-            RemoveTraitOnObjectAtIndex<Pet_Time>(traitBasedObjectIndex);
             RemoveTraitOnObjectAtIndex<Need>(traitBasedObjectIndex);
             RemoveTraitOnObjectAtIndex<Lake_Drink>(traitBasedObjectIndex);
             RemoveTraitOnObjectAtIndex<Table_Happiness>(traitBasedObjectIndex);
@@ -928,11 +928,11 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                 case 1:
                     return LocationBuffer.Reinterpret<T>();
                 case 2:
-                    return PetBuffer.Reinterpret<T>();
-                case 3:
-                    return Tree_FoodBuffer.Reinterpret<T>();
-                case 4:
                     return Pet_TimeBuffer.Reinterpret<T>();
+                case 3:
+                    return PetBuffer.Reinterpret<T>();
+                case 4:
+                    return Tree_FoodBuffer.Reinterpret<T>();
                 case 5:
                     return NeedBuffer.Reinterpret<T>();
                 case 6:
@@ -959,9 +959,9 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
             if (TraitBasedObjects.Length != rhsState.TraitBasedObjects.Length
                 || MoveableBuffer.Length != rhsState.MoveableBuffer.Length
                 || LocationBuffer.Length != rhsState.LocationBuffer.Length
+                || Pet_TimeBuffer.Length != rhsState.Pet_TimeBuffer.Length
                 || PetBuffer.Length != rhsState.PetBuffer.Length
                 || Tree_FoodBuffer.Length != rhsState.Tree_FoodBuffer.Length
-                || Pet_TimeBuffer.Length != rhsState.Pet_TimeBuffer.Length
                 || NeedBuffer.Length != rhsState.NeedBuffer.Length
                 || Lake_DrinkBuffer.Length != rhsState.Lake_DrinkBuffer.Length
                 || Table_HappinessBuffer.Length != rhsState.Table_HappinessBuffer.Length
@@ -982,9 +982,9 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
             if (TraitBasedObjects.Length != rhsState.TraitBasedObjects.Length
                 || MoveableBuffer.Length != rhsState.MoveableBuffer.Length
                 || LocationBuffer.Length != rhsState.LocationBuffer.Length
+                || Pet_TimeBuffer.Length != rhsState.Pet_TimeBuffer.Length
                 || PetBuffer.Length != rhsState.PetBuffer.Length
                 || Tree_FoodBuffer.Length != rhsState.Tree_FoodBuffer.Length
-                || Pet_TimeBuffer.Length != rhsState.Pet_TimeBuffer.Length
                 || NeedBuffer.Length != rhsState.NeedBuffer.Length
                 || Lake_DrinkBuffer.Length != rhsState.Lake_DrinkBuffer.Length
                 || Table_HappinessBuffer.Length != rhsState.Table_HappinessBuffer.Length
@@ -1062,11 +1062,11 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                 return false;
 
 
-
-
             if (traitBasedObjectLHS.Pet_TimeIndex != TraitBasedObject.Unset
                 && !Pet_TimeTraitAttributesEqual(Pet_TimeBuffer[traitBasedObjectLHS.Pet_TimeIndex], rhsState.Pet_TimeBuffer[traitBasedObjectRHS.Pet_TimeIndex]))
                 return false;
+
+
 
 
             if (traitBasedObjectLHS.NeedIndex != TraitBasedObject.Unset
@@ -1136,6 +1136,14 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
                     ^ element.Forward.GetHashCode();
                 stateHashValue = 3860031 + (stateHashValue + value) * 2779 + (stateHashValue * value * 2);
             }
+            bufferLength = Pet_TimeBuffer.Length;
+            for (int i = 0; i < bufferLength; i++)
+            {
+                var element = Pet_TimeBuffer[i];
+                var value = 397
+                    ^ element.Value.GetHashCode();
+                stateHashValue = 3860031 + (stateHashValue + value) * 2779 + (stateHashValue * value * 2);
+            }
             bufferLength = PetBuffer.Length;
             for (int i = 0; i < bufferLength; i++)
             {
@@ -1146,14 +1154,6 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
             for (int i = 0; i < bufferLength; i++)
             {
                 var value = 397;
-                stateHashValue = 3860031 + (stateHashValue + value) * 2779 + (stateHashValue * value * 2);
-            }
-            bufferLength = Pet_TimeBuffer.Length;
-            for (int i = 0; i < bufferLength; i++)
-            {
-                var element = Pet_TimeBuffer[i];
-                var value = 397
-                    ^ element.Value.GetHashCode();
                 stateHashValue = 3860031 + (stateHashValue + value) * 2779 + (stateHashValue * value * 2);
             }
             bufferLength = NeedBuffer.Length;
@@ -1224,15 +1224,15 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
 
                 traitIndex = traitBasedObject[i++];
                 if (traitIndex != TraitBasedObject.Unset)
+                    sb.AppendLine(Pet_TimeBuffer[traitIndex].ToString());
+
+                traitIndex = traitBasedObject[i++];
+                if (traitIndex != TraitBasedObject.Unset)
                     sb.AppendLine(PetBuffer[traitIndex].ToString());
 
                 traitIndex = traitBasedObject[i++];
                 if (traitIndex != TraitBasedObject.Unset)
                     sb.AppendLine(Tree_FoodBuffer[traitIndex].ToString());
-
-                traitIndex = traitBasedObject[i++];
-                if (traitIndex != TraitBasedObject.Unset)
-                    sb.AppendLine(Pet_TimeBuffer[traitIndex].ToString());
 
                 traitIndex = traitBasedObject[i++];
                 if (traitIndex != TraitBasedObject.Unset)
@@ -1273,9 +1273,9 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
 
         [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<Moveable> MoveableData;
         [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<Location> LocationData;
+        [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<Pet_Time> Pet_TimeData;
         [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<Pet> PetData;
         [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<Tree_Food> Tree_FoodData;
-        [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<Pet_Time> Pet_TimeData;
         [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<Need> NeedData;
         [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<Lake_Drink> Lake_DrinkData;
         [ReadOnly,NativeDisableContainerSafetyRestriction] public BufferFromEntity<Table_Happiness> Table_HappinessData;
@@ -1292,9 +1292,9 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
 
             MoveableData = system.GetBufferFromEntity<Moveable>(true);
             LocationData = system.GetBufferFromEntity<Location>(true);
+            Pet_TimeData = system.GetBufferFromEntity<Pet_Time>(true);
             PetData = system.GetBufferFromEntity<Pet>(true);
             Tree_FoodData = system.GetBufferFromEntity<Tree_Food>(true);
-            Pet_TimeData = system.GetBufferFromEntity<Pet_Time>(true);
             NeedData = system.GetBufferFromEntity<Need>(true);
             Lake_DrinkData = system.GetBufferFromEntity<Lake_Drink>(true);
             Table_HappinessData = system.GetBufferFromEntity<Table_Happiness>(true);
@@ -1319,9 +1319,9 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
 
                 MoveableBuffer = MoveableData[stateEntity],
                 LocationBuffer = LocationData[stateEntity],
+                Pet_TimeBuffer = Pet_TimeData[stateEntity],
                 PetBuffer = PetData[stateEntity],
                 Tree_FoodBuffer = Tree_FoodData[stateEntity],
-                Pet_TimeBuffer = Pet_TimeData[stateEntity],
                 NeedBuffer = NeedData[stateEntity],
                 Lake_DrinkBuffer = Lake_DrinkData[stateEntity],
                 Table_HappinessBuffer = Table_HappinessData[stateEntity],
@@ -1418,9 +1418,9 @@ namespace Generated.AI.Planner.StateRepresentation.PetAgentPlan
             m_StateArchetype = base.EntityManager.CreateArchetype(typeof(State), typeof(TraitBasedObject), typeof(TraitBasedObjectId), typeof(HashCode),
                 typeof(Moveable),
                 typeof(Location),
+                typeof(Pet_Time),
                 typeof(Pet),
                 typeof(Tree_Food),
-                typeof(Pet_Time),
                 typeof(Need),
                 typeof(Lake_Drink),
                 typeof(Table_Happiness),

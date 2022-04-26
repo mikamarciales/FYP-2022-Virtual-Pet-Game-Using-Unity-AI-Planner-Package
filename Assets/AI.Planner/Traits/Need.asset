@@ -56,7 +56,7 @@ MonoBehaviour:
       data:
         m_Name: ThirstTick
         m_Id: 5
-        m_Value: 7
+        m_Value: 10
     00000005:
       type: {class: IntProperty, ns: Unity.Semantic.Traits, asm: Unity.Semantic.Traits}
       data:
@@ -68,7 +68,7 @@ MonoBehaviour:
       data:
         m_Name: HappinessTick
         m_Id: 7
-        m_Value: 2
+        m_Value: 5
     00000007:
       type: {class: IntProperty, ns: Unity.Semantic.Traits, asm: Unity.Semantic.Traits}
       data:

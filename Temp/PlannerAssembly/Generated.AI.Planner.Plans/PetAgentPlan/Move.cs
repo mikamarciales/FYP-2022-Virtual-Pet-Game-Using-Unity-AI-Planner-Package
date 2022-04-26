@@ -20,11 +20,13 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
         
         const int k_MoverIndex = 0;
         const int k_DestinationIndex = 1;
-        const int k_MaxArguments = 2;
+        const int k_TimeIndex = 2;
+        const int k_MaxArguments = 3;
 
         public static readonly string[] parameterNames = {
             "Mover",
             "Destination",
+            "Time",
         };
 
         [ReadOnly] NativeArray<StateEntityKey> m_StatesToExpand;
@@ -35,6 +37,8 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
         [NativeDisableContainerSafetyRestriction] NativeList<int> MoverObjectIndices;
         [NativeDisableContainerSafetyRestriction] NativeArray<ComponentType> DestinationFilter;
         [NativeDisableContainerSafetyRestriction] NativeList<int> DestinationObjectIndices;
+        [NativeDisableContainerSafetyRestriction] NativeArray<ComponentType> TimeFilter;
+        [NativeDisableContainerSafetyRestriction] NativeList<int> TimeObjectIndices;
 
         [NativeDisableContainerSafetyRestriction] NativeList<ActionKey> ArgumentPermutations;
         [NativeDisableContainerSafetyRestriction] NativeList<MoveFixupReference> TransitionInfo;
@@ -50,6 +54,8 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
             MoverObjectIndices = default;
             DestinationFilter = default;
             DestinationObjectIndices = default;
+            TimeFilter = default;
+            TimeObjectIndices = default;
             ArgumentPermutations = default;
             TransitionInfo = default;
         }
@@ -60,6 +66,8 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
             MoverObjectIndices = new NativeList<int>(2, Allocator.Temp);
             DestinationFilter = new NativeArray<ComponentType>(2, Allocator.Temp){[0] = ComponentType.ReadWrite<Location>(), [1] = ComponentType.Exclude<Moveable>(),  };
             DestinationObjectIndices = new NativeList<int>(2, Allocator.Temp);
+            TimeFilter = new NativeArray<ComponentType>(1, Allocator.Temp){[0] = ComponentType.ReadWrite<Pet_Time>(),  };
+            TimeObjectIndices = new NativeList<int>(2, Allocator.Temp);
 
             ArgumentPermutations = new NativeList<ActionKey>(4, Allocator.Temp);
             TransitionInfo = new NativeList<MoveFixupReference>(ArgumentPermutations.Length, Allocator.Temp);
@@ -72,6 +80,8 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
                  return k_MoverIndex;
             if (string.Equals(parameterName, "Destination", StringComparison.OrdinalIgnoreCase))
                  return k_DestinationIndex;
+            if (string.Equals(parameterName, "Time", StringComparison.OrdinalIgnoreCase))
+                 return k_TimeIndex;
 
             return -1;
         }
@@ -84,6 +94,9 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
             DestinationObjectIndices.Clear();
             stateData.GetTraitBasedObjectIndices(DestinationObjectIndices, DestinationFilter);
             
+            TimeObjectIndices.Clear();
+            stateData.GetTraitBasedObjectIndices(TimeObjectIndices, TimeFilter);
+            
             var LocationBuffer = stateData.LocationBuffer;
             
             
@@ -92,6 +105,7 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
             {
                 var MoverIndex = MoverObjectIndices[i0];
                 var MoverObject = stateData.TraitBasedObjects[MoverIndex];
+                
                 
                 
                 
@@ -107,13 +121,28 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
                     continue;
                 
                 
+                
+            
+            
+
+            for (int i2 = 0; i2 < TimeObjectIndices.Length; i2++)
+            {
+                var TimeIndex = TimeObjectIndices[i2];
+                var TimeObject = stateData.TraitBasedObjects[TimeIndex];
+                
+                
+                
+                
 
                 var actionKey = new ActionKey(k_MaxArguments) {
                                                         ActionGuid = ActionGuid,
                                                        [k_MoverIndex] = MoverIndex,
                                                        [k_DestinationIndex] = DestinationIndex,
+                                                       [k_TimeIndex] = TimeIndex,
                                                     };
                 argumentPermutations.Add(actionKey);
+            
+            }
             
             }
             
@@ -126,9 +155,11 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
             var originalStateObjectBuffer = originalState.TraitBasedObjects;
             var originalMoverObject = originalStateObjectBuffer[action[k_MoverIndex]];
             var originalDestinationObject = originalStateObjectBuffer[action[k_DestinationIndex]];
+            var originalTimeObject = originalStateObjectBuffer[action[k_TimeIndex]];
 
             var newState = m_StateDataContext.CopyStateData(originalState);
             var newLocationBuffer = newState.LocationBuffer;
+            var newPet_TimeBuffer = newState.Pet_TimeBuffer;
             {
                     var @Location = newLocationBuffer[originalMoverObject.LocationIndex];
                     @Location.Position = newLocationBuffer[originalDestinationObject.LocationIndex].Position;
@@ -136,6 +167,11 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
             }
             {
                     new global::AI.Planner.Custom.PetAgentPlan.CustomMoveEffects().ApplyCustomActionEffectsToState(originalState, action, newState);
+            }
+            {
+                    var @Pet_Time = newPet_TimeBuffer[originalTimeObject.Pet_TimeIndex];
+                    @Pet_Time.@Value += 1;
+                    newPet_TimeBuffer[originalTimeObject.Pet_TimeIndex] = @Pet_Time;
             }
 
             
@@ -194,6 +230,11 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
         public static T GetDestinationTrait<T>(StateData state, ActionKey action) where T : struct, ITrait
         {
             return state.GetTraitOnObjectAtIndex<T>(action[k_DestinationIndex]);
+        }
+        
+        public static T GetTimeTrait<T>(StateData state, ActionKey action) where T : struct, ITrait
+        {
+            return state.GetTraitOnObjectAtIndex<T>(action[k_TimeIndex]);
         }
         
     }

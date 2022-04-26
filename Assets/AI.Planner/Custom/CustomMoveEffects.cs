@@ -15,7 +15,7 @@ namespace AI.Planner.Custom.PetAgentPlan
             TraitBasedObject moverObject = newState.GetTraitBasedObject(moverObjectId);
             Need needs = newState.GetTraitOnObject<Need>(moverObject);
     
-            needs.HungerLevel = Mathf.Max(0, needs.HungerLevel - 20);
+            needs.HungerLevel = Mathf.Max(0, needs.HungerLevel - 3);
             needs.ThirstLevel = Mathf.Max(0, needs.ThirstLevel - 3);
             needs.HappinessLevel = Mathf.Max(0, needs.HappinessLevel - 3);
             needs.EnergyLevel = Mathf.Max(0, needs.EnergyLevel - 3);

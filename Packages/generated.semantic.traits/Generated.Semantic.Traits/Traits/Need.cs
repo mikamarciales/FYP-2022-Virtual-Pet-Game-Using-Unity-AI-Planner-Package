@@ -237,13 +237,13 @@ namespace Generated.Semantic.Traits
         System.Int32 m_p4 = 100;
         [SerializeField]
         [InspectorName("ThirstTick")]
-        System.Int32 m_p5 = 7;
+        System.Int32 m_p5 = 10;
         [SerializeField]
         [InspectorName("HappinessLevel")]
         System.Int32 m_p6 = 100;
         [SerializeField]
         [InspectorName("HappinessTick")]
-        System.Int32 m_p7 = 2;
+        System.Int32 m_p7 = 5;
         [SerializeField]
         [InspectorName("EnergyLevel")]
         System.Int32 m_p8 = 100;
