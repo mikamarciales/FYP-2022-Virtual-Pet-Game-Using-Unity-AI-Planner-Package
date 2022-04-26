@@ -36,14 +36,15 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets/AI.Planner/Custom/CustomDrankEffects.cs" />
      <Compile Include="Assets/AI.Planner/Custom/CustomHungryPrecondition.cs" />
      <Compile Include="Library/PackageCache/com.unity.ai.planner@0.3.0-preview.3/Runtime/Modules/Navigation/CustomMethods/RewardModifiers.cs" />
      <Compile Include="Assets/AI.Planner/Custom/CustomFedEffects.cs" />
+     <Compile Include="Assets/AI.Planner/Custom/CustomSleptEffects.cs" />
      <Compile Include="Library/PackageCache/com.unity.ai.planner@0.3.0-preview.3/Runtime/Assemblies/AI.Planner.Custom/AssemblyInfo.cs" />
      <Compile Include="Assets/AI.Planner/Custom/CustomMoveEffects.cs" />
-     <Compile Include="Assets/AI.Planner/Custom/CustomDrankEffects.cs" />
      <Compile Include="Assets/AI.Planner/Custom/CustomPlayedEffects.cs" />
-     <Compile Include="Assets/AI.Planner/Custom/CustomSleptEffects.cs" />
+     <Compile Include="Assets/AI.Planner/Custom/CustomDie.cs" />
      <None Include="Assets/AI.Planner/Custom/PetAgent.Custom.asmref" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2020.3.23f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>

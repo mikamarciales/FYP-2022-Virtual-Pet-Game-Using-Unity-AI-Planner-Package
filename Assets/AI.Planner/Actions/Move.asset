@@ -29,6 +29,13 @@ MonoBehaviour:
     m_LimitCount: 0
     m_LimitComparerType: 
     m_LimitComparerReference: 
+  - m_Name: Time
+    m_RequiredTraits:
+    - {fileID: 11400000, guid: 2c6580743559942118cb567835c8ed57, type: 2}
+    m_ProhibitedTraits: []
+    m_LimitCount: 0
+    m_LimitComparerType: 
+    m_LimitComparerReference: 
   m_Preconditions:
   - m_Operator: '!='
     m_CustomOperatorType: 
@@ -75,6 +82,20 @@ MonoBehaviour:
       m_TraitPropertyId: 0
       m_Enum: {fileID: 0}
       m_Value: 
+  - m_Operator: +=
+    m_CustomOperatorType: 
+    m_OperandA:
+      m_Parameter: Time
+      m_Trait: {fileID: 11400000, guid: 2c6580743559942118cb567835c8ed57, type: 2}
+      m_TraitPropertyId: 0
+      m_Enum: {fileID: 0}
+      m_Value: 
+    m_OperandB:
+      m_Parameter: 
+      m_Trait: {fileID: 0}
+      m_TraitPropertyId: -1
+      m_Enum: {fileID: 0}
+      m_Value: 1
   m_Reward: -2
   m_CustomRewards:
   - m_Operator: -=

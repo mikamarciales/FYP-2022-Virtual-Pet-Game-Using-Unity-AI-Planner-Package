@@ -18,14 +18,14 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
     {
         public Guid ActionGuid;
         
-        const int k_petIndex = 0;
+        const int k_agentIndex = 0;
         const int k_homeIndex = 1;
         const int k_timeIndex = 2;
         const int k_energyIndex = 3;
         const int k_MaxArguments = 4;
 
         public static readonly string[] parameterNames = {
-            "pet",
+            "agent",
             "home",
             "time",
             "energy",
@@ -35,8 +35,8 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
         StateDataContext m_StateDataContext;
 
         // local allocations
-        [NativeDisableContainerSafetyRestriction] NativeArray<ComponentType> petFilter;
-        [NativeDisableContainerSafetyRestriction] NativeList<int> petObjectIndices;
+        [NativeDisableContainerSafetyRestriction] NativeArray<ComponentType> agentFilter;
+        [NativeDisableContainerSafetyRestriction] NativeList<int> agentObjectIndices;
         [NativeDisableContainerSafetyRestriction] NativeArray<ComponentType> homeFilter;
         [NativeDisableContainerSafetyRestriction] NativeList<int> homeObjectIndices;
         [NativeDisableContainerSafetyRestriction] NativeArray<ComponentType> timeFilter;
@@ -54,8 +54,8 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
             ActionGuid = guid;
             m_StatesToExpand = statesToExpand.AsDeferredJobArray();
             m_StateDataContext = stateDataContext;
-            petFilter = default;
-            petObjectIndices = default;
+            agentFilter = default;
+            agentObjectIndices = default;
             homeFilter = default;
             homeObjectIndices = default;
             timeFilter = default;
@@ -68,8 +68,8 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
 
         void InitializeLocalContainers()
         {
-            petFilter = new NativeArray<ComponentType>(2, Allocator.Temp){[0] = ComponentType.ReadWrite<Pet>(),[1] = ComponentType.ReadWrite<Location>(),  };
-            petObjectIndices = new NativeList<int>(2, Allocator.Temp);
+            agentFilter = new NativeArray<ComponentType>(2, Allocator.Temp){[0] = ComponentType.ReadWrite<Pet>(),[1] = ComponentType.ReadWrite<Location>(),  };
+            agentObjectIndices = new NativeList<int>(2, Allocator.Temp);
             homeFilter = new NativeArray<ComponentType>(2, Allocator.Temp){[0] = ComponentType.ReadWrite<Home_Energy>(),[1] = ComponentType.ReadWrite<Location>(),  };
             homeObjectIndices = new NativeList<int>(2, Allocator.Temp);
             timeFilter = new NativeArray<ComponentType>(1, Allocator.Temp){[0] = ComponentType.ReadWrite<Pet_Time>(),  };
@@ -84,8 +84,8 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
         public static int GetIndexForParameterName(string parameterName)
         {
             
-            if (string.Equals(parameterName, "pet", StringComparison.OrdinalIgnoreCase))
-                 return k_petIndex;
+            if (string.Equals(parameterName, "agent", StringComparison.OrdinalIgnoreCase))
+                 return k_agentIndex;
             if (string.Equals(parameterName, "home", StringComparison.OrdinalIgnoreCase))
                  return k_homeIndex;
             if (string.Equals(parameterName, "time", StringComparison.OrdinalIgnoreCase))
@@ -98,8 +98,8 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
 
         void GenerateArgumentPermutations(StateData stateData, NativeList<ActionKey> argumentPermutations)
         {
-            petObjectIndices.Clear();
-            stateData.GetTraitBasedObjectIndices(petObjectIndices, petFilter);
+            agentObjectIndices.Clear();
+            stateData.GetTraitBasedObjectIndices(agentObjectIndices, agentFilter);
             
             homeObjectIndices.Clear();
             stateData.GetTraitBasedObjectIndices(homeObjectIndices, homeFilter);
@@ -111,13 +111,15 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
             stateData.GetTraitBasedObjectIndices(energyObjectIndices, energyFilter);
             
             var NeedBuffer = stateData.NeedBuffer;
+            var LocationBuffer = stateData.LocationBuffer;
             
             
 
-            for (int i0 = 0; i0 < petObjectIndices.Length; i0++)
+            for (int i0 = 0; i0 < agentObjectIndices.Length; i0++)
             {
-                var petIndex = petObjectIndices[i0];
-                var petObject = stateData.TraitBasedObjects[petIndex];
+                var agentIndex = agentObjectIndices[i0];
+                var agentObject = stateData.TraitBasedObjects[agentIndex];
+                
                 
                 
                 
@@ -132,6 +134,9 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
                 var homeObject = stateData.TraitBasedObjects[homeIndex];
                 
                 
+                if (!(LocationBuffer[agentObject.LocationIndex].Position != LocationBuffer[homeObject.LocationIndex].Position))
+                    continue;
+                
                 
                 
                 
@@ -142,6 +147,7 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
             {
                 var timeIndex = timeObjectIndices[i2];
                 var timeObject = stateData.TraitBasedObjects[timeIndex];
+                
                 
                 
                 
@@ -161,10 +167,11 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
                 
                 
                 
+                
 
                 var actionKey = new ActionKey(k_MaxArguments) {
                                                         ActionGuid = ActionGuid,
-                                                       [k_petIndex] = petIndex,
+                                                       [k_agentIndex] = agentIndex,
                                                        [k_homeIndex] = homeIndex,
                                                        [k_timeIndex] = timeIndex,
                                                        [k_energyIndex] = energyIndex,
@@ -184,12 +191,20 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
         {
             var originalState = m_StateDataContext.GetStateData(originalStateEntityKey);
             var originalStateObjectBuffer = originalState.TraitBasedObjects;
+            var originalagentObject = originalStateObjectBuffer[action[k_agentIndex]];
+            var originalhomeObject = originalStateObjectBuffer[action[k_homeIndex]];
             var originalenergyObject = originalStateObjectBuffer[action[k_energyIndex]];
             var originaltimeObject = originalStateObjectBuffer[action[k_timeIndex]];
 
             var newState = m_StateDataContext.CopyStateData(originalState);
+            var newLocationBuffer = newState.LocationBuffer;
             var newNeedBuffer = newState.NeedBuffer;
             var newPet_TimeBuffer = newState.Pet_TimeBuffer;
+            {
+                    var @Location = newLocationBuffer[originalagentObject.LocationIndex];
+                    @Location.Position = newLocationBuffer[originalhomeObject.LocationIndex].Position;
+                    newLocationBuffer[originalagentObject.LocationIndex] = @Location;
+            }
             {
                     var @Need = newNeedBuffer[originalenergyObject.NeedIndex];
                     @Need.EnergyLevel += newNeedBuffer[originalenergyObject.NeedIndex].EnergyTick;
@@ -247,9 +262,9 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
         }
 
         
-        public static T GetPetTrait<T>(StateData state, ActionKey action) where T : struct, ITrait
+        public static T GetAgentTrait<T>(StateData state, ActionKey action) where T : struct, ITrait
         {
-            return state.GetTraitOnObjectAtIndex<T>(action[k_petIndex]);
+            return state.GetTraitOnObjectAtIndex<T>(action[k_agentIndex]);
         }
         
         public static T GetHomeTrait<T>(StateData state, ActionKey action) where T : struct, ITrait

@@ -111,6 +111,7 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
             stateData.GetTraitBasedObjectIndices(thirstObjectIndices, thirstFilter);
             
             var NeedBuffer = stateData.NeedBuffer;
+            var LocationBuffer = stateData.LocationBuffer;
             
             
 
@@ -118,6 +119,7 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
             {
                 var agentIndex = agentObjectIndices[i0];
                 var agentObject = stateData.TraitBasedObjects[agentIndex];
+                
                 
                 
                 
@@ -131,6 +133,9 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
                 var lakeIndex = lakeObjectIndices[i1];
                 var lakeObject = stateData.TraitBasedObjects[lakeIndex];
                 
+                
+                if (!(LocationBuffer[agentObject.LocationIndex].Position != LocationBuffer[lakeObject.LocationIndex].Position))
+                    continue;
                 
                 
                 
@@ -147,6 +152,7 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
                 
                 
                 
+                
             
             
 
@@ -157,6 +163,7 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
                 
                 if (!(NeedBuffer[thirstObject.NeedIndex].ThirstLevel <= 85))
                     continue;
+                
                 
                 
                 
@@ -184,12 +191,20 @@ namespace Generated.AI.Planner.Plans.PetAgentPlan
         {
             var originalState = m_StateDataContext.GetStateData(originalStateEntityKey);
             var originalStateObjectBuffer = originalState.TraitBasedObjects;
+            var originalagentObject = originalStateObjectBuffer[action[k_agentIndex]];
+            var originallakeObject = originalStateObjectBuffer[action[k_lakeIndex]];
             var originalthirstObject = originalStateObjectBuffer[action[k_thirstIndex]];
             var originaltimeObject = originalStateObjectBuffer[action[k_timeIndex]];
 
             var newState = m_StateDataContext.CopyStateData(originalState);
+            var newLocationBuffer = newState.LocationBuffer;
             var newNeedBuffer = newState.NeedBuffer;
             var newPet_TimeBuffer = newState.Pet_TimeBuffer;
+            {
+                    var @Location = newLocationBuffer[originalagentObject.LocationIndex];
+                    @Location.Position = newLocationBuffer[originallakeObject.LocationIndex].Position;
+                    newLocationBuffer[originalagentObject.LocationIndex] = @Location;
+            }
             {
                     var @Need = newNeedBuffer[originalthirstObject.NeedIndex];
                     @Need.ThirstLevel += newNeedBuffer[originalthirstObject.NeedIndex].ThirstTick;
