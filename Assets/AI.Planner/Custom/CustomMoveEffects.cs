@@ -8,7 +8,6 @@ namespace AI.Planner.Custom.PetAgentPlan
 {
     public struct CustomMoveEffects : ICustomActionEffect<StateData>
     {
-        //public NeedsController nc;
 
         public void ApplyCustomActionEffectsToState(StateData originalState, ActionKey action, StateData newState)
         {
@@ -17,7 +16,6 @@ namespace AI.Planner.Custom.PetAgentPlan
             Need needs = newState.GetTraitOnObject<Need>(moverObject);
     
             needs.HungerLevel = Mathf.Max(0, needs.HungerLevel - 1);
-            //nc.food -= 10;
             needs.ThirstLevel = Mathf.Max(0, needs.ThirstLevel - 1);
             needs.HappinessLevel = Mathf.Max(0, needs.HappinessLevel - 1);
             needs.EnergyLevel = Mathf.Max(0, needs.EnergyLevel - 1);

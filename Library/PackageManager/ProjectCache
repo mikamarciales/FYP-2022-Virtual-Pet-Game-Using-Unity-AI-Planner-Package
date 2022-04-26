@@ -23,7 +23,7 @@ m_EmbeddedPackageManifests:
       m_ContentTrackingEnabled: 1
       m_ModificationDate:
         serializedVersion: 2
-        ticks: 637865265290000000
+        ticks: 637865605720000000
       m_Hash: 3265200468
     /Users/mikamarciales/Virtual Pet Game/Packages/generated.ai.planner.staterepresentation/package.json:
       m_FilePath: /Users/mikamarciales/Virtual Pet Game/Packages/generated.ai.planner.staterepresentation/package.json
@@ -31,7 +31,7 @@ m_EmbeddedPackageManifests:
       m_ContentTrackingEnabled: 1
       m_ModificationDate:
         serializedVersion: 2
-        ticks: 637865265150000000
+        ticks: 637865605710000000
       m_Hash: 3133949500
     /Users/mikamarciales/Virtual Pet Game/Packages/generated.semantic.traits/package.json:
       m_FilePath: /Users/mikamarciales/Virtual Pet Game/Packages/generated.semantic.traits/package.json
