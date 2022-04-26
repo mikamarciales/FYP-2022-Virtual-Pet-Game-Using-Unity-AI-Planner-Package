@@ -82,7 +82,7 @@ namespace VirtualPetGame
 
             if (needsController.food > 100) needsController.food = 100;
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(5);
         }
 
         public IEnumerator Drink(GameObject target, int amount)
@@ -102,7 +102,7 @@ namespace VirtualPetGame
 
             if (needsController.drink > 100) needsController.drink = 100;
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(5);
         }
 
         public IEnumerator Play(GameObject target, int amount)
@@ -122,7 +122,7 @@ namespace VirtualPetGame
 
             if (needsController.happiness > 100) needsController.happiness = 100;
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(5);
         }
 
         public IEnumerator Sleep(GameObject target, int amount)
@@ -142,7 +142,7 @@ namespace VirtualPetGame
 
             if (needsController.energy > 100) needsController.energy = 100;
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(5);
         }
 
         void Start()
