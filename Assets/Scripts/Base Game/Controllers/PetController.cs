@@ -4,7 +4,6 @@
 
 using System.Collections;
 using System.Collections.Generic;
-using Unity.AI.Planner;
 using UnityEngine;
 
 namespace VirtualPetGame

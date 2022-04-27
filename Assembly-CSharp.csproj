@@ -37,13 +37,6 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets/Scripts/AI Planner/PetAgent.cs" />
-     <Compile Include="Assets/Scripts/Base Game/Managers/PetManager.cs" />
-     <Compile Include="Assets/Scripts/Base Game/Managers/TimingManager.cs" />
-     <Compile Include="Assets/Scripts/Base Game/Controllers/PetController.cs" />
-     <Compile Include="Assets/Scripts/Base Game/Controllers/UI/PetUIController.cs" />
-     <Compile Include="Assets/Scripts/Base Game/Controllers/NeedsController.cs" />
-     <Compile Include="Assets/Scripts/Base Game/Abstracts/Pet.cs" />
-     <Compile Include="Assets/Scripts/Base Game/Managers/GameManager.cs" />
      <Compile Include="Assets/Resources/Art/Simple UI/Samples/IconPreview.cs" />
      <None Include="Assets/Resources/Art/Simple UI/Fonts/OFL.txt" />
     <Reference Include="UnityEngine">
@@ -831,6 +824,10 @@
     <ProjectReference Include="AI.Planner.Custom.csproj">
       <Project>{ec82f1c3-3b9b-6d76-29d5-6ee2ac32def2}</Project>
       <Name>AI.Planner.Custom</Name>
+    </ProjectReference>
+    <ProjectReference Include="BaseGameScripts.csproj">
+      <Project>{b966873e-5c3a-38aa-8e93-81262f61d994}</Project>
+      <Name>BaseGameScripts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

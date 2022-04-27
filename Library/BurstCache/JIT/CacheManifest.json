@@ -3,7 +3,7 @@
   "Assemblies": [
     {
       "FullName": "Unity.Entities, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2022-04-21T14:04:32Z"
+      "LastWriteTime": "2022-04-27T09:07:42Z"
     },
     {
       "FullName": "netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51",
@@ -15,7 +15,7 @@
     },
     {
       "FullName": "Unity.Collections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2022-04-21T14:04:30Z"
+      "LastWriteTime": "2022-04-27T09:07:40Z"
     },
     {
       "FullName": "UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
@@ -27,11 +27,11 @@
     },
     {
       "FullName": "Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2022-04-21T14:04:29Z"
+      "LastWriteTime": "2022-04-27T09:07:40Z"
     },
     {
       "FullName": "Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2022-04-21T14:04:29Z"
+      "LastWriteTime": "2022-04-27T09:07:39Z"
     },
     {
       "FullName": "Unity.Burst.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=null",
@@ -43,7 +43,7 @@
     },
     {
       "FullName": "Unity.2D.Animation.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2022-04-21T14:04:34Z"
+      "LastWriteTime": "2022-04-27T09:07:45Z"
     }
   ],
   "Functions": [
@@ -618,40 +618,6 @@
         7,
         1,
         2
-      ]
-    },
-    {
-      "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.Collections.NativeListDisposeJob>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "96443db019558fb18ad5bebfb509e09d",
-      "LinkName": "352B6D5D03F8F621",
-      "AssemblyDependencyIndices": [
-        4,
-        3,
-        5,
-        1,
-        2,
-        6,
-        7,
-        8,
-        9
-      ]
-    },
-    {
-      "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.Collections.LowLevel.Unsafe.UnsafeHashMapDataDisposeJob>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "2eae739789a29d1fa38c43fc2eef75c0",
-      "LinkName": "C0BB42F31A3089F2",
-      "AssemblyDependencyIndices": [
-        4,
-        3,
-        5,
-        1,
-        2,
-        6,
-        7,
-        8,
-        9
       ]
     }
   ]
