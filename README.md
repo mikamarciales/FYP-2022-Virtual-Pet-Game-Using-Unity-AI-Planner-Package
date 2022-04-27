@@ -9,9 +9,9 @@ This is project highlights the design and development of a 2D virtual pet simula
 It uses the latest [AI Planner package](https://docs.unity3d.com/Packages/com.unity.ai.planner@latest/) (version 0.3.0-preview.3).
 
 ## Installation and Build Guide
-1. Clone this repo (downloading a .zip file will not include largefiles -- e.g. fbx, png)
-2. Open the Virtual Pet Game in Unity version 2020.3.23f1
-3. Open the Main scene in the Assets/Scenes folder
+1. Clone this repo (downloading a .zip file will not include largefiles -- e.g. fbx, png).
+2. Open the Virtual Pet Game in Unity version 2020.3.23f1.
+3. Open the Main scene in the Assets/Scenes folder.
 4. Press the Play button in the Unity Editor to build and run the game.
 5. Click on the buttons representing the needs on the bottom of the screen to interact with the game.
 6. To see a visualisation of the AI plan, open the Plan Visualizer window. (Window -> AI -> Plan Visualizer). Click on any of the nodes within the plan to see its state/action data.
